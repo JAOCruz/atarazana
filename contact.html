@@ -15,6 +15,8 @@
 <link href="/plugins/jquery-timepicker/jquery.timepicker.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="/styles/contact.css">
 <link rel="stylesheet" type="text/css" href="/styles/contact_responsive.css">
+<link rel="stylesheet" type="text/css" href="/styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="/styles/responsive.css">
 </head>
 <body>
 
@@ -269,15 +271,20 @@
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
 <script src="/js/contact.js"></script>
 <script type="module">
-    document.getElementById('site-logo').src = import.meta.env.VITE_LOGO_2_2;
+    document.getElementById('site-logo').src = "https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Logo_Atarazana.png";
     const intro2 = document.getElementById('intro-2-img');
-    if (intro2) intro2.src = import.meta.env.VITE_TABLE_1;
+    if (intro2) intro2.src = "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table1.jpg";
     const videoBg = document.getElementById('video-bg');
-    if (videoBg) videoBg.style.backgroundImage = `url('${import.meta.env.VITE_PLATE_1}')`;
+    if (videoBg) videoBg.style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/plate1.jpg')`;
     const sigBg = document.getElementById('sig-bg');
-    if (sigBg) sigBg.style.backgroundImage = `url('${import.meta.env.VITE_TABLE_2}')`;
+    if (sigBg) sigBg.style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table2.jpg')`;
     const sigImg = document.getElementById('sig-img');
-    if (sigImg) sigImg.src = import.meta.env.VITE_TABLE_2;
+    if (sigImg) sigImg.src = "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table2.jpg";
+    const reservationsSections = document.querySelectorAll('.parallax_background.parallax-window[data-image-src*="reservations"]');
+    reservationsSections.forEach(bg => {
+        bg.setAttribute('data-image-src', "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table4.jpg");
+        bg.style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table4.jpg')`;
+    });
 </script>
 </body>
 </html>

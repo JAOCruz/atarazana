@@ -13,6 +13,8 @@
 <link rel="stylesheet" type="text/css" href="/plugins/OwlCarousel2-2.2.1/animate.css">
 <link href="/plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
 <link href="/plugins/jquery-timepicker/jquery.timepicker.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="/styles/responsive.css">
 <link rel="stylesheet" type="text/css" href="/styles/about.css">
 <link rel="stylesheet" type="text/css" href="/styles/about_responsive.css">
 </head>
@@ -332,23 +334,30 @@
 <script src="/plugins/jquery-datepicker/jquery-ui.js"></script>
 <script src="/plugins/jquery-timepicker/jquery.timepicker.js"></script>
 <script src="/js/about.js"></script>
+<script src="/plugins/colorbox/jquery.colorbox-min.js"></script>
+<script src="/js/custom.js"></script>
 <script type="module">
-    document.getElementById('site-logo').src = import.meta.env.VITE_LOGO_2_2;
+    document.getElementById('site-logo').src = "https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Logo_Atarazana.png";
     const intro2 = document.getElementById('intro-2-img');
-    if (intro2) intro2.src = import.meta.env.VITE_TABLE_1;
+    if (intro2) intro2.src = "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table1.jpg";
     const videoBg = document.getElementById('video-bg');
-    if (videoBg) videoBg.style.backgroundImage = `url('${import.meta.env.VITE_PLATE_1}')`;
+    if (videoBg) videoBg.style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/plate1.jpg')`;
     const sigBg = document.getElementById('sig-bg');
-    if (sigBg) sigBg.style.backgroundImage = `url('${import.meta.env.VITE_TABLE_2}')`;
+    if (sigBg) sigBg.style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table2.jpg')`;
     const sigImg = document.getElementById('sig-img');
-    if (sigImg) sigImg.src = import.meta.env.VITE_TABLE_2;
+    if (sigImg) sigImg.src = "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table2.jpg";
     const aboutIntroImg = document.getElementById('about-intro-img');
-    if (aboutIntroImg) aboutIntroImg.src = import.meta.env.VITE_TABLE_4;
+    if (aboutIntroImg) aboutIntroImg.src = "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/interiorprimer.jpg";
     const aboutBg = document.getElementById('about-bg');
     if (aboutBg) {
-        aboutBg.setAttribute('data-image-src', import.meta.env.VITE_TABLE_5);
-        aboutBg.style.backgroundImage = `url('${import.meta.env.VITE_TABLE_5}')`;
+        aboutBg.setAttribute('data-image-src', "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/vistadesde.jpg");
+        aboutBg.style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/vistadesde.jpg')`;
     }
+    const reservationsSections = document.querySelectorAll('.parallax_background.parallax-window[data-image-src*="reservations"]');
+    reservationsSections.forEach(bg => {
+        bg.setAttribute('data-image-src', "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table4.jpg");
+        bg.style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table4.jpg')`;
+    });
 </script>
 </body>
 </html>
