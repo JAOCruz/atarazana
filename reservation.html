@@ -1,0 +1,315 @@
+<!-- Reservations Component -->
+<div class="reservations" style="background-image: url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/boda/brid-groom-blurry.jpg');">
+	<div class="reservations_overlay"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="reservations_container">
+					<div class="reservations_title"><h2>Reservaciones</h2></div>
+					<div class="reservations_text">
+						<p>¿Tienes un evento especial? Completa el formulario y nos pondremos en contacto contigo para confirmar todos los detalles.</p>
+					</div>
+					<div class="reservations_form_container">
+						<form action="https://submit-form.com/VIqdZ2gBq" method="POST" class="reservations_form">
+							<input type="hidden" name="_redirect" value="/reservacion-exitosa.html">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="res_fecha_evento">Fecha del evento *</label>
+										<input type="date" name="fecha_evento" id="res_fecha_evento" class="form-control" required>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="res_cantidad_personas">Cantidad de personas *</label>
+										<input type="number" name="cantidad_personas" id="res_cantidad_personas" class="form-control" min="1" max="200" required>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="res_email">Email *</label>
+										<input type="email" name="email" id="res_email" class="form-control" required>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="res_numero">Número de teléfono *</label>
+										<input type="tel" name="numero" id="res_numero" class="form-control" required>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="res_tipo_evento">Tipo de evento *</label>
+										<select name="tipo_evento" id="res_tipo_evento" class="form-control" required>
+											<option value="">-</option>
+											<option value="Bodas">Bodas</option>
+											<option value="Baby shower">Baby shower</option>
+											<option value="15 Años">15 Años</option>
+											<option value="Empresariales">Empresariales</option>
+											<option value="Eventos especiales">Eventos especiales</option>
+											<option value="A la dominicana">A la dominicana (de Atarazana)</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="res_nombre">Nombre completo *</label>
+										<input type="text" name="nombre" id="res_nombre" class="form-control" required>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-12">
+									<div class="form-group">
+										<label for="res_mensaje">Mensaje adicional (opcional)</label>
+										<textarea name="mensaje" id="res_mensaje" class="form-control" rows="3" placeholder="Cuéntanos más detalles sobre tu evento..."></textarea>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-12 text-center">
+									<button type="submit" class="reservations_button">
+										Enviar solicitud de reservación
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+// Set minimum date to today for reservation component
+document.addEventListener('DOMContentLoaded', function() {
+    const today = new Date().toISOString().split('T')[0];
+    const dateInput = document.getElementById('res_fecha_evento');
+    if (dateInput) {
+        dateInput.setAttribute('min', today);
+    }
+    
+    // Form submission handling
+    const form = document.querySelector('.reservations_form');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            const submitBtn = document.querySelector('.reservations_button');
+            if (submitBtn) {
+                submitBtn.innerHTML = 'Enviando...';
+                submitBtn.disabled = true;
+            }
+        });
+    }
+});
+</script>
+
+<style>
+.reservations {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.reservations_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(2px);
+    z-index: 1;
+}
+
+.reservations .container {
+    position: relative;
+    z-index: 2;
+}
+
+.reservations_container {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.reservations_title h2 {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 3.5rem;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.reservations_text p {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reservations_form_container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.reservations_form_container .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.reservations_form_container .form-group label {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.reservations_form_container .form-control {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 0.95rem;
+    padding: 1rem 1rem;
+    height: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.reservations_form_container .form-control:focus {
+    border-color: #b49383;
+    box-shadow: 0 0 0 0.2rem rgba(180, 147, 131, 0.25);
+    background: rgba(255, 255, 255, 0.25);
+    outline: none;
+}
+
+.reservations_form_container .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.reservations_form_container select.form-control {
+    height: 50px;
+    padding: 0.75rem 1rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    padding-right: 3rem;
+}
+
+.reservations_form_container select.form-control option {
+    background: #333;
+    color: #fff;
+    padding: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.reservations_form_container select.form-control option:first-child {
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+}
+
+.reservations_form_container textarea.form-control {
+    height: auto;
+    min-height: 100px;
+    resize: vertical;
+    padding: 1rem;
+}
+
+.reservations_button {
+    background-color: #b49383;
+    border: 2px solid #b49383;
+    color: white;
+    padding: 15px 35px;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    min-width: 250px;
+}
+
+.reservations_button:hover {
+    background-color: #9a7f6f;
+    border-color: #9a7f6f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.reservations_button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .reservations_title h2 {
+        font-size: 2.5rem;
+    }
+    
+    .reservations_text p {
+        font-size: 1rem;
+    }
+    
+    .reservations_form_container .form-control {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+        height: 45px;
+    }
+    
+    .reservations_form_container select.form-control {
+        height: 45px;
+        padding: 0.6rem 1rem;
+    }
+    
+    .reservations_button {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+        min-width: 200px;
+    }
+    
+    .reservations_container {
+        padding: 2rem 0;
+    }
+}
+
+/* Fix for Safari and other browsers */
+.reservations_form_container input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+.reservations_form_container input[type="number"]::-webkit-outer-spin-button,
+.reservations_form_container input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.reservations_form_container input[type="number"] {
+    -moz-appearance: textfield;
+}
+</style> 
