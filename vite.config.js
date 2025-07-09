@@ -11,7 +11,15 @@ export default defineConfig({
             'blog.html',
             'contact.html',
             'menu.html',
-            'elements.html'
+            'elements.html',
+            'index.html',
+            'header.html',
+            'footer.html',
+            'reservation.html',
+            'reservaciones.html',
+            'reservacion-exitosa.html',
+            'tour-operadores.html',
+            'event-*.html'
           ],
           dest: ''
         }
