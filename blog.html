@@ -1,3 +1,4 @@
+<!-- TIP: For easier maintenance, consider using HTML includes for the header/footer. See https://www.w3schools.com/howto/howto_html_include.asp -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,40 +18,15 @@
 <link rel="stylesheet" type="text/css" href="/styles/responsive.css">
 <link rel="stylesheet" type="text/css" href="/styles/blog.css">
 <link rel="stylesheet" type="text/css" href="/styles/blog_responsive.css">
+<!-- Add Google Fonts for Cormorant Garamond and Montserrat -->
+<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:700,600,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
 </head>
 <body>
+<div w3-include-html="header.html"></div>
 
 <div class="super_container">
 	
-	<!-- Header -->
-
-	<header class="header">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="header_content d-flex flex-row align-items-center justify-content-start">
-						<div class="logo">
-							<a href="#">
-								<img id="site-logo" alt="Atarazana" style="max-height: 60px;">
-							</a>
-						</div>
-						<nav class="main_nav">
-							<ul class="d-flex flex-row align-items-center justify-content-start">
-								<li><a href="index.html">home</a></li>
-								<li><a href="about.html">about us</a></li>
-								<li><a href="menu.html">menu</a></li>
-								<li><a href="#">delivery</a></li>
-								<li><a href="blog.html">blog</a></li>
-								<li><a href="contact.html">contact</a></li>
-							</ul>
-						</nav>
-						<div class="reservations_phone ml-auto">Reservations: +34 586 778 8892</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-
 	<!-- Hamburger -->
 	
 	<div class="hamburger_bar trans_400 d-flex flex-row align-items-center justify-content-start">
@@ -87,14 +63,14 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/images/blog.jpg" data-speed="0.8"></div>
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/2018/boda1.jpg" data-speed="0.8"></div>
 		<div class="home_container">
 			<div class="container">
 				<div class="row">
 					<div class="col">
 						<div class="home_content text-center">
-							<div class="home_subtitle page_subtitle">The Venue</div>
-							<div class="home_title"><h1>Our Blog</h1></div>
+							<div class="home_subtitle page_subtitle">Atarazana</div>
+							<div class="home_title"><h1>Eventos</h1></div>
 						</div>
 					</div>
 				</div>
@@ -102,237 +78,81 @@
 		</div>
 	</div>
 
-	<!-- Blog -->
-
-	<div class="blog">
+	<!-- Events Gallery -->
+	<div class="events-gallery container">
 		<div class="container">
 			<div class="row">
-
-				<!-- Blog Post -->
-				<div class="col-lg-6 blog_col">
-					<div class="blog_post">
-						<div class="blog_post_image_container">
-							<div class="blog_post_image"><img src="/images/blog_1.jpg" alt="https://unsplash.com/@patrick_schneider"></div>
-							<div class="blog_post_date"><a href="#">June 18, 2018</a></div>
-						</div>
-						<div class="blog_post_content">
-							<div class="blog_post_title"><a href="#">Our Nomenee at the Restaurants Awards</a></div>
-							<div class="blog_post_info">
-								<ul class="d-flex flex-row align-items-center justify-content-start">
-									<li>by <a href="#">George Smith</a></li>
-									<li>in <a href="#">Lifestyle</a></li>
-									<li><a href="#">2 Comments</a></li>
-								</ul>
-							</div>
-							<div class="blog_post_text">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Ut non justo eleifend, facilisis nibh ut, interdum odio. Suspendisse potenti.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Blog Post -->
-				<div class="col-lg-6 blog_col">
-					<div class="blog_post">
-						<div class="blog_post_image_container">
-							<div class="blog_post_image"><img src="/images/blog_2.jpg" alt="https://unsplash.com/@tashytown"></div>
-							<div class="blog_post_date"><a href="#">June 18, 2018</a></div>
-						</div>
-						<div class="blog_post_content">
-							<div class="blog_post_title"><a href="#">Recipe of the week</a></div>
-							<div class="blog_post_info">
-								<ul class="d-flex flex-row align-items-center justify-content-start">
-									<li>by <a href="#">George Smith</a></li>
-									<li>in <a href="#">Lifestyle</a></li>
-									<li><a href="#">2 Comments</a></li>
-								</ul>
-							</div>
-							<div class="blog_post_text">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Ut non justo eleifend, facilisis nibh ut, interdum odio. Suspendisse potenti.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Blog Post -->
-				<div class="col-lg-6 blog_col">
-					<div class="blog_post">
-						<div class="blog_post_image_container">
-							<div class="blog_post_image"><img src="/images/blog_3.jpg" alt="https://unsplash.com/@stefanjonhson"></div>
-							<div class="blog_post_date"><a href="#">June 18, 2018</a></div>
-						</div>
-						<div class="blog_post_content">
-							<div class="blog_post_title"><a href="#">Our Nomenee at the Restaurants Awards</a></div>
-							<div class="blog_post_info">
-								<ul class="d-flex flex-row align-items-center justify-content-start">
-									<li>by <a href="#">George Smith</a></li>
-									<li>in <a href="#">Lifestyle</a></li>
-									<li><a href="#">2 Comments</a></li>
-								</ul>
-							</div>
-							<div class="blog_post_text">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Ut non justo eleifend, facilisis nibh ut, interdum odio. Suspendisse potenti.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Blog Post -->
-				<div class="col-lg-6 blog_col">
-					<div class="blog_post">
-						<div class="blog_post_image_container">
-							<div class="blog_post_image"><img src="/images/blog_4.jpg" alt="Jackelin Slack"></div>
-							<div class="blog_post_date"><a href="#">June 18, 2018</a></div>
-						</div>
-						<div class="blog_post_content">
-							<div class="blog_post_title"><a href="#">Our Nomenee at the Restaurants Awards</a></div>
-							<div class="blog_post_info">
-								<ul class="d-flex flex-row align-items-center justify-content-start">
-									<li>by <a href="#">George Smith</a></li>
-									<li>in <a href="#">Lifestyle</a></li>
-									<li><a href="#">2 Comments</a></li>
-								</ul>
-							</div>
-							<div class="blog_post_text">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Ut non justo eleifend, facilisis nibh ut, interdum odio. Suspendisse potenti.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Blog Post -->
-				<div class="col-lg-6 blog_col">
-					<div class="blog_post">
-						<div class="blog_post_image_container">
-							<div class="blog_post_image"><img src="/images/blog_5.jpg" alt="https://unsplash.com/@mantra_media_ltd"></div>
-							<div class="blog_post_date"><a href="#">June 18, 2018</a></div>
-						</div>
-						<div class="blog_post_content">
-							<div class="blog_post_title"><a href="#">Our Nomenee at the Restaurants Awards</a></div>
-							<div class="blog_post_info">
-								<ul class="d-flex flex-row align-items-center justify-content-start">
-									<li>by <a href="#">George Smith</a></li>
-									<li>in <a href="#">Lifestyle</a></li>
-									<li><a href="#">2 Comments</a></li>
-								</ul>
-							</div>
-							<div class="blog_post_text">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Ut non justo eleifend, facilisis nibh ut, interdum odio. Suspendisse potenti.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Blog Post -->
-				<div class="col-lg-6 blog_col">
-					<div class="blog_post">
-						<div class="blog_post_image_container">
-							<div class="blog_post_image"><img src="/images/blog_6.jpg" alt="https://unsplash.com/@brookelark"></div>
-							<div class="blog_post_date"><a href="#">June 18, 2018</a></div>
-						</div>
-						<div class="blog_post_content">
-							<div class="blog_post_title"><a href="#">Our Nomenee at the Restaurants Awards</a></div>
-							<div class="blog_post_info">
-								<ul class="d-flex flex-row align-items-center justify-content-start">
-									<li>by <a href="#">George Smith</a></li>
-									<li>in <a href="#">Lifestyle</a></li>
-									<li><a href="#">2 Comments</a></li>
-								</ul>
-							</div>
-							<div class="blog_post_text">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Ut non justo eleifend, facilisis nibh ut, interdum odio. Suspendisse potenti.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-			<div class="row load_more_row">
-				<div class="col">
-					<div class="button load_more_button ml-auto mr-auto trans_200"><a href="#">Load More</a></div>
+				<div class="col-12 text-center mb-5">
+					<h2 class="section_title">Tu boda en Atarazana</h2>
+					<p class="section_subtitle">Con más de 50 años de experiencia, nuestro restaurante se ha convertido en el lugar de referencia para dar el "sí quiero". Hemos sido testigos de los momentos más maravillosos y felices de miles de parejas que se decidieron por nuestro restaurante en un ambiente colonial único de características inigualables.<br><br>Creadores de los más innovadores paquetes para en el manejo de eventos y bodas en la República Dominicana.</p>
 				</div>
 			</div>
+			<!-- Terraza Colonial Section -->
+<div class="venue-section mb-5">
+  <div class="sig_content_container">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="sig_content">
+            <div class="sig_subtitle page_subtitle">Terraza colonial</div>
+            <div class="sig_title"><h2>Un espacio único</h2></div>
+            <p>Único Terraza interior de estilo colonial con techo panorámico y con aire acondicionado con capacidad para 120 personas. Amplio, confortable con el toque que hace falta para crear ese ambiente mágico que deleite a todos sus invitados y que solo le puede proporcionar el más cálido y elegante escenario que envuelve la estructura del Restaurante Atarazana desde el siglo XVI, complementado por la calidad de nuestros servicios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sig_image_container">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 offset-lg-5">
+          <div class="sig_image">
+            <div class="background_image" style="background-image:url('https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/2018/boda1.jpg')"></div>
+            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/2018/boda1.jpg" alt="Terraza colonial" style="display:none;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Salón Armas Section -->
+<div class="venue-section mb-5">
+  <div class="sig_content_container">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 offset-lg-7"> <!-- Move card to the right -->
+          <div class="sig_content">
+            <div class="sig_subtitle page_subtitle">Salón Armas</div>
+            <div class="sig_title"><h2>Ambiente colonial</h2></div>
+            <p>Salón decorado al estilo Colonial con capacidad hasta 60 personas, con la vista más impresionante del Alcázar de Diego Colón, donde tú y tus invitados podrán sentirse parte de la historia, de la romántica magia que envuelve la época del descubrimiento.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sig_image_container">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="sig_image">
+            <div class="background_image" style="background-image:url('https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/2018/boda2.JPG')"></div>
+            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/2018/boda2.JPG" alt="Salón Armas" style="display:none;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 		</div>
+		<!-- More event types can be added here -->
 	</div>
 
 	<!-- Reservations -->
-
-	<div class="reservations text-center">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/images/reservations.jpg" data-speed="0.8"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="reservations_content d-flex flex-column align-items-center justify-content-center">
-						<div class="res_stars page_subtitle">5 Stars</div>
-						<div class="res_title">Make a Reservation</div>
-						<div class="res_form_container">
-							<form action="#" id="res_form" class="res_form">
-								<div class="d-flex flex-sm-row flex-column align-items-center justify-content-start">
-									<input type="text" id="datepicker" class="res_input" required="required">
-									<input type="text" class="res_input timepicker" required="required">
-									<select class="res_select">
-										<option disabled="" selected="">2 person</option>
-										<option>3 person</option>
-										<option>4 person</option>
-										<option>5 person</option>
-										<option>6 person</option>
-									</select>
-								</div>
-								<button class="res_button">Make a Reservation</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>		
-	</div>
+	<div w3-include-html="reservation.html"></div>
 
 	<!-- Footer -->
-
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-
-				<!-- Footer Logo -->
-				<div class="col-lg-3 footer_col">
-					<div class="footer_logo">
-						<div class="footer_logo_title">The Venue</div>
-						<div class="footer_logo_subtitle">restaurant</div>
-					</div>
-					<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-<p style="line-height: 1.2;">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
-				</div>
-
-				<!-- Footer About -->
-				<div class="col-lg-6 footer_col">
-					<div class="footer_about">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Ut non justo eleifend, facilisis nibh ut, interdum odio.</p>
-					</div>
-				</div>
-
-				<!-- Footer Contact -->
-				<div class="col-lg-3 footer_col">
-					<div class="footer_contact">
-						<ul>
-							<li class="d-flex flex-row align-items-start justify-content-start">
-								<div><div class="footer_contact_title">Dirección:</div></div>
-								<div class="footer_contact_text">Atarazana No. 5, Zona Colonial, Santo Domingo, Dominican Republic 10210</div>
-							</li>
-							<li class="d-flex flex-row align-items-start justify-content-start">
-								<div><div class="footer_contact_title">Teléfono:</div></div>
-								<div class="footer_contact_text">809-689-2900</div>
-							</li>
-							<li class="d-flex flex-row align-items-start justify-content-start">
-								<div><div class="footer_contact_title">Correo:</div></div>
-								<div class="footer_contact_text">ventas@restauranteatarazana.com</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<div w3-include-html="footer.html"></div>
 </div>
 
 <script src="/js/jquery-3.2.1.min.js"></script>
@@ -349,21 +169,144 @@
 <script src="/plugins/jquery-datepicker/jquery-ui.js"></script>
 <script src="/plugins/jquery-timepicker/jquery.timepicker.js"></script>
 <script src="/js/blog.js"></script>
+<script type="module" src="/js/atarazana-images.js"></script>
 <script type="module">
-    document.getElementById('site-logo').src = "https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Logo_Atarazana.png";
-    const intro2 = document.getElementById('intro-2-img');
-    if (intro2) intro2.src = "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table1.jpg";
-    const videoBg = document.getElementById('video-bg');
-    if (videoBg) videoBg.style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/plate1.jpg')`;
-    const sigBg = document.getElementById('sig-bg');
-    if (sigBg) sigBg.style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table2.jpg')`;
-    const sigImg = document.getElementById('sig-img');
-    if (sigImg) sigImg.src = "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table2.jpg";
-    const reservationsSections = document.querySelectorAll('.parallax_background.parallax-window[data-image-src*="reservations"]');
-    reservationsSections.forEach(bg => {
-        bg.setAttribute('data-image-src', "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table4.jpg");
-        bg.style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table4.jpg')`;
-    });
+import { eventImages } from '/js/atarazana-images.js';
+
+const bodasGallery = document.getElementById('events-bodas-gallery');
+if (bodasGallery && eventImages.bodas) {
+	eventImages.bodas.forEach((url, idx) => {
+		const col = document.createElement('div');
+		col.className = 'col-md-6 col-lg-3 d-flex';
+		const card = document.createElement('div');
+		card.className = 'event-card';
+		const link = document.createElement('a');
+		link.href = url;
+		link.target = '_blank';
+		link.rel = 'noopener noreferrer';
+		const img = document.createElement('img');
+		img.src = url;
+		img.alt = 'Boda en Atarazana ' + (idx+1);
+		img.className = 'event-card-img';
+		link.appendChild(img);
+		card.appendChild(link);
+		const cardBody = document.createElement('div');
+		cardBody.className = 'event-card-body';
+		const title = document.createElement('div');
+		title.className = 'event-card-title';
+		cardBody.appendChild(title);
+		card.appendChild(cardBody);
+		col.appendChild(card);
+		bodasGallery.appendChild(col);
+	});
+}
 </script>
+
+<style>
+.event-card {
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+	overflow: hidden;
+	margin-bottom: 30px;
+	transition: box-shadow 0.2s;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.event-card:hover {
+	box-shadow: 0 6px 24px rgba(0,0,0,0.16);
+}
+.event-card-img {
+	width: 100%;
+	height: 520px;
+	object-fit: cover;
+	display: block;
+}
+.event-card-body {
+	padding: 0.75rem;
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+.event-card-title {
+	font-size: 1.1rem;
+	font-weight: 700;
+	color: #b49383;
+	margin-bottom: 0.5rem;
+	text-align: center;
+}
+.event-feature-card {
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+	margin-bottom: 20px;
+}
+.event-feature-title {
+	color: #b49383;
+	font-size: 1.3rem;
+	font-weight: 700;
+}
+.venue-section .sig_subtitle, .venue-section .sig_title h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  color: #b49383;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.venue-section .sig_title h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.venue-section .sig_content p {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 1.08rem;
+  color: #636363;
+  font-weight: 400;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* Style for the main wedding heading and subtitle */
+.section_title {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 3.2rem;
+  color: #b49383;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+}
+.section_subtitle {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 1.25rem;
+  color: #7a6a5e;
+  font-weight: 400;
+  line-height: 1.7;
+  margin-bottom: 2.2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Ensure dropdown arrow is inline with text */
+.main_nav .dropdown-toggle::after {
+  display: none !important;
+}
+.main_nav .dropdown-menu {
+  background: #fff;
+  font-family: 'Cormorant Garamond', serif !important;
+}
+.main_nav .dropdown-menu .dropdown-item {
+  color: #232323 !important;
+  font-family: 'Cormorant Garamond', serif !important;
+  font-weight: 500;
+}
+.main_nav .dropdown-menu .dropdown-item:hover,
+.main_nav .dropdown-menu .dropdown-item:focus {
+  background: #f5f5f5;
+  color: #b49383 !important;
+}
+</style>
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<script>w3.includeHTML();</script>
 </body>
 </html>

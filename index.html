@@ -16,39 +16,46 @@
 <link href="/plugins/jquery-timepicker/jquery.timepicker.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="/styles/responsive.css">
+<!-- Add Google Fonts for Cormorant Garamond if not present -->
+<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:700,600,400&display=swap" rel="stylesheet">
+<style>
+/* Ensure dropdown arrow is inline with text */
+.main_nav .dropdown-toggle::after {
+  display: none !important;
+}
+.main_nav .dropdown-menu {
+  background: #fff;
+  font-family: 'Cormorant Garamond', serif !important;
+}
+.main_nav .dropdown-menu .dropdown-item {
+  color: #232323 !important;
+  font-family: 'Cormorant Garamond', serif !important;
+  font-weight: 500;
+}
+.main_nav .dropdown-menu .dropdown-item:hover,
+.main_nav .dropdown-menu .dropdown-item:focus {
+  background: #f5f5f5;
+  color: #b49383 !important;
+}
+.home_title h1 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 72px;
+  color: #FFFFFF;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.home_text p {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 1.25rem;
+  color: #fff;
+  font-weight: 400;
+  line-height: 1.7;
+}
+</style>
 </head>
 <body>
 
-<div class="super_container">
-	
-	<!-- Header -->
-
-	<header class="header">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="header_content d-flex flex-row align-items-center justify-content-start">
-						<div class="logo">
-							<a href="#">
-								<img id="site-logo" alt="Atarazana" style="max-height: 60px;">
-							</a>
-						</div>
-						<nav class="main_nav">
-							<ul class="d-flex flex-row align-items-center justify-content-start">
-								<li><a href="index.html">inicio</a></li>
-								<li><a href="about.html">nosotros</a></li>
-								<li><a href="menu.html">menú</a></li>
-								<li><a href="#">eventos</a></li>
-								<li><a href="blog.html">blog</a></li>
-								<li><a href="contact.html">contacto</a></li>
-							</ul>
-						</nav>
-						<div class="reservations_phone ml-auto">Reservaciones: 809-689-2900</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
+<div w3-include-html="header.html"></div>
 
 	<!-- Hamburger -->
 	
@@ -384,86 +391,10 @@
 
 
 			<!-- Reservations -->
-			<div class="reservations text-center">
-				<div class="parallax_background parallax-window" id="reservations-bg" data-parallax="scroll">
-					<div class="section-overlay"></div>
-					<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="reservations_content d-flex flex-column align-items-center justify-content-center">
-								<div class="res_stars page_subtitle">Desde 1972</div>
-								<div class="res_title">Haz tu Reservación</div>
-								<div class="res_form_container">
-									<form action="#" id="res_form" class="res_form">
-										<div class="d-flex flex-sm-row flex-column align-items-center justify-content-start">
-											<input type="text" id="datepicker" class="res_input" placeholder="Fecha" required="required">
-											<input type="text" class="res_input timepicker" placeholder="Hora" required="required">
-											<select class="res_select">
-												<option disabled="" selected="">Cantidad de personas</option>
-												<option>Hasta 50 personas</option>
-												<option>51 - 100 personas</option>
-												<option>101 - 150 personas</option>
-												<option>151 - 200 personas</option>
-												<option>Más de 200 personas</option>
-											</select>
-										</div>
-										<button class="res_button">Hacer Reservación</button>
-									</form>
-								</div>
-								<div class="mt-4">
-									<p class="text-white">Temporadas altas: Agosto, Noviembre, Diciembre y Enero</p>
-									<p class="text-white">Para tour operadores: Servicio diario hasta 200 personas por turno</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>		
-			</div>
+			<div w3-include-html="reservation.html"></div>
 
 			<!-- Footer -->
-			<footer class="footer">
-				<div class="container">
-					<div class="row">
-						<!-- Footer Logo -->
-						<div class="col-lg-3 footer_col">
-							<div class="footer_logo">
-								<div class="footer_logo_title">Restaurante</div>
-								<div class="footer_logo_subtitle">Atarazana</div>
-							</div>
-							<div class="copyright">
-								<p style="line-height: 1.2;">Copyright ©<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Esta plantilla fue hecha con <i class="fa fa-heart-o" aria-hidden="true"></i> por <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
-							</div>
-						</div>
-
-						<!-- Footer About -->
-						<div class="col-lg-6 footer_col">
-							<div class="footer_about">
-								<p>Desde 1972, Atarazana ha sido pionero en la Ciudad Colonial de Santo Domingo. Especialistas en servicios gastronómicos para tour operadores y eventos especiales, ofrecemos la auténtica experiencia culinaria dominicana en un ambiente colonial único, con instalaciones modernas y aire acondicionado.</p>
-							</div>
-						</div>
-
-						<!-- Footer Contact -->
-						<div class="col-lg-3 footer_col">
-							<div class="footer_contact">
-								<ul>
-									<li class="d-flex flex-row align-items-start justify-content-start">
-										<div><div class="footer_contact_title">Dirección:</div></div>
-										<div class="footer_contact_text">Atarazana No. 5, Zona Colonial, Santo Domingo, República Dominicana 10210</div>
-									</li>
-									<li class="d-flex flex-row align-items-start justify-content-start">
-										<div><div class="footer_contact_title">Teléfono:</div></div>
-										<div class="footer_contact_text">809-689-2900</div>
-									</li>
-									<li class="d-flex flex-row align-items-start justify-content-start">
-										<div><div class="footer_contact_title">Correo:</div></div>
-										<div class="footer_contact_text">ventas@restauranteatarazana.com</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
+			<div w3-include-html="footer.html"></div>
 		</div>
 
 <script src="/js/jquery-3.2.1.min.js"></script>
@@ -481,16 +412,8 @@
 <script src="/plugins/jquery-datepicker/jquery-ui.js"></script>
 <script src="/plugins/jquery-timepicker/jquery.timepicker.js"></script>
 <script src="/js/custom.js"></script>
-<script type="module">
-    document.getElementById('site-logo').src = "https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Logo_Atarazana.png";
-    document.getElementById('intro-2-img').src = "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table1.jpg";
-    document.getElementById('video-bg').style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/plate1.jpg')`;
-    document.getElementById('sig-bg').style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table2.jpg')`;
-    document.getElementById('sig-img').src = "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table2.jpg";
-    document.getElementById('home-bg').setAttribute('data-image-src', "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table3.jpg");
-    document.getElementById('home-bg').style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table3.jpg')`;
-    document.getElementById('reservations-bg').setAttribute('data-image-src', "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table4.jpg");
-    document.getElementById('reservations-bg').style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table4.jpg')`;
-</script>
+<script type="module" src="/js/atarazana-images.js"></script>
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<script>w3.includeHTML();</script>
 </body>
 </html>

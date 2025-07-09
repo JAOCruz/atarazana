@@ -1,3 +1,4 @@
+<!-- TIP: For easier maintenance, consider using HTML includes for the header/footer. See https://www.w3schools.com/howto/howto_html_include.asp -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,39 +18,86 @@
 <link rel="stylesheet" type="text/css" href="/styles/responsive.css">
 <link rel="stylesheet" type="text/css" href="/styles/about.css">
 <link rel="stylesheet" type="text/css" href="/styles/about_responsive.css">
+<!-- Add Google Fonts for Cormorant Garamond if not present -->
+<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:700,600,400&display=swap" rel="stylesheet">
+<style>
+/* Header styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.header .main_nav ul li a {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.header .reservations_phone {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.header.scrolled {
+    background: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(10px);
+}
+
+.header.scrolled .main_nav ul li a {
+    color: #ffffff !important;
+    text-shadow: none;
+}
+
+.header.scrolled .reservations_phone {
+    color: #ffffff !important;
+    text-shadow: none;
+}
+
+.main_nav .dropdown-toggle {
+  display: inline-block !important;
+  vertical-align: middle;
+}
+.main_nav .dropdown-toggle::after {
+  display: none !important;
+}
+.main_nav .dropdown-menu {
+  background: #fff;
+  font-family: 'Cormorant Garamond', serif !important;
+}
+.main_nav .dropdown-menu .dropdown-item {
+  color: #232323 !important;
+  font-family: 'Cormorant Garamond', serif !important;
+  font-weight: 500;
+}
+.main_nav .dropdown-menu .dropdown-item:hover,
+.main_nav .dropdown-menu .dropdown-item:focus {
+  background: #f5f5f5;
+  color: #b49383 !important;
+}
+
+.header.scrolled .dropdown-menu {
+  background: rgba(0, 0, 0, 0.9) !important;
+}
+
+.header.scrolled .dropdown-menu .dropdown-item {
+  color: #ffffff !important;
+}
+
+.header.scrolled .dropdown-menu .dropdown-item:hover {
+  background: rgba(180, 147, 131, 0.2) !important;
+  color: #b49383 !important;
+}
+</style>
 </head>
 <body>
+<div w3-include-html="header.html"></div>
 
 <div class="super_container">
 	
-	<!-- Header -->
-	<header class="header">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="header_content d-flex flex-row align-items-center justify-content-start">
-						<div class="logo">
-							<a href="#">
-								<img id="site-logo" alt="Restaurante Atarazana" style="max-height: 60px;">
-							</a>
-						</div>
-						<nav class="main_nav">
-							<ul class="d-flex flex-row align-items-center justify-content-start">
-								<li><a href="index.html">inicio</a></li>
-								<li><a href="about.html">sobre nosotros</a></li>
-								<li><a href="menu.html">menú</a></li>
-								<li><a href="#">eventos</a></li>
-								<li><a href="blog.html">blog</a></li>
-								<li><a href="contact.html">contacto</a></li>
-							</ul>
-						</nav>
-						<div class="reservations_phone ml-auto">Reservaciones: 809-689-2900</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-
 	<!-- Hamburger -->
 	<div class="hamburger_bar trans_400 d-flex flex-row align-items-center justify-content-start">
 		<div class="hamburger">
@@ -71,10 +119,9 @@
 		<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
 			<ul>
 				<li><a href="index.html">inicio</a></li>
-				<li><a href="about.html">sobre nosotros</a></li>
-				<li><a href="menu.html">menú</a></li>
+				<li><a href="about.html">nosotros</a></li>
 				<li><a href="#">eventos</a></li>
-				<li><a href="blog.html">blog</a></li>
+				<li><a href="blog.html">tour operadores</a></li>
 				<li><a href="contact.html">contacto</a></li>
 			</ul>
 		</div>
@@ -242,82 +289,10 @@
 	</div>
 
 	<!-- Reservations -->
-	<div class="reservations text-center">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/images/reservations.jpg" data-speed="0.8"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="reservations_content d-flex flex-column align-items-center justify-content-center">
-						<div class="res_stars page_subtitle">★★★★★</div>
-						<div class="res_title">Haz tu Reservación</div>
-						<div class="res_form_container">
-							<form action="#" id="res_form" class="res_form">
-								<div class="d-flex flex-sm-row flex-column align-items-center justify-content-start">
-									<input type="text" id="datepicker" class="res_input" placeholder="Fecha" required="required">
-									<input type="text" class="res_input timepicker" placeholder="Hora" required="required">
-									<select class="res_select">
-										<option disabled="" selected="">Personas</option>
-										<option>2 personas</option>
-										<option>3 personas</option>
-										<option>4 personas</option>
-										<option>5 personas</option>
-										<option>6+ personas</option>
-									</select>
-								</div>
-								<button class="res_button">Reservar Ahora</button>
-							</form>
-						</div>
-						<div style="margin-top: 20px; color: white;">
-							<p>Para eventos especiales y grupos grandes, contáctanos directamente</p>
-							<p><strong>Temporadas altas:</strong> Agosto, Noviembre, Diciembre y Enero</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>		
-	</div>
+	<div w3-include-html="reservation.html"></div>
 
 	<!-- Footer -->
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 footer_col">
-					<div class="footer_logo">
-						<div class="footer_logo_title">Restaurante</div>
-						<div class="footer_logo_subtitle">Atarazana</div>
-					</div>
-					<div class="copyright">
-						<p style="line-height: 1.2;">Copyright &copy;<script>document.write(new Date().getFullYear());</script> Restaurante Atarazana. Todos los derechos reservados.</p>
-					</div>
-				</div>
-
-				<div class="col-lg-6 footer_col">
-					<div class="footer_about">
-						<p>El restaurante más antiguo de la Ciudad Colonial de Santo Domingo. Ubicado en la primera calle comercial del nuevo mundo, ofrecemos una experiencia gastronómica única que combina historia, tradición y excelencia culinaria.</p>
-					</div>
-				</div>
-
-				<div class="col-lg-3 footer_col">
-					<div class="footer_contact">
-						<ul>
-							<li class="d-flex flex-row align-items-start justify-content-start">
-								<div><div class="footer_contact_title">Dirección:</div></div>
-								<div class="footer_contact_text">Atarazana No. 5, Zona Colonial, Santo Domingo, República Dominicana 10210</div>
-							</li>
-							<li class="d-flex flex-row align-items-start justify-content-start">
-								<div><div class="footer_contact_title">Teléfono:</div></div>
-								<div class="footer_contact_text">809-689-2900</div>
-							</li>
-							<li class="d-flex flex-row align-items-start justify-content-start">
-								<div><div class="footer_contact_title">Correo:</div></div>
-								<div class="footer_contact_text">ventas@restauranteatarazana.com</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<div w3-include-html="footer.html"></div>
 </div>
 
 <script src="/js/jquery-3.2.1.min.js"></script>
@@ -336,28 +311,18 @@
 <script src="/js/about.js"></script>
 <script src="/plugins/colorbox/jquery.colorbox-min.js"></script>
 <script src="/js/custom.js"></script>
-<script type="module">
-    document.getElementById('site-logo').src = "https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Logo_Atarazana.png";
-    const intro2 = document.getElementById('intro-2-img');
-    if (intro2) intro2.src = "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table1.jpg";
-    const videoBg = document.getElementById('video-bg');
-    if (videoBg) videoBg.style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/plate1.jpg')`;
-    const sigBg = document.getElementById('sig-bg');
-    if (sigBg) sigBg.style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table2.jpg')`;
-    const sigImg = document.getElementById('sig-img');
-    if (sigImg) sigImg.src = "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table2.jpg";
-    const aboutIntroImg = document.getElementById('about-intro-img');
-    if (aboutIntroImg) aboutIntroImg.src = "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/interiorprimer.jpg";
-    const aboutBg = document.getElementById('about-bg');
-    if (aboutBg) {
-        aboutBg.setAttribute('data-image-src', "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/vistadesde.jpg");
-        aboutBg.style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/vistadesde.jpg')`;
+<script type="module" src="/js/atarazana-images.js"></script>
+<script>
+// Header scroll functionality
+$(window).on('scroll', function() {
+    if ($(window).scrollTop() > 100) {
+        $('.header').addClass('scrolled');
+    } else {
+        $('.header').removeClass('scrolled');
     }
-    const reservationsSections = document.querySelectorAll('.parallax_background.parallax-window[data-image-src*="reservations"]');
-    reservationsSections.forEach(bg => {
-        bg.setAttribute('data-image-src', "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table4.jpg");
-        bg.style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table4.jpg')`;
-    });
+});
 </script>
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<script>w3.includeHTML();</script>
 </body>
 </html>

@@ -62,7 +62,7 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other/empresarial-min.jpg" data-speed="0.8"></div>
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other/empresarial-min.jpg?v=1" data-speed="0.8"></div>
 		<div class="home_overlay"></div>
 		<div class="home_container">
 			<div class="container">
@@ -88,37 +88,40 @@
 				</div>
 			</div>
 			
-			<!-- Corporate Events Content -->
+			<!-- Corporate Events Gallery -->
 			<div class="row mb-5">
-				<div class="col-lg-6 mb-4">
-					<!-- Corporate Events Gallery -->
+				<div class="col-12">
 					<div class="corporate-gallery">
 						<div class="corporate-slideshow owl-carousel">
 							<div class="corporate-slide-item">
-								<img src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other/empresarial-min.jpg" alt="Evento empresarial" class="img-fluid">
+								<img src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other/empresarial-min.jpg?v=1" alt="Evento empresarial" class="img-fluid">
 							</div>
 							<div class="corporate-slide-item">
-								<img src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other/empresarial2-min.jpg" alt="Reunión corporativa" class="img-fluid">
+								<img src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other/empresarial2-min.jpg?v=1" alt="Reunión corporativa" class="img-fluid">
 							</div>
 							<div class="corporate-slide-item">
-								<img src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other/table-buffett-min.JPG" alt="Buffet corporativo" class="img-fluid">
+								<img src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other/table-buffett-min.JPG?v=1" alt="Buffet corporativo" class="img-fluid">
 							</div>
 							<div class="corporate-slide-item">
-								<img src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other/table-min.JPG" alt="Mesa corporativa" class="img-fluid">
+								<img src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other/table-min.JPG?v=1" alt="Mesa corporativa" class="img-fluid">
 							</div>
 							<div class="corporate-slide-item">
-								<img src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other/interior-min.JPG" alt="Interior del restaurante" class="img-fluid">
+								<img src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other/interior-min.JPG?v=1" alt="Interior del restaurante" class="img-fluid">
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-6">
+			</div>
+			
+			<!-- Corporate Events Content -->
+			<div class="row mb-5">
+				<div class="col-lg-10 offset-lg-1">
 					<div class="corporate-content">
 						<p class="corporate-text">Ofrecemos las mejores facilidades para realizar cualquier tipo de evento, excelente servicio y una variedad de ambientes, contando con el único patio interior en la Zona Colonial techado y con aire acondicionado para su comodidad.</p>
 						
 						<p class="corporate-text">Dentro de nuestros planes se encuentra la "Noche Típica Dominicana" donde se puede disfrutar en todo su esplendor los elementos característicos dominicanos, acompañados del show folklórico dominicano, que le da vida al ambiente con un compendio de los principales bailes típicos del país.</p>
 						
-						<p class="corporate-text">El Restaurante Atarazana cuenta a la vez con varios salones confortables con aire acondicionado y la vista más impresionante del Alcázar de Diego Colón, donde tú y tus invitados podrán sentirse parte de la historia, de la romántica magia que envuelve la época del descubrimiento.</p>
+						<p class="corporate-text">El Restaurante Atarazana cuenta a la vez con varios salones confortables con aire acondicionado y la vista más impresionante del Alcázar de Diego Colón, donde tú y tus invitados podrán sentirse parte de la historia, de la romántica magia que envuelve la época del descubrimiento. El estilo Colonial es el toque que hace falta para crear ese ambiente mágico que deleite a todos sus invitados y que solo le puede proporcionar el más cálido y elegante escenario que envuelve la estructura del Restaurante Atarazana desde el siglo XVI, complementado por la calidad de nuestros servicios. Razón por la que somos reconocidos como un Dominican Treasures.</p>
 						
 						<div class="contact-cta text-center mt-4">
 							<h3 class="cta-title">¿Estás interesado (a) en celebrar con Nosotros?</h3>
@@ -225,7 +228,7 @@ $(document).ready(function() {
 
 .corporate-slideshow .corporate-slide-item img {
     width: 100%;
-    height: 400px;
+    height: 500px;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
@@ -390,6 +393,19 @@ $(document).ready(function() {
 .main_nav .dropdown-menu .dropdown-item:hover,
 .main_nav .dropdown-menu .dropdown-item:focus {
   background: #f5f5f5;
+  color: #b49383 !important;
+}
+
+.header.scrolled .dropdown-menu {
+  background: rgba(0, 0, 0, 0.9) !important;
+}
+
+.header.scrolled .dropdown-menu .dropdown-item {
+  color: #ffffff !important;
+}
+
+.header.scrolled .dropdown-menu .dropdown-item:hover {
+  background: rgba(180, 147, 131, 0.2) !important;
   color: #b49383 !important;
 }
 .corporate-content {

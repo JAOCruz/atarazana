@@ -1,0 +1,68 @@
+<!-- Header Component -->
+<header class="header">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="header_content d-flex flex-row align-items-center justify-content-start">
+					<div class="logo">
+						<a href="index.html">
+							<img id="site-logo" src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Logo_Atarazana.png" alt="Restaurante Atarazana" style="max-height: 60px;">
+						</a>
+					</div>
+					<nav class="main_nav" style="font-family: 'Cormorant Garamond', serif;">
+						<ul class="d-flex flex-row align-items-center justify-content-start">
+							<li><a href="index.html">inicio</a></li>
+							<li><a href="about.html">nosotros</a></li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="blog.html" id="eventosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									eventos
+								</a>
+								<div class="dropdown-menu" aria-labelledby="eventosDropdown">
+									<a class="dropdown-item" href="event-bodas.html">Bodas</a>
+									<a class="dropdown-item" href="event-empresariales.html">Empresariales</a>
+									<a class="dropdown-item" href="event-dominicana.html">A la dominicana</a>
+								</div>
+							</li>
+							<li><a href="tour-operadores.html">tour operadores</a></li>
+							<li><a href="contact.html">contacto</a></li>
+						</ul>
+					</nav>
+					<div class="reservations_phone ml-auto">
+						<a href="reservaciones.html" class="btn btn-reservation">Reservaciones</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<style>
+/* Reservation button styling - matches navigation links */
+.btn-reservation {
+  background: none !important;
+  border: none !important;
+  color: #fff !important;
+  padding: 0 !important;
+  font-family: 'Cormorant Garamond', serif !important;
+  font-weight: 400 !important;
+  font-size: 1rem !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+  text-transform: lowercase !important;
+}
+
+.btn-reservation:hover {
+  color: #b49383 !important;
+  text-decoration: none !important;
+  transform: none !important;
+}
+
+/* When header is scrolled */
+.header.scrolled .btn-reservation {
+  color: #ffffff !important;
+}
+
+.header.scrolled .btn-reservation:hover {
+  color: #b49383 !important;
+}
+</style>
