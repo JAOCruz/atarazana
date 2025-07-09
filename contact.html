@@ -1,3 +1,4 @@
+<!-- TIP: For easier maintenance, consider using HTML includes for the header/footer. See https://www.w3schools.com/howto/howto_html_include.asp -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,40 +18,229 @@
 <link rel="stylesheet" type="text/css" href="/styles/contact_responsive.css">
 <link rel="stylesheet" type="text/css" href="/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="/styles/responsive.css">
+<!-- Add Google Fonts for Cormorant Garamond if not present -->
+<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:700,600,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
+<style>
+/* Home Section */
+.home {
+    position: relative;
+}
+
+/* Home Overlay */
+.home_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.home_container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Fix header text colors */
+.home .home_content .home_subtitle,
+.home .home_content .home_title h1 {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Header styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.header .main_nav ul li a {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.header .reservations_phone {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.header.scrolled {
+    background: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(10px);
+}
+
+.header.scrolled .main_nav ul li a {
+    color: #ffffff !important;
+    text-shadow: none;
+}
+
+.header.scrolled .reservations_phone {
+    color: #ffffff !important;
+    text-shadow: none;
+}
+
+/* Enhanced Contact Styling */
+.contact {
+    padding: 5rem 0;
+    background: #f8f9fa;
+}
+
+.contact_title {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 2.5rem;
+    color: #b49383;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    letter-spacing: 0.02em;
+}
+
+.contact_text {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 1.1rem;
+    color: #636363;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+}
+
+.contact_logo_container {
+    background: #b49383;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.contact_logo_title {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 2.2rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.contact_logo_subtitle {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.contact_list_container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.contact_list li {
+    margin-bottom: 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.contact_list li:last-child {
+    border-bottom: none;
+}
+
+.contact_list li > div:first-child {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 1.2rem;
+    color: #b49383;
+    font-weight: 700;
+    min-width: 100px;
+    margin-right: 1rem;
+}
+
+.contact_list li > div:last-child {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 1rem;
+    color: #636363;
+    line-height: 1.6;
+}
+
+.contact_social {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.contact_social ul li {
+    margin: 0 0.5rem;
+}
+
+.contact_social ul li a {
+    display: block;
+    width: 45px;
+    height: 45px;
+    background: #b49383;
+    color: white;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.contact_social ul li a:hover {
+    background: #a08671;
+    transform: translateY(-3px);
+}
+
+.contact_map {
+    margin-top: 3rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Ensure dropdown arrow is inline with text */
+.main_nav .dropdown-toggle::after {
+  display: none !important;
+}
+.main_nav .dropdown-menu {
+  background: #fff;
+  font-family: 'Cormorant Garamond', serif !important;
+}
+.main_nav .dropdown-menu .dropdown-item {
+  color: #232323 !important;
+  font-family: 'Cormorant Garamond', serif !important;
+  font-weight: 500;
+}
+.main_nav .dropdown-menu .dropdown-item:hover,
+.main_nav .dropdown-menu .dropdown-item:focus {
+  background: #f5f5f5;
+  color: #b49383 !important;
+}
+
+@media (max-width: 768px) {
+    .contact_title {
+        font-size: 2rem;
+    }
+    
+    .contact_list_container {
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .contact_logo_container {
+        padding: 1.5rem;
+    }
+}
+</style>
 </head>
 <body>
+<div w3-include-html="header.html"></div>
 
 <div class="super_container">
 	
-	<!-- Header -->
-
-	<header class="header">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="header_content d-flex flex-row align-items-center justify-content-start">
-						<div class="logo">
-							<a href="#">
-								<img id="site-logo" alt="Restaurante Atarazana" style="max-height: 60px;">
-							</a>
-						</div>
-						<nav class="main_nav">
-							<ul class="d-flex flex-row align-items-center justify-content-start">
-								<li><a href="index.html">inicio</a></li>
-								<li><a href="about.html">sobre nosotros</a></li>
-								<li><a href="menu.html">menú</a></li>
-								<li><a href="#">eventos</a></li>
-								<li><a href="blog.html">blog</a></li>
-								<li><a href="contact.html">contacto</a></li>
-							</ul>
-						</nav>
-						<div class="reservations_phone ml-auto">Reservaciones: 809-689-2900</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-
 	<!-- Hamburger -->
 	
 	<div class="hamburger_bar trans_400 d-flex flex-row align-items-center justify-content-start">
@@ -87,7 +277,8 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/images/contact.jpg" data-speed="0.8"></div>
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other/window-min.JPG" data-speed="0.8"></div>
+		<div class="home_overlay"></div>
 		<div class="home_container">
 			<div class="container">
 				<div class="row">
@@ -175,84 +366,10 @@
 	</div>
 
 	<!-- Reservations -->
-
-	<div class="reservations text-center">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/images/reservations.jpg" data-speed="0.8"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="reservations_content d-flex flex-column align-items-center justify-content-center">
-						<div class="res_stars page_subtitle">★★★★★</div>
-						<div class="res_title">Haz tu Reservación</div>
-						<div class="res_form_container">
-							<form action="#" id="res_form" class="res_form">
-								<div class="d-flex flex-sm-row flex-column align-items-center justify-content-start">
-									<input type="text" id="datepicker" class="res_input" placeholder="Fecha" required="required">
-									<input type="text" class="res_input timepicker" placeholder="Hora" required="required">
-									<select class="res_select">
-										<option disabled="" selected="">Personas</option>
-										<option>2 personas</option>
-										<option>3 personas</option>
-										<option>4 personas</option>
-										<option>5 personas</option>
-										<option>6+ personas</option>
-									</select>
-								</div>
-								<button class="res_button">Reservar Ahora</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>		
-	</div>
+	<div w3-include-html="reservation.html"></div>
 
 	<!-- Footer -->
-
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-
-				<!-- Footer Logo -->
-				<div class="col-lg-3 footer_col">
-					<div class="footer_logo">
-						<div class="footer_logo_title">Restaurante</div>
-						<div class="footer_logo_subtitle">Atarazana</div>
-					</div>
-					<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-<p style="line-height: 1.2;">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
-				</div>
-
-				<!-- Footer About -->
-				<div class="col-lg-6 footer_col">
-					<div class="footer_about">
-						<p>El restaurante más antiguo de la Ciudad Colonial de Santo Domingo. Especialistas en eventos y servicios para tour operadores, ofrecemos una experiencia gastronómica dominicana en un espacio colonial único, con instalaciones modernas y aire acondicionado.</p>
-					</div>
-				</div>
-
-				<!-- Footer Contact -->
-				<div class="col-lg-3 footer_col">
-					<div class="footer_contact">
-						<ul>
-							<li class="d-flex flex-row align-items-start justify-content-start">
-								<div><div class="footer_contact_title">Dirección:</div></div>
-								<div class="footer_contact_text">Atarazana No. 5, Zona Colonial, Santo Domingo, República Dominicana 10210</div>
-							</li>
-							<li class="d-flex flex-row align-items-start justify-content-start">
-								<div><div class="footer_contact_title">Teléfono:</div></div>
-								<div class="footer_contact_text">809-689-2900</div>
-							</li>
-							<li class="d-flex flex-row align-items-start justify-content-start">
-								<div><div class="footer_contact_title">Correo:</div></div>
-								<div class="footer_contact_text">ventas@restauranteatarazana.com</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<div w3-include-html="footer.html"></div>
 </div>
 
 <script src="/js/jquery-3.2.1.min.js"></script>
@@ -270,21 +387,18 @@
 <script src="/plugins/jquery-timepicker/jquery.timepicker.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
 <script src="/js/contact.js"></script>
-<script type="module">
-    document.getElementById('site-logo').src = "https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Logo_Atarazana.png";
-    const intro2 = document.getElementById('intro-2-img');
-    if (intro2) intro2.src = "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table1.jpg";
-    const videoBg = document.getElementById('video-bg');
-    if (videoBg) videoBg.style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/plate1.jpg')`;
-    const sigBg = document.getElementById('sig-bg');
-    if (sigBg) sigBg.style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table2.jpg')`;
-    const sigImg = document.getElementById('sig-img');
-    if (sigImg) sigImg.src = "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table2.jpg";
-    const reservationsSections = document.querySelectorAll('.parallax_background.parallax-window[data-image-src*="reservations"]');
-    reservationsSections.forEach(bg => {
-        bg.setAttribute('data-image-src', "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table4.jpg");
-        bg.style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table4.jpg')`;
-    });
+<script type="module" src="/js/atarazana-images.js"></script>
+<script>
+// Header scroll functionality
+$(window).on('scroll', function() {
+    if ($(window).scrollTop() > 100) {
+        $('.header').addClass('scrolled');
+    } else {
+        $('.header').removeClass('scrolled');
+    }
+});
 </script>
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<script>w3.includeHTML();</script>
 </body>
 </html>

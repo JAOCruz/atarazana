@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Reservaciones - Atarazana</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Reservaciones - Restaurante Atarazana">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/styles/bootstrap-4.1.2/bootstrap.min.css">
+<link href="/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="/plugins/OwlCarousel2-2.2.1/animate.css">
+<link href="/plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
+<link href="/plugins/jquery-timepicker/jquery.timepicker.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="/styles/responsive.css">
+<link rel="stylesheet" type="text/css" href="/styles/contact.css">
+<link rel="stylesheet" type="text/css" href="/styles/contact_responsive.css">
+<!-- Add Google Fonts for Cormorant Garamond and Montserrat -->
+<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:700,600,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div w3-include-html="header.html"></div>
+
+<div class="super_container">
+	
+	<!-- Hamburger -->
+	
+	<div class="hamburger_bar trans_400 d-flex flex-row align-items-center justify-content-start">
+		<div class="hamburger">
+			<div class="menu_toggle d-flex flex-row align-items-center justify-content-start">
+				<span>menu</span>
+				<div class="hamburger_container">
+					<div class="menu_hamburger">
+						<div class="line_1 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+						<div class="line_2 hamburger_lines" style="visibility: inherit; opacity: 1;"></div>
+						<div class="line_3 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Menu -->
+
+	<div class="menu trans_800">
+		<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+			<ul>
+				<li><a href="index.html">inicio</a></li>
+				<li><a href="about.html">nosotros</a></li>
+				<li><a href="menu.html">menú</a></li>
+				<li><a href="tour-operadores.html">tour operadores</a></li>
+				<li><a href="contact.html">contacto</a></li>
+			</ul>
+		</div>
+		<div class="menu_reservations_phone ml-auto">Reservaciones: 809-689-2900</div>
+	</div>
+	
+	<!-- Home -->
+
+	<div class="home">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other/interior-min.JPG" data-speed="0.8"></div>
+		<div class="home_overlay"></div>
+		<div class="home_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_content text-center">
+							<div class="home_subtitle page_subtitle">Atarazana</div>
+							<div class="home_title"><h1>Reservaciones</h1></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Reservation Form -->
+	<div class="reservation_form_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 text-center mb-5">
+					<h2 class="section_title">Reserva tu evento</h2>
+					<p class="section_subtitle">Completa el formulario y nos pondremos en contacto contigo para confirmar los detalles de tu evento especial.</p>
+				</div>
+			</div>
+			
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="reservation_form_container">
+						<form action="https://submit-form.com/VIqdZ2gBq" method="POST" class="reservation_form">
+							<input type="hidden" name="_redirect" value="/reservacion-exitosa.html">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="fecha_evento">Fecha del evento *</label>
+										<input type="date" name="fecha_evento" id="fecha_evento" class="form-control" required>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="cantidad_personas">Cantidad de personas *</label>
+										<input type="number" name="cantidad_personas" id="cantidad_personas" class="form-control" min="1" max="200" required>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="email">Email *</label>
+										<input type="email" name="email" id="email" class="form-control" required>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="numero">Número de teléfono *</label>
+										<input type="tel" name="numero" id="numero" class="form-control" required>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="tipo_evento">Tipo de evento *</label>
+										<select name="tipo_evento" id="tipo_evento" class="form-control" required>
+											<option value="">-</option>
+											<option value="Bodas">Bodas</option>
+											<option value="Baby shower">Baby shower</option>
+											<option value="15 Años">15 Años</option>
+											<option value="Empresariales">Empresariales</option>
+											<option value="Eventos especiales">Eventos especiales</option>
+											<option value="A la dominicana">A la dominicana (de Atarazana)</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="nombre">Nombre completo *</label>
+										<input type="text" name="nombre" id="nombre" class="form-control" required>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-12">
+									<div class="form-group">
+										<label for="mensaje">Mensaje adicional (opcional)</label>
+										<textarea name="mensaje" id="mensaje" class="form-control" rows="4" placeholder="Cuéntanos más detalles sobre tu evento..."></textarea>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-12 text-center">
+									<button type="submit" class="btn btn-primary btn-reservation-submit">
+										<i class="fa fa-paper-plane mr-2"></i>
+										Enviar solicitud de reservación
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Contact Information -->
+			<div class="row mt-5">
+				<div class="col-12">
+					<div class="contact_info_section">
+						<div class="row">
+							<div class="col-md-4 text-center">
+								<div class="contact_info_item">
+									<i class="fa fa-phone contact_icon"></i>
+									<h4>Teléfono</h4>
+									<p>809-689-2900</p>
+								</div>
+							</div>
+							<div class="col-md-4 text-center">
+								<div class="contact_info_item">
+									<i class="fa fa-envelope contact_icon"></i>
+									<h4>Email</h4>
+									<p>info@atarazana.com</p>
+								</div>
+							</div>
+							<div class="col-md-4 text-center">
+								<div class="contact_info_item">
+									<i class="fa fa-map-marker contact_icon"></i>
+									<h4>Dirección</h4>
+									<p>Atarazana No. 5, Zona Colonial<br>Santo Domingo, República Dominicana</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<div w3-include-html="footer.html"></div>
+</div>
+
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/styles/bootstrap-4.1.2/popper.js"></script>
+<script src="/styles/bootstrap-4.1.2/bootstrap.min.js"></script>
+<script src="/plugins/greensock/TweenMax.min.js"></script>
+<script src="/plugins/greensock/TimelineMax.min.js"></script>
+<script src="/plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="/plugins/greensock/animation.gsap.min.js"></script>
+<script src="/plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="/plugins/easing/easing.js"></script>
+<script src="/plugins/parallax-js-master/parallax.min.js"></script>
+<script src="/plugins/jquery-datepicker/jquery-ui.js"></script>
+<script src="/plugins/jquery-timepicker/jquery.timepicker.js"></script>
+<script src="/js/contact.js"></script>
+<script src="/js/custom.js"></script>
+<script>
+// Header scroll functionality
+$(window).on('scroll', function() {
+    if ($(window).scrollTop() > 100) {
+        $('.header').addClass('scrolled');
+    } else {
+        $('.header').removeClass('scrolled');
+    }
+});
+
+// Form validation and enhancement
+$(document).ready(function() {
+    // Set minimum date to today
+    const today = new Date().toISOString().split('T')[0];
+    $('#fecha_evento').attr('min', today);
+    
+    // Form submission handling
+    $('.reservation_form').on('submit', function(e) {
+        const submitBtn = $('.btn-reservation-submit');
+        submitBtn.html('<i class="fa fa-spinner fa-spin mr-2"></i>Enviando...');
+        submitBtn.prop('disabled', true);
+    });
+});
+</script>
+
+<style>
+.home_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.home_container {
+  position: relative;
+  z-index: 2;
+}
+
+.section_title {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 3.2rem;
+  color: #b49383;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+}
+.section_subtitle {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 1.25rem;
+  color: #7a6a5e;
+  font-weight: 400;
+  line-height: 1.7;
+  margin-bottom: 2.2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.reservation_form_section {
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+.reservation_form_container {
+  background: white;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.form-group {
+  margin-bottom: 1.5rem;
+}
+.form-group label {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.form-control {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+.form-control:focus {
+  border-color: #b49383;
+  box-shadow: 0 0 0 0.2rem rgba(180, 147, 131, 0.25);
+}
+.btn-reservation-submit {
+  background-color: #b49383;
+  border-color: #b49383;
+  color: white;
+  padding: 15px 40px;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.btn-reservation-submit:hover {
+  background-color: #9a7f6f;
+  border-color: #9a7f6f;
+  color: white;
+  transform: translateY(-2px);
+}
+.contact_info_section {
+  background: white;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+.contact_info_item {
+  padding: 1.5rem;
+}
+.contact_icon {
+  font-size: 2.5rem;
+  color: #b49383;
+  margin-bottom: 1rem;
+}
+.contact_info_item h4 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 1.4rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.contact_info_item p {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0;
+}
+
+/* Header styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+.header.scrolled {
+  background: rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: blur(10px);
+}
+.header.scrolled .main_nav ul li a {
+  color: #ffffff !important;
+}
+.header.scrolled .reservations_phone {
+  color: #ffffff !important;
+}
+.reservations_phone {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Dropdown styles */
+.main_nav .dropdown-toggle::after {
+  display: none !important;
+}
+.main_nav .dropdown-menu {
+  background: #fff;
+  font-family: 'Cormorant Garamond', serif !important;
+}
+.main_nav .dropdown-menu .dropdown-item {
+  color: #232323 !important;
+  font-family: 'Cormorant Garamond', serif !important;
+  font-weight: 500;
+}
+.main_nav .dropdown-menu .dropdown-item:hover,
+.main_nav .dropdown-menu .dropdown-item:focus {
+  background: #f5f5f5;
+  color: #b49383 !important;
+}
+</style>
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<script>w3.includeHTML();</script>
+</body>
+</html> 
