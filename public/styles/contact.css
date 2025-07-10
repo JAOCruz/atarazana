@@ -872,3 +872,84 @@ section
 	white-space: nowrap;
 }
 
+/* Mobile Responsiveness for Contact Page */
+@media (max-width: 768px) {
+    .contact {
+        margin-top: 80px !important;
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+    
+    .contact_title {
+        font-size: 2rem !important;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .contact_list_container {
+        padding: 30px 20px !important;
+        margin: 20px 10px;
+        font-size: 16px !important;
+    }
+    
+    .contact_list li div:first-child {
+        font-size: 1.5rem !important;
+        margin-bottom: 8px;
+    }
+    
+    .contact_list li div:last-child {
+        font-size: 16px !important;
+        line-height: 1.5;
+    }
+    
+    .contact_social ul {
+        gap: 20px;
+        padding-top: 15px;
+    }
+    
+    .contact_social i {
+        font-size: 28px !important;
+    }
+    
+    .google_map_row {
+        margin-top: 40px !important;
+    }
+    
+    .google_map {
+        height: 300px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact {
+        margin-top: 70px !important;
+        padding-top: 30px !important;
+    }
+    
+    .contact_title {
+        font-size: 1.8rem !important;
+    }
+    
+    .contact_list_container {
+        padding: 25px 15px !important;
+        margin: 15px 5px;
+        font-size: 15px !important;
+    }
+    
+    .contact_list li div:first-child {
+        font-size: 1.3rem !important;
+    }
+    
+    .contact_list li div:last-child {
+        font-size: 15px !important;
+    }
+    
+    .contact_social i {
+        font-size: 24px !important;
+    }
+    
+    .google_map {
+        height: 250px !important;
+    }
+}
+

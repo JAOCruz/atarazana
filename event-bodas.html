@@ -27,41 +27,7 @@
 
 <div class="super_container">
 	
-	<!-- Hamburger -->
-	
-	<div class="hamburger_bar trans_400 d-flex flex-row align-items-center justify-content-start">
-		<div class="hamburger">
-			<div class="menu_toggle d-flex flex-row align-items-center justify-content-start">
-				<span>menu</span>
-				<div class="hamburger_container">
-					<div class="menu_hamburger">
-						<div class="line_1 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
-						<div class="line_2 hamburger_lines" style="visibility: inherit; opacity: 1;"></div>
-						<div class="line_3 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Menu -->
-
-	<div class="menu trans_800">
-		<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
-			<ul>
-				<li><a href="index.html">home</a></li>
-				<li><a href="about.html">about us</a></li>
-				<li><a href="menu.html">menu</a></li>
-				<li><a href="#">delivery</a></li>
-				<li><a href="blog.html">blog</a></li>
-				<li><a href="contact.html">contact</a></li>
-			</ul>
-		</div>
-		<div class="menu_reservations_phone ml-auto">Reservations: +34 586 778 8892</div>
-	</div>
-	
 	<!-- Home -->
-
 	<div class="home" style="background-image: url('https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/bride-groom.jpg'); background-attachment: fixed; background-size: cover; background-position: center; background-repeat: no-repeat;">
 		<div class="home-overlay"></div>
 		<div class="home_container">
@@ -143,7 +109,7 @@
 						<div class="sig_content">
 							<div class="sig_subtitle page_subtitle">Terraza colonial</div>
 							<div class="sig_title"><h2>Un espacio único</h2></div>
-							<p>Único Terraza interior de estilo colonial con techo panorámico y con aire acondicionado con capacidad para 120 personas. Amplio, confortable con el toque que hace falta para crear ese ambiente mágico que deleite a todos sus invitados y que solo le puede proporcionar el más cálido y elegante escenario que envuelve la estructura del Restaurante Atarazana desde el siglo XVI, complementado por la calidad de nuestros servicios.</p>
+							<p>Único Terraza interior de estilo colonial con techo panorámico y con aire acondicionado. Amplio, confortable con el toque que hace falta para crear ese ambiente mágico que deleite a todos sus invitados y que solo le puede proporcionar el más cálido y elegante escenario que envuelve la estructura del Restaurante Atarazana desde el siglo XVI, complementado por la calidad de nuestros servicios.</p>
 						</div>
 					</div>
 				</div>
@@ -172,7 +138,7 @@
 						<div class="sig_content">
 							<div class="sig_subtitle page_subtitle">Salón Armas</div>
 							<div class="sig_title"><h2>Ambiente colonial</h2></div>
-							<p>Salón decorado al estilo Colonial con capacidad hasta 60 personas, con la vista más impresionante del Alcázar de Diego Colón, donde tú y tus invitados podrán sentirse parte de la historia, de la romántica magia que envuelve la época del descubrimiento.</p>
+							<p>Salón decorado al estilo Colonial con la vista más impresionante del Alcázar de Diego Colón, donde tú y tus invitados podrán sentirse parte de la historia, de la romántica magia que envuelve la época del descubrimiento.</p>
 						</div>
 					</div>
 				</div>
@@ -224,7 +190,7 @@
 						<img src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/boda/cake.JPG" alt="Torta de bodas" class="img-fluid">
 						<div class="card-content">
 							<h4>Tortas de Bodas</h4>
-							<p>Diseños únicos y personalizados que reflejan el estilo de cada pareja</p>
+							<p>Generalmente las parejas traen su propia torta, pero podemos gestionar una si es necesario</p>
 						</div>
 					</div>
 				</div>
@@ -232,8 +198,8 @@
 					<div class="dessert-card">
 						<img src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/boda/cake2.jpg" alt="Torta elegante" class="img-fluid">
 						<div class="card-content">
-							<h4>Diseños Elegantes</h4>
-							<p>Cada torta es una obra de arte comestible creada por nuestros pasteleros</p>
+							<h4>Coordinación</h4>
+							<p>Nos encargamos de la presentación y servicio de la torta en el momento perfecto</p>
 						</div>
 					</div>
 				</div>
@@ -1007,6 +973,41 @@ $(document).ready(function() {
 }
 
 @media (max-width: 768px) {
+    /* Home section mobile adjustments */
+    .home {
+        height: 60vh !important;
+        min-height: 400px;
+        background-attachment: scroll !important;
+        background-position: center center !important;
+        background-size: cover !important;
+    }
+    
+    .home_container {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    
+    .home_content {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .home_title h1 {
+        font-size: 2.5rem !important;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+    
+    .home_subtitle {
+        font-size: 1.2rem !important;
+        margin-bottom: 15px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+    
+    .home-overlay {
+        background: rgba(0, 0, 0, 0.4) !important;
+    }
+    
     .wedding-intro-card {
         padding: 35px 25px 39px 25px;
     }

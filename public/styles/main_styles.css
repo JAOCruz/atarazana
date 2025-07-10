@@ -1241,3 +1241,264 @@ section
 	position: relative;
 	z-index: 3;
   }
+
+/* Mobile Responsiveness - Comprehensive */
+
+/* Global Mobile Fixes for Home Section Background Images */
+@media (max-width: 768px) {
+    /* Background image fixes for all pages */
+    .home {
+        background-attachment: scroll !important;
+        background-position: center center !important;
+        background-size: cover !important;
+    }
+    
+    .home .parallax_background,
+    .home .parallax-window {
+        background-attachment: scroll !important;
+        background-position: center center !important;
+        background-size: cover !important;
+    }
+    
+    .home_content {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .home-overlay,
+    .home_overlay {
+        background: rgba(0, 0, 0, 0.4) !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    
+    /* Fix parallax issues on mobile */
+    .parallax_background {
+        background-attachment: scroll !important;
+    }
+    
+    .parallax-window {
+        background-attachment: scroll !important;
+    }
+    
+    /* Apply general mobile fixes to pages that don't have specific styles */
+    /* These have lower specificity so existing page-specific styles can override */
+}
+@media (max-width: 768px) {
+    /* Container and layout adjustments */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* Home section specific adjustments */
+    .home {
+        min-height: 60vh !important; /* Reduce height to prevent overlap */
+        padding-bottom: 200px !important;
+    }
+    
+    .home_container {
+        position: relative !important;
+        bottom: auto !important;
+        transform: none !important;
+    }
+    
+    .home_content {
+        padding: 5px 5px !important;
+    }
+    
+    /* Typography adjustments */
+    .home_title h1 {
+        font-size: 2.2rem !important;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+    
+    .home_subtitle {
+        font-size: 1.3rem !important;
+        margin-bottom: 5px;
+        color: #ffffff !important; /* Make Atarazana subtitle white on mobile */
+    }
+    
+    .home_text {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+    
+    .home_text p {
+        font-size: 0.95rem !important;
+        line-height: 1.6;
+        padding: 5 10px;
+        margin-bottom: 20px !important;
+    }
+    
+    /* Section spacing to prevent overlap */
+    .intro {
+        margin-top: 40px !important; /* Reduced from 60px */
+        padding-top: 40px !important; /* Reduced from 60px */
+        padding-bottom: 40px !important;
+    }
+    
+    .sig {
+        margin-top: 30px !important; /* Reduced from 40px */
+        padding-top: 30px !important; /* Reduced from 40px */
+        padding-bottom: 40px !important;
+    }
+    
+    .themenu {
+        margin-top: 30px !important;
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+    
+    /* Section titles */
+    .intro_title h2, 
+    .section_title,
+    .sig_title h1,
+    .sig_title h2 {
+        font-size: 1.8rem !important;
+        line-height: 1.3;
+        margin-bottom: 15px;
+    }
+    
+    .intro_subtitle,
+    .section_subtitle,
+    .sig_subtitle {
+        font-size: 1.1rem !important;
+        margin-bottom: 10px;
+    }
+    
+    .intro_text p,
+    .section_text p,
+    .sig_content p {
+        font-size: 0.9rem !important;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+    
+    /* Menu adjustments */
+    .menu_content ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .menu_reservations_phone {
+        font-size: 14px;
+    }
+    
+    /* Header adjustments */
+    .header {
+        padding: 10px 0;
+    }
+    
+    .logo img {
+        max-height: 50px !important;
+    }
+    
+    /* Image responsiveness */
+    .intro_image img,
+    .sig_image img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+    
+    /* Button adjustments */
+    .button {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+    
+    /* Card adjustments */
+    .card {
+        margin-bottom: 20px;
+    }
+    
+    .card_title {
+        font-size: 1.3rem !important;
+    }
+    
+    .card_text {
+        font-size: 0.9rem !important;
+    }
+    
+    /* Events section adjustments */
+    .themenu_title {
+        font-size: 1.8rem !important;
+        margin-bottom: 20px;
+    }
+    
+    .themenu_col {
+        margin-bottom: 30px;
+    }
+    
+    .themenu_col_title {
+        font-size: 1.5rem !important;
+        margin-bottom: 15px;
+    }
+    
+    .dish_title {
+        font-size: 1.2rem !important;
+    }
+    
+    .dish_contents p {
+        font-size: 0.9rem !important;
+        line-height: 1.5;
+    }
+    
+    /* Signature section adjustments */
+    .sig_content {
+        padding: 20px !important;
+        margin-bottom: 20px;
+    }
+    
+    .sig_title h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    .sig_subtitle {
+        font-size: 1.1rem !important;
+    }
+    
+    .sig_image {
+        height: 250px !important;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small screens */
+    .home_title h1 {
+        font-size: 2rem !important;
+    }
+    
+    .home_text p {
+        font-size: 0.9rem !important;
+        padding: 0 5px;
+    }
+    
+    .intro_title h2,
+    .section_title {
+        font-size: 1.8rem !important;
+    }
+    
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .sig_content,
+    .contact_list_container {
+        padding: 20px 15px !important;
+    }
+    
+    .intro_text p,
+    .sig_content p {
+        font-size: 0.9rem !important;
+    }
+}
