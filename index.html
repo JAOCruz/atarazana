@@ -19,22 +19,44 @@
 <!-- Add Google Fonts for Cormorant Garamond if not present -->
 <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:700,600,400&display=swap" rel="stylesheet">
 <style>
+/* Header styles - Always black background on index page */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(10px);
+}
+
+.header .main_nav ul li a {
+    color: #ffffff !important;
+    text-shadow: none;
+}
+
+.header .reservations_phone {
+    color: #ffffff !important;
+    text-shadow: none;
+}
+
 /* Ensure dropdown arrow is inline with text */
 .main_nav .dropdown-toggle::after {
   display: none !important;
 }
 .main_nav .dropdown-menu {
-  background: #fff;
+  background: rgba(0, 0, 0, 0.9) !important;
   font-family: 'Cormorant Garamond', serif !important;
 }
 .main_nav .dropdown-menu .dropdown-item {
-  color: #232323 !important;
+  color: #ffffff !important;
   font-family: 'Cormorant Garamond', serif !important;
   font-weight: 500;
 }
 .main_nav .dropdown-menu .dropdown-item:hover,
 .main_nav .dropdown-menu .dropdown-item:focus {
-  background: #f5f5f5;
+  background: rgba(180, 147, 131, 0.2) !important;
   color: #b49383 !important;
 }
 .home_title h1 {
@@ -52,6 +74,8 @@
   line-height: 1.7;
 }
 
+
+
 /* Food Slideshow Styles */
 .food_slideshow_section {
   position: relative;
@@ -66,7 +90,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.3);
   z-index: 2;
 }
 
@@ -172,6 +196,42 @@
 .food_slideshow .owl-dots .owl-dot:hover span {
   background: #b49383;
 }
+
+/* Event boxes equal height */
+.event-dish {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 300px;
+}
+
+.event-dish .dish_contents {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.event-dish .dish_contents p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.themenu_column {
+  display: flex;
+  flex-direction: column;
+}
+
+.themenu_col {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.dish_list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
 </style>
 </head>
 <body>
@@ -214,7 +274,7 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="parallax_background parallax-window" id="home-bg" data-parallax="scroll" data-image-src="/images/home.jpg" data-speed="0.8"></div>
+		<div class="parallax_background" id="home-bg" style="background-attachment: fixed; background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
 		<div class="home-overlay"></div>
 		<div class="home_container">
 			<div class="container">
@@ -231,7 +291,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="scroll_icon"></div>
 	</div>
 
 	<!-- Intro -->
@@ -241,10 +300,10 @@
 			<div class="row">
 				<div class="col">
 					<div class="intro_content">
-						<div class="intro_subtitle page_subtitle">Más de 50 años</div>
-						<div class="intro_title"><h2>Una Experiencia Extraordinaria</h2></div>
+						<div class="intro_subtitle page_subtitle" style="font-family: 'Cormorant Garamond', serif !important;">Más de 50 años</div>
+						<div class="intro_title"><h2 style="font-family: 'Cormorant Garamond', serif !important;">Una Experiencia Extraordinaria</h2></div>
 						<div class="intro_text">
-							<p>Iniciamos en 1972 como "Fonda de La Atarazana", siendo el primer restaurante del país enfocado en servicios para tour operadores. Fuimos pioneros en presentar orquestas de "Nuevos Talentos" e iniciamos las noches de música en la Ciudad Colonial con grupos legendarios como "Los Paimasí" que nacieron aquí. Hoy seguimos siendo líderes en servicios gastronómicos para turismo y eventos especiales.</p>
+							<p style="font-family: 'Montserrat', sans-serif !important;">Iniciamos en 1972 como "Fonda de La Atarazana", siendo el primer restaurante del país enfocado en servicios para tour operadores. Fuimos pioneros en presentar orquestas de "Nuevos Talentos" e iniciamos las noches de música en la Ciudad Colonial con grupos legendarios como "Los Paimasí" que nacieron aquí. Hoy seguimos siendo líderes en servicios gastronómicos para turismo y eventos especiales.</p>
 						</div>
 					</div>
 					<div class="row">
@@ -260,15 +319,13 @@
 		</div>
 	</div>
 
-	<!-- Food Slideshow -->
+	<!-- Drinks Slideshow -->
 
 	<div class="food_slideshow_section">
 		<div class="food_slideshow_overlay"></div>
 		<div class="food_slideshow_content d-flex flex-column align-items-center justify-content-center text-center">
-			<div class="food_slideshow_title">Sabores Dominicanos Auténticos</div>
-			<div class="food_slideshow_subtitle">Especialidad de la casa</div>
 		</div>
-		<div class="owl-carousel owl-theme food_slideshow">
+		<div class="owl-carousel food_slideshow">
 			<div class="food_slide" style="background-image: url(/images/video.jpg)"></div>
 			<div class="food_slide" style="background-image: url(https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/dominicana/food1.JPG?v=1)"></div>
 			<div class="food_slide" style="background-image: url(https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/dominicana/food2.JPG?v=1)"></div>
@@ -278,7 +335,7 @@
 		</div>
 	</div>
 
-	<!-- Signature Dish -->
+	<!-- Premium Service -->
 
 	<div class="sig">
 		<div class="sig_content_container">
@@ -286,14 +343,14 @@
 				<div class="row">
 					<div class="col-lg-7">
 						<div class="sig_content">
-							<div class="sig_subtitle page_subtitle">Especialidad de la casa</div>
-							<div class="sig_title"><h1>Platos Típicos Dominicanos</h1></div>
+							<div class="sig_subtitle page_subtitle" style="font-family: 'Cormorant Garamond', serif !important;">Nuestra Promesa</div>
+							<div class="sig_title"><h1 style="font-family: 'Cormorant Garamond', serif !important;">Servicio Premium</h1></div>
 							<div class="rating_r sig_rating rating_r_5"><i></i><i></i><i></i><i></i><i></i></div>
 							<div class="sig_name_container d-flex flex-row align-items-start justify-content-start">
-								<div class="sig_name">Menú Típico Dominicano con Espectáculo</div>
+								<div class="sig_name" style="font-family: 'Montserrat', sans-serif !important;">Más de 50 años de experiencia brindando atención personalizada y profesional que hace de cada visita una experiencia inolvidable</div>
 
 							</div>
-							<div class="button sig_button trans_200"><a href="#">Reservar Ahora</a></div>
+							<div class="button sig_button trans_200"><a href="about.html">Conocer Más</a></div>
 						</div>
 					</div>
 				</div>
@@ -313,192 +370,75 @@
 		</div>
 	</div>
 
-	<!-- Services Section -->
+	<!-- Events Section -->
 
 	<div class="themenu">
 		<div class="container">
 			<div class="row">
 				<div class="col">
 					<div class="themenu_title_bar_container">
-						<div class="themenu_stars text-center page_subtitle">Nuestros Servicios</div>
+						<div class="themenu_stars text-center page_subtitle" style="font-family: 'Cormorant Garamond', serif !important;">Nuestros Eventos</div>
 						<div class="themenu_rating text-center">
 							<div class="rating_r rating_r_5"><i></i><i></i><i></i><i></i><i></i></div>
 						</div>
 						<div class="themenu_title_bar d-flex flex-column align-items-center justify-content-center">
-							<div class="themenu_title">Especializaciones</div>
+							<div class="themenu_title" style="font-family: 'Cormorant Garamond', serif !important;">Celebraciones Especiales</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row themenu_row">
 
+				<!-- Bodas -->
+				<div class="col-lg-4 themenu_column">
+					<div class="themenu_col">
+						<div class="themenu_col_title" style="font-family: 'Cormorant Garamond', serif !important;">Bodas</div>
+						<div class="dish_list">
+							<div class="dish event-dish">
+								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
+									<div class="dish_title" style="font-family: 'Cormorant Garamond', serif !important;">Celebraciones Únicas</div>
+								</div>
+								<div class="dish_contents">
+									<p style="font-family: 'Montserrat', sans-serif !important;">Con más de 50 años de experiencia, creamos bodas inolvidables en un ambiente colonial único. Terraza interior con capacidad para 120 personas y el elegante Salón Armas con vista al Alcázar de Diego Colón.</p>
+								</div>
+								<div class="dish_order"><a href="event-bodas.html">Conocer Más</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
 				<!-- Tour Operadores -->
 				<div class="col-lg-4 themenu_column">
 					<div class="themenu_col">
-						<div class="themenu_col_title">Tour Operadores</div>
+						<div class="themenu_col_title" style="font-family: 'Cormorant Garamond', serif !important;">Tour Operadores</div>
 						<div class="dish_list">
-
-							<!-- Service -->
-							<div class="dish">
+							<div class="dish event-dish">
 								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Almuerzo Típico Dominicano</div>
+									<div class="dish_title" style="font-family: 'Cormorant Garamond', serif !important;">Experiencia Histórica</div>
 								</div>
 								<div class="dish_contents">
-									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Hasta 200 pax</li>
-										<li>Menú típico</li>
-										<li>Espectáculo incluido</li>
-									</ul>
+									<p style="font-family: 'Montserrat', sans-serif !important;">Restaurante más antiguo de la Ciudad Colonial, pioneros en servicios para grupos turísticos. Ofrecemos la experiencia gastronómica más completa con folklore dominicano en el corazón de la historia.</p>
 								</div>
-								<div class="dish_order"><a href="#">Cotizar</a></div>
+								<div class="dish_order"><a href="tour-operadores.html">Conocer Más</a></div>
 							</div>
-
-							<!-- Service -->
-							<div class="dish">
-								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Espectáculo Merengue</div>
-									<div class="dish_price">Incluido</div>
-								</div>
-								<div class="dish_contents">
-									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Folclore</li>
-										<li>Merengue</li>
-										<li>Bailes típicos</li>
-									</ul>
-								</div>
-								<div class="dish_order"><a href="#">Información</a></div>
-							</div>
-
-							<!-- Service -->
-							<div class="dish">
-								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Espectáculo Taíno</div>
-									<div class="dish_price">Disponible</div>
-								</div>
-								<div class="dish_contents">
-									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Cultura</li>
-										<li>Historia</li>
-										<li>Tradición</li>
-									</ul>
-								</div>
-							</div>
-
 						</div>
 					</div>
 				</div>
 
-				<!-- Eventos -->
+				<!-- A la Dominicana -->
 				<div class="col-lg-4 themenu_column">
 					<div class="themenu_col">
-						<div class="themenu_col_title">Eventos Especiales</div>
+						<div class="themenu_col_title" style="font-family: 'Cormorant Garamond', serif !important;">A la Dominicana</div>
 						<div class="dish_list">
-							
-							<!-- Service -->
-							<div class="dish">
+							<div class="dish event-dish">
 								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Bodas</div>
-									<div class="dish_price">Desde 1978</div>
+									<div class="dish_title" style="font-family: 'Cormorant Garamond', serif !important;">Tradición Caribeña</div>
 								</div>
 								<div class="dish_contents">
-									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Hasta 130 pax</li>
-										<li>Ambiente colonial</li>
-										<li>Aire acondicionado</li>
-									</ul>
+									<p style="font-family: 'Montserrat', sans-serif !important;">Eventos temáticos con auténtico sabor dominicano. Música folklórica, gastronomía criolla y decoración tropical que transporta a tus invitados a la esencia del Caribe dominicano.</p>
 								</div>
-								<div class="dish_order"><a href="#">Planificar</a></div>
+								<div class="dish_order"><a href="event-dominicana.html">Conocer Más</a></div>
 							</div>
-
-							<!-- Service -->
-							<div class="dish">
-								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Eventos Corporativos</div>
-								</div>
-								<div class="dish_contents">
-									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Congresos</li>
-										<li>Hasta 200 pax</li>
-										<li>Equipos A/V</li>
-									</ul>
-								</div>
-								<div class="dish_order"><a href="#">Reservar</a></div>
-							</div>
-
-							<!-- Service -->
-							<div class="dish">
-								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Ferias y Exposiciones</div>
-									<div class="dish_price">Disponible</div>
-								</div>
-								<div class="dish_contents">
-									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Espacios amplios</li>
-										<li>Montajes flexibles</li>
-										<li>Catering completo</li>
-									</ul>
-								</div>
-								<div class="dish_order"><a href="#">Organizar</a></div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-
-				<!-- Facilidades -->
-				<div class="col-lg-4 themenu_column">
-					<div class="themenu_col">
-						<div class="themenu_col_title">Nuestras Facilidades</div>
-						<div class="dish_list">
-
-							<!-- Service -->
-							<div class="dish">
-								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Salón "La Terraza"</div>
-									<div class="dish_price">Principal</div>
-								</div>
-								<div class="dish_contents">
-									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>130 pax banquete</li>
-										<li>200 pax teatro</li>
-										<li>250 pax cóctel</li>
-									</ul>
-								</div>
-								<div class="dish_order"><a href="#">Ver Salón</a></div>
-							</div>
-
-							<!-- Service -->
-							<div class="dish">
-								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Aire Acondicionado</div>
-									<div class="dish_price">Total</div>
-								</div>
-								<div class="dish_contents">
-									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Clima controlado</li>
-										<li>Comodidad garantizada</li>
-										<li>Todo el año</li>
-									</ul>
-								</div>
-								<div class="dish_order"><a href="#">Confort</a></div>
-							</div>
-
-							<!-- Service -->
-							<div class="dish">
-								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Instalaciones Renovadas</div>
-									<div class="dish_price">Modernas</div>
-								</div>
-								<div class="dish_contents">
-									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Recientemente renovado</li>
-										<li>Excelente estado</li>
-										<li>Ambiente colonial</li>
-									</ul>
-								</div>
-								<div class="dish_order"><a href="#">Conocer</a></div>
-							</div>
-
 						</div>
 					</div>
 				</div>
@@ -512,7 +452,7 @@
 			<div w3-include-html="reservation.html"></div>
 
 			<!-- Footer -->
-			<div w3-include-html="footer.html"></div>
+		
 		</div>
 
 <script src="/js/jquery-3.2.1.min.js"></script>
