@@ -1,0 +1,62 @@
+
+.hamburger {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger_lines {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu.active {
+    display: flex;
+}
+
+.menu_content ul {
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu_content ul li {
+    margin-bottom: 20px;
+}
+
+.menu_toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu_toggle.active .line_1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu_toggle.active .line_2 {
+    opacity: 0;
+}
+
+.menu_toggle.active .line_3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+} 
