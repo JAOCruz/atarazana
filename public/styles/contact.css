@@ -656,7 +656,7 @@ section
 }
 .contact_list
 {
-	max-width: 220px;
+	max-width: 500px;
 }
 .contact_list li:not(:last-child)
 {
@@ -668,40 +668,40 @@ section
 }
 .contact_list li > div:first-child div
 {
-	width: 87px;
-	font-size: 20px;
+	width: 150px;
+	font-size: 25px;
 	color: #232323;
 	line-height: 0.75;
 }
 .contact_list li > div:last-child
 {
-	font-size: 15px;
+	font-size: 20px;
 	color: #838383;
 	line-height: 1.6;
 	margin-top: -3px;
 }
-.contact_social
-{
-	margin-top: 35px;
+.contact_social {
+    display: flex;
+    justify-content: center; /* Center the social icons */
+    margin-top: 35px;
 }
-.contact_social ul li:not(:last-child)
-{
-	margin-right: 21px;
+
+.contact_social ul {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding-top: 20px;
 }
-.contact_social ul li a i
-{
-	padding: 5px;
-	font-size: 14px;
-	color: #838383;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
+
+.contact_social ul li a i {
+    padding: 5px;
+    font-size: 14px;
+    color: #838383;
+    transition: all 200ms ease;
 }
-.contact_social ul li a i:hover
-{
-	color: #c4ab9f;
+
+.contact_social ul li a i:hover {
+    color: #c4ab9f;
 }
 .google_map_row
 {

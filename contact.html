@@ -102,6 +102,56 @@
   background: rgba(180, 147, 131, 0.2) !important;
   color: #b49383 !important;
 }
+/* Updated Contact Section Styling */
+.contact_title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px; /* Increased font size */
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #232323;
+}
+
+.contact_list_container {
+    background-color: #f9f9f9;
+    padding: 60px 50px; /* Increased padding for more space */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; /* Increased font size */
+    color: #333;
+    text-align: center;
+    max-width: 100%;
+}
+
+.contact_list li {
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+.contact_list li div:first-child {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 28px; /* Increased font size */
+    color: #b49383;
+}
+
+.contact_social ul {
+    gap: 25px;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.contact_social i {
+    font-size: 32px; /* Increased icon size */
+    color: #b49383;
+    transition: all 0.3s ease;
+}
+
+.contact_social i:hover {
+    color: #232323;
+    transform: scale(1.1);
+}
 </style>
 </head>
 <body>
@@ -135,21 +185,14 @@
 
 	<div class="contact" style="margin-top: 149px;">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
+			<div class="row justify-content-center">
+				<div class="col-xl-6 col-lg-7">
 					<div class="contact_title">Información de Contacto</div>
-					<div class="contact_text">
-						<p>En Atarazana, nos especializamos en la organización de eventos sociales, corporativos y en la atención a tour operadores. Contáctanos para reservar tu evento, solicitar cotizaciones o recibir información personalizada sobre nuestros servicios y menús típicos dominicanos.</p>
-					</div>
-					<div class="contact_logo_container">
-						<div class="contact_logo_title">Atarazana</div>
-						<div class="contact_logo_subtitle">eventos & gastronomía</div>
-					</div>
-				</div>
-				<div class="col-xl-5 col-lg-6">
 					<div class="contact_list_container d-flex flex-column align-items-lg-center justify-content-start">
+						
 						<div class="contact_list_content">
 							<ul class="contact_list">
+								
 								<li class="d-flex flex-row align-items-start justify-content-start">
 									<div><div>Dirección</div></div>
 									<div>Atarazana No. 5, Zona Colonial, Santo Domingo, República Dominicana 10210</div>
