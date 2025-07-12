@@ -154,7 +154,7 @@
     background: none;
     border: none;
     outline: none;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -325,6 +325,7 @@
 /* Mobile Dropdown Styles */
 .mobile-dropdown {
     margin: 25px 0;
+    position: relative;
 }
 
 .mobile-dropdown-title {
@@ -337,10 +338,25 @@
     padding: 10px;
     -webkit-tap-highlight-color: transparent;
     user-select: none;
+    position: relative;
 }
 
 .mobile-dropdown-title:hover {
     color: #c4ab9f;
+}
+
+.mobile-dropdown-title:after {
+    content: "▼";
+    font-size: 12px;
+    margin-left: 8px;
+    position: relative;
+    top: -3px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.mobile-dropdown-title.active:after {
+    transform: rotate(180deg);
 }
 
 .mobile-dropdown-menu {
@@ -349,11 +365,12 @@
     margin: 10px 0 0 0;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.5s ease;
 }
 
 .mobile-dropdown-menu.show {
     max-height: 500px;
+    display: block;
 }
 
 .mobile-dropdown-menu li {
@@ -376,146 +393,7 @@
 }
 </style>
 
-<script>
-// Mobile menu toggle functionality - improved for mobile compatibility
-(function() {
-    'use strict';
-    
-    function toggleMobileMenu() {
-        const overlay = document.getElementById('mobileMenuOverlay');
-        const hamburger = document.getElementById('hamburgerBtn');
-        
-        console.log('Toggle mobile menu called', { overlay, hamburger }); // Debug log
-        
-        if (overlay && hamburger) {
-            const isActive = overlay.classList.contains('active');
-            
-            console.log('Current state:', isActive ? 'active' : 'inactive'); // Debug log
-            
-            if (isActive) {
-                overlay.classList.remove('active');
-                hamburger.classList.remove('active');
-                document.body.style.overflow = '';
-                console.log('Menu closed'); // Debug log
-            } else {
-                overlay.classList.add('active');
-                hamburger.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                console.log('Menu opened'); // Debug log
-            }
-        } else {
-            console.log('Elements not found:', { overlay: !!overlay, hamburger: !!hamburger }); // Debug log
-        }
-    }
-    
-    // Wait for DOM to be ready
-    document.addEventListener('DOMContentLoaded', function() {
-        const hamburger = document.getElementById('hamburgerBtn');
-        const closeBtn = document.getElementById('mobileMenuClose');
-        const overlay = document.getElementById('mobileMenuOverlay');
-        const menuLinks = document.querySelectorAll('.mobile_menu_nav a');
-        
-        // Hamburger click
-        if (hamburger) {
-            console.log('Hamburger element found, adding event listeners'); // Debug log
-            
-            hamburger.addEventListener('click', function(e) {
-                console.log('Hamburger clicked'); // Debug log
-                e.preventDefault();
-                e.stopPropagation();
-                toggleMobileMenu();
-            });
-            
-            // Touch event for better mobile support
-            hamburger.addEventListener('touchend', function(e) {
-                console.log('Hamburger touched'); // Debug log
-                e.preventDefault();
-                e.stopPropagation();
-                toggleMobileMenu();
-            });
-            
-            // Additional pointer events for better compatibility
-            hamburger.addEventListener('pointerdown', function(e) {
-                console.log('Hamburger pointer down'); // Debug log
-                e.preventDefault();
-                e.stopPropagation();
-                toggleMobileMenu();
-            });
-        } else {
-            console.log('Hamburger element not found!'); // Debug log
-        }
-        
-        // Close button click
-        if (closeBtn) {
-            closeBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                toggleMobileMenu();
-            });
-            
-            closeBtn.addEventListener('touchstart', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                toggleMobileMenu();
-            });
-        }
-        
-        // Close when clicking menu links
-        menuLinks.forEach(function(link) {
-            link.addEventListener('click', function() {
-                setTimeout(toggleMobileMenu, 100);
-            });
-        });
-        
-        // Close when clicking outside menu content
-        if (overlay) {
-            overlay.addEventListener('click', function(e) {
-                if (e.target === overlay) {
-                    toggleMobileMenu();
-                }
-            });
-        }
-        
-        // Close on escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && overlay && overlay.classList.contains('active')) {
-                toggleMobileMenu();
-            }
-        });
-        
-        // Desktop dropdown functionality
-        const dropdownToggle = document.querySelector('.dropdown-toggle');
-        const dropdownMenu = document.querySelector('.dropdown-menu');
-        
-        if (dropdownToggle && dropdownMenu) {
-            dropdownToggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                dropdownMenu.classList.toggle('show');
-            });
-            
-            // Close dropdown when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
-                    dropdownMenu.classList.remove('show');
-                }
-            });
-        }
-        
-        // Mobile dropdown functionality
-        const mobileDropdownTitle = document.querySelector('.mobile-dropdown-title');
-        const mobileDropdownMenu = document.querySelector('.mobile-dropdown-menu');
-        
-        if (mobileDropdownTitle && mobileDropdownMenu) {
-            mobileDropdownTitle.addEventListener('click', function(e) {
-                e.preventDefault();
-                mobileDropdownMenu.classList.toggle('show');
-            });
-            
-            mobileDropdownTitle.addEventListener('touchstart', function(e) {
-                e.preventDefault();
-                mobileDropdownMenu.classList.toggle('show');
-            });
-        }
-    });
-})();
-</script>
+<!-- 
+The JavaScript for the mobile menu is now handled in custom.js
+This script has been removed to avoid conflicts
+-->
