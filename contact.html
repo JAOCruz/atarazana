@@ -127,6 +127,10 @@
 .contact_list li {
     flex-direction: column;
     margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .contact_list li div:first-child {
@@ -134,6 +138,11 @@
     margin-bottom: 5px;
     font-size: 28px; /* Increased font size */
     color: #b49383;
+}
+
+.contact_list li div:last-child {
+    word-break: break-word; /* Ensures long text like emails wrap properly */
+    max-width: 100%; /* Ensures content doesn't overflow container */
 }
 
 .contact_social ul {
@@ -152,29 +161,58 @@
     color: #232323;
     transform: scale(1.1);
 }
+
+/* Mobile Responsiveness for Contact Section */
+@media (max-width: 768px) {
+    .contact_title {
+        font-size: 36px;
+    }
+    
+    .contact_list_container {
+        padding: 30px 20px;
+    }
+    
+    .contact_list li div:first-child {
+        font-size: 24px;
+    }
+    
+    .contact_list li div:last-child {
+        font-size: 18px;
+    }
+    
+    .contact_social i {
+        font-size: 28px;
+    }
+    
+    .contact {
+        margin-top: 80px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact_title {
+        font-size: 32px;
+    }
+    
+    .contact_list_container {
+        padding: 25px 15px;
+    }
+    
+    .contact_list li div:first-child {
+        font-size: 22px;
+    }
+    
+    .contact_list li div:last-child {
+        font-size: 16px;
+    }
+}
 </style>
 </head>
 <body>
 <div w3-include-html="header.html"></div>
 
 <div class="super_container">
-	
-	<!-- Home -->
-	<div class="home">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/images/contact.jpg" data-speed="0.8"></div>
-		<div class="home_container">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="home_content text-center">
-							<div class="home_subtitle page_subtitle">Atarazana</div>
-							<div class="home_title"><h1>Contacto</h1></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
 	
 	<!-- Contact -->
 
@@ -183,21 +221,19 @@
 			<div class="row justify-content-center">
 				<div class="col-xl-6 col-lg-7">
 					<div class="contact_title">Información de Contacto</div>
-					<div class="contact_list_container d-flex flex-column align-items-lg-center justify-content-start">
-						
+					<div class="contact_list_container">
 						<div class="contact_list_content">
 							<ul class="contact_list">
-								
-								<li class="d-flex flex-row align-items-start justify-content-start">
-									<div><div>Dirección</div></div>
+								<li>
+									<div>Dirección</div>
 									<div>Atarazana No. 5, Zona Colonial, Santo Domingo, República Dominicana 10210</div>
 								</li>
-								<li class="d-flex flex-row align-items-start justify-content-start">
-									<div><div>Teléfono</div></div>
+								<li>
+									<div>Teléfono</div>
 									<div>809-689-2900</div>
 								</li>
-								<li class="d-flex flex-row align-items-start justify-content-start">
-									<div><div>Correo</div></div>
+								<li>
+									<div>Correo</div>
 									<div>ventas@restauranteatarazana.com</div>
 								</li>
 							</ul>
@@ -260,6 +296,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
 <script src="/js/contact.js"></script>
 <script type="module" src="/js/atarazana-images.js"></script>
+<script src="/js/custom.js"></script>
 <script>
 // Header scroll functionality
 $(window).on('scroll', function() {
@@ -271,6 +308,6 @@ $(window).on('scroll', function() {
 });
 </script>
 <script src="https://www.w3schools.com/lib/w3.js"></script>
-<script>w3.includeHTML();</script>
+<script src="/js/include-helper.js"></script>
 </body>
 </html>

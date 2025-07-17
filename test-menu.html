@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Test Mobile Menu - Atarazana</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Test page for mobile menu">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/styles/bootstrap-4.1.2/bootstrap.min.css">
+<link href="/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="/styles/responsive.css">
+<!-- Add Google Fonts for Cormorant Garamond and Montserrat -->
+<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:700,600,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
+<style>
+/* Header styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.9) !important;
+}
+
+.test-content {
+    padding-top: 120px;
+    min-height: 100vh;
+    background: #f5f5f5;
+    padding-bottom: 50px;
+}
+
+.test-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+h1, h2 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #b49383;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.debug-log {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    font-family: monospace;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+<div w3-include-html="header.html"></div>
+
+<div class="test-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="test-card">
+                    <h1>Mobile Menu Test Page</h1>
+                    <p>This page is designed to test the mobile menu functionality. Try clicking on the hamburger menu icon in the top right corner (on mobile view).</p>
+                    
+                    <h2>Testing Instructions:</h2>
+                    <ol>
+                        <li>Resize your browser to mobile width (less than 768px)</li>
+                        <li>Click on the hamburger menu icon</li>
+                        <li>The mobile menu overlay should appear</li>
+                        <li>Click on the "Eventos" dropdown</li>
+                        <li>The dropdown menu should expand</li>
+                        <li>Click the X to close the menu</li>
+                    </ol>
+                    
+                    <button id="testMenuBtn" class="btn btn-primary">Test Mobile Menu Manually</button>
+                    
+                    <h2>Debug Log:</h2>
+                    <div id="debugLog" class="debug-log"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/styles/bootstrap-4.1.2/popper.js"></script>
+<script src="/styles/bootstrap-4.1.2/bootstrap.min.js"></script>
+<script src="/js/custom.js"></script>
+
+<script>
+// Debug logging
+function log(message) {
+    console.log(message);
+    var debugLog = document.getElementById('debugLog');
+    if (debugLog) {
+        var time = new Date().toLocaleTimeString();
+        debugLog.innerHTML += `<div>[${time}] ${message}</div>`;
+        debugLog.scrollTop = debugLog.scrollHeight;
+    }
+}
+
+// Test button functionality
+$(document).ready(function() {
+    log('Page loaded');
+    
+    $('#testMenuBtn').on('click', function() {
+        log('Test button clicked');
+        
+        // Check if hamburger button exists
+        if ($('#hamburgerBtn').length) {
+            log('Hamburger button found, triggering click');
+            $('#hamburgerBtn').trigger('click');
+        } else {
+            log('ERROR: Hamburger button not found');
+        }
+    });
+    
+    // Log when includes are loaded
+    setTimeout(function() {
+        log('Checking if header was loaded');
+        if ($('#hamburgerBtn').length) {
+            log('Header loaded successfully');
+        } else {
+            log('ERROR: Header not loaded properly');
+        }
+    }, 1000);
+});
+</script>
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<script src="/js/include-helper.js"></script>
+</body>
+</html> 

@@ -120,6 +120,7 @@
 <script src="/plugins/jquery-datepicker/jquery-ui.js"></script>
 <script src="/plugins/jquery-timepicker/jquery.timepicker.js"></script>
 <script src="/js/blog.js"></script>
+<script src="/js/custom.js"></script>
 
 <script>
 // Header scroll functionality
@@ -152,6 +153,17 @@ $(document).ready(function() {
             }
         }
     });
+    
+    // Manual menu initialization
+    setTimeout(function() {
+        if($('.menu').length && $('.hamburger').length) {
+            $('.hamburger').on('click', function() {
+                console.log('Hamburger clicked');
+                $(this).toggleClass('active');
+                $('.menu').toggleClass('active');
+            });
+        }
+    }, 500); // Give time for includes to load
 });
 </script>
 
@@ -415,6 +427,6 @@ $(document).ready(function() {
 }
 </style>
 <script src="https://www.w3schools.com/lib/w3.js"></script>
-<script>w3.includeHTML();</script>
+<script src="/js/include-helper.js"></script>
 </body>
 </html> 
