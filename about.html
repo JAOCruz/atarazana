@@ -92,6 +92,62 @@
   background: rgba(180, 147, 131, 0.2) !important;
   color: #b49383 !important;
 }
+
+/* Food Cards Styles */
+.food-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.food-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.food-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.food-card-content {
+  padding: 25px 20px;
+}
+
+.food-card-content h4 {
+  color: #b49383;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.food-card-content p {
+  color: #636363;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Responsive styles for food cards */
+@media (max-width: 768px) {
+  .food-card img {
+    height: 200px;
+  }
+  
+  .food-card-content {
+    padding: 20px 15px;
+  }
+  
+  .food-card-content h4 {
+    font-size: 1.3rem;
+  }
+  
+  .food-card-content p {
+    font-size: 0.9rem;
+  }
+}
 </style>
 </head>
 <body>
@@ -137,7 +193,7 @@
 					</div>
 					<div class="row">
 						<div class="col-lg-8">
-							<div class="intro_image"><img id="about-intro-img" src="/images/about_intro.jpg" alt="Interior colonial del Restaurante Atarazana"></div>
+							<div class="intro_image"><img id="about-intro-img" src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other2/location_night.jpeg" alt="Vista nocturna del Restaurante Atarazana"></div>
 						</div>
 					</div>
 				</div>	
@@ -183,8 +239,51 @@
 		</div>
 	</div>
 
+	<!-- Gastronomía Section -->
+	<div class="gastronomy-section" style="padding: 80px 0; background-color: #f8f9fa;">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title_container text-center">
+						<div class="section_subtitle page_subtitle" style="font-family: 'Cormorant Garamond', serif !important;">Nuestra Cocina</div>
+						<div class="section_title"><h2 style="font-family: 'Cormorant Garamond', serif !important;">Gastronomía</h2></div>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-5">
+				<div class="col-lg-4 mb-4">
+					<div class="food-card">
+						<img src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other2/food2.jpeg" alt="Plato gourmet" class="img-fluid">
+						<div class="food-card-content">
+							<h4 style="font-family: 'Cormorant Garamond', serif !important;">Sabores Dominicanos</h4>
+							<p style="font-family: 'Montserrat', sans-serif !important;">Nuestra cocina fusiona lo mejor de la tradición dominicana con técnicas culinarias modernas.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-4">
+					<div class="food-card">
+						<img src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other2/food.jpeg" alt="Plato especial" class="img-fluid">
+						<div class="food-card-content">
+							<h4 style="font-family: 'Cormorant Garamond', serif !important;">Ingredientes Selectos</h4>
+							<p style="font-family: 'Montserrat', sans-serif !important;">Utilizamos productos frescos y de la más alta calidad para cada una de nuestras creaciones.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-4">
+					<div class="food-card">
+						<img src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other2/food_buffette.jpeg" alt="Buffet" class="img-fluid">
+						<div class="food-card-content">
+							<h4 style="font-family: 'Cormorant Garamond', serif !important;">Experiencias Culinarias</h4>
+							<p style="font-family: 'Montserrat', sans-serif !important;">Ofrecemos opciones para todos los gustos, desde buffets hasta menús a la carta.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- Filosofía -->
-	<div class="intro" style="background-color: #f8f9fa; padding: 80px 0;">
+	<div class="intro" style="background-color: #ffffff; padding: 80px 0;">
 		<div class="container">
 			<div class="row">
 				<div class="col">
