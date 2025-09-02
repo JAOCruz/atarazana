@@ -1,4 +1,3 @@
-<!-- TIP: For easier maintenance, consider using HTML includes for the header/footer. See https://www.w3schools.com/howto/howto_html_include.asp -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -93,6 +92,86 @@
   color: #b49383 !important;
 }
 
+/* Fix for overlapping issues */
+.super_container {
+    position: relative;
+    z-index: 1;
+}
+
+.home {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.home-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.home_container {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+}
+
+/* Historia section fixes */
+.intro {
+    padding: 80px 0;
+    position: relative;
+    z-index: 1;
+    clear: both;
+    overflow: hidden;
+}
+
+.intro_content {
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.intro_text {
+    margin-top: 30px;
+    line-height: 1.8;
+}
+
+.intro_text p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #636363;
+    position: relative;
+    z-index: 1;
+}
+
+.intro_image {
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.intro_image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Ensure proper spacing between sections */
+.chefs {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+    position: relative;
+    z-index: 1;
+    clear: both;
+}
+
 /* Food Cards Styles */
 .food-card {
   background: white;
@@ -130,6 +209,54 @@
   margin-bottom: 0;
 }
 
+/* Gastronomy section */
+.gastronomy-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+    position: relative;
+    z-index: 1;
+    clear: both;
+}
+
+/* Section title improvements */
+.section_title_container {
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.section_subtitle {
+    font-size: 1.2rem;
+    color: #b49383;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.section_title h1,
+.section_title h2 {
+    color: #232323;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+/* Testimonials section */
+.testimonials {
+    padding: 80px 0;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+}
+
+.parallax_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
 /* Responsive styles for food cards */
 @media (max-width: 768px) {
   .food-card img {
@@ -147,6 +274,39 @@
   .food-card-content p {
     font-size: 0.9rem;
   }
+  
+  .intro {
+    padding: 60px 0;
+  }
+  
+  .intro_text p {
+    font-size: 0.95rem;
+  }
+  
+  .home {
+    min-height: 50vh;
+  }
+}
+
+/* Additional spacing fixes */
+.chefs_text_row {
+    margin-top: 40px;
+}
+
+.chefs_text h4 {
+    color: #b49383;
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+.chefs_text h4:first-child {
+    margin-top: 0;
+}
+
+.chefs_text p {
+    color: #636363;
+    line-height: 1.7;
+    margin-bottom: 20px;
 }
 </style>
 </head>
@@ -157,7 +317,7 @@
 	
 	<!-- Home -->
 	<div class="home">
-		<div class="parallax_background" id="about-bg" style="background-attachment: fixed; background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+		<div class="parallax_background" id="about-bg" style="background-image: url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other2/location_night.jpeg'); background-attachment: fixed; background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
 		<div class="home-overlay"></div>
 		<div class="home_container">
 			<div class="container">
@@ -177,7 +337,7 @@
 	<div class="intro">
 		<div class="container">
 			<div class="row">
-				<div class="col">
+				<div class="col-lg-6">
 					<div class="intro_content">
 						<div class="intro_subtitle page_subtitle" style="font-family: 'Cormorant Garamond', serif !important;">Una tradición desde 1972</div>
 						<div class="intro_title"><h2 style="font-family: 'Cormorant Garamond', serif !important;">Historia del Restaurante Atarazana</h2></div>
@@ -186,17 +346,19 @@
 							
 							<p style="font-family: 'Montserrat', sans-serif !important;">Ubicado en la primera calle comercial del nuevo mundo, nuestro restaurante se encuentra en el corazón histórico donde se produjo la gran fusión gastronómica entre el nuevo y el viejo mundo. En los fogones de la ciudad de Santo Domingo se realizó exitosamente la aleación de productos y técnicas que constituyeron un tesoro incalculable para la humanidad.</p>
 							
-							<p style="font-family: 'Montserrat', sans-serif !important;">La "Real Cofradía del Buen Yantar", creada por los colonos de Santo Domingo, tuvo su epicentro en la casa de Bernardo Santín, en el sector de las Atarazanas Reales. Aquí se reunía esta cofradía para celebrar banquetes e intercambiar hallazgos culinarios. En la remodelación del sector en la década de los 70 se encontró el cofre con sus recetas ancestrales.</p>
+							<p style="font-family: 'Montserrat', sans-serif !important;">La "Real Cofradía del Buen Yantar", creada por los colonos de Santo Domingo, tuvo su epicentro en la casa de Bernardo Santín, en el sector de las Atarazanas Reales; aquí se reunía esta cofradía para celebrar banquetes e intercambiar hallazgos culinarios.</p>
 							
+							<p style="font-family: 'Montserrat', sans-serif !important;">En la remodelación del sector en la década de los 70 se encontró el cofre con sus recetas ancestrales.</p>
+
 							<p style="font-family: 'Montserrat', sans-serif !important;">Más que intuición, el Sr. de Windt confesó que la casa le sugería qué hacer en ella: un lugar del buen comer donde se presenta la fusión de los tesoros culinarios de Europa, África, Asia y América transformados en tradición gastronómica dominicana.</p>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-lg-8">
-							<div class="intro_image"><img id="about-intro-img" src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other2/location_night.jpeg" alt="Vista nocturna del Restaurante Atarazana"></div>
-						</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="intro_image">
+						<img id="about-intro-img" src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other2/location_night.jpeg" alt="Vista nocturna del Restaurante Atarazana" class="img-fluid">
 					</div>
-				</div>	
+				</div>
 			</div>
 		</div>
 	</div>
@@ -240,7 +402,7 @@
 	</div>
 
 	<!-- Gastronomía Section -->
-	<div class="gastronomy-section" style="padding: 80px 0; background-color: #f8f9fa;">
+	<div class="gastronomy-section">
 		<div class="container">
 			<div class="row">
 				<div class="col">
@@ -283,7 +445,7 @@
 	</div>
 
 	<!-- Filosofía -->
-	<div class="intro" style="background-color: #ffffff; padding: 80px 0;">
+	<div class="intro" style="background-color: #ffffff;">
 		<div class="container">
 			<div class="row">
 				<div class="col">
