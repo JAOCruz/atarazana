@@ -335,7 +335,7 @@
     margin-bottom: 20px;
 }
 
-/* ADDITIONAL BOOTSTRAP ROW FIXES */
+/* ADDITIONAL BOOTSTRAP ROW FIXES - PREVENT OVERLAP */
 .row {
     margin-left: 0;
     margin-right: 0;
@@ -344,17 +344,46 @@
 .col-lg-6, .col-lg-4 {
     padding-left: 15px;
     padding-right: 15px;
+    position: static !important; /* Force static positioning */
 }
 
-/* Ensure proper stacking on mobile */
+/* Ensure proper stacking on mobile - PREVENT OVERLAP */
 @media (max-width: 991px) {
     .intro .row > div {
         margin-bottom: 30px;
+        position: static !important;
+        float: none !important;
+        clear: both;
     }
     
     .intro .row > div:last-child {
         margin-bottom: 0;
     }
+    
+    /* Force Bootstrap columns to stack properly */
+    .intro .col-lg-6 {
+        width: 100% !important;
+        display: block !important;
+        position: static !important;
+    }
+}
+
+/* Additional safety measures to prevent any positioning conflicts */
+.intro * {
+    box-sizing: border-box;
+}
+
+.intro .container,
+.intro .row,
+.intro .col-lg-6 {
+    position: static !important;
+}
+
+/* Ensure images don't float or position absolutely */
+.intro img {
+    float: none !important;
+    position: static !important;
+    transform: none !important;
 }
 </style>
 </head>
