@@ -122,24 +122,26 @@
     width: 100%;
 }
 
-/* Historia section fixes */
+/* Historia section fixes - FIXED OVERLAPPING ISSUE */
 .intro {
     padding: 80px 0;
     position: relative;
-    z-index: 1;
+    background: #fff; /* Ensure white background */
     clear: both;
-    overflow: hidden;
+    overflow: visible; /* Changed from hidden to visible */
 }
 
 .intro_content {
     margin-bottom: 40px;
     position: relative;
-    z-index: 1;
+    z-index: auto; /* Removed fixed z-index */
 }
 
 .intro_text {
     margin-top: 30px;
     line-height: 1.8;
+    position: relative;
+    z-index: auto; /* Removed fixed z-index */
 }
 
 .intro_text p {
@@ -147,13 +149,14 @@
     font-size: 1rem;
     color: #636363;
     position: relative;
-    z-index: 1;
+    z-index: auto; /* Removed fixed z-index */
 }
 
+/* FIXED IMAGE POSITIONING */
 .intro_image {
     margin-top: 40px;
     position: relative;
-    z-index: 1;
+    z-index: auto; /* Removed fixed z-index that was causing overlap */
 }
 
 .intro_image img {
@@ -161,6 +164,8 @@
     height: auto;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: block; /* Ensure proper display */
+    position: relative; /* Changed from any absolute positioning */
 }
 
 /* Ensure proper spacing between sections */
@@ -222,7 +227,7 @@
 .section_title_container {
     margin-bottom: 50px;
     position: relative;
-    z-index: 1;
+    z-index: auto; /* Removed fixed z-index */
 }
 
 .section_subtitle {
@@ -257,8 +262,41 @@
     z-index: -1;
 }
 
-/* Responsive styles for food cards */
+/* RESPONSIVE FIXES FOR MOBILE */
 @media (max-width: 768px) {
+  /* Mobile-specific fixes for image and text */
+  .intro {
+    padding: 40px 0;
+  }
+  
+  .intro_content {
+    margin-bottom: 30px;
+  }
+  
+  .intro_image {
+    margin-top: 30px;
+    order: 2; /* Ensure image comes after text on mobile */
+  }
+  
+  .intro_text {
+    margin-top: 20px;
+    order: 1; /* Ensure text comes first on mobile */
+  }
+  
+  .intro_text p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+  
+  .intro_image img {
+    margin-top: 20px;
+  }
+  
+  .home {
+    min-height: 50vh;
+  }
+  
+  /* Food cards responsive */
   .food-card img {
     height: 200px;
   }
@@ -273,18 +311,6 @@
   
   .food-card-content p {
     font-size: 0.9rem;
-  }
-  
-  .intro {
-    padding: 60px 0;
-  }
-  
-  .intro_text p {
-    font-size: 0.95rem;
-  }
-  
-  .home {
-    min-height: 50vh;
   }
 }
 
@@ -307,6 +333,28 @@
     color: #636363;
     line-height: 1.7;
     margin-bottom: 20px;
+}
+
+/* ADDITIONAL BOOTSTRAP ROW FIXES */
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.col-lg-6, .col-lg-4 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Ensure proper stacking on mobile */
+@media (max-width: 991px) {
+    .intro .row > div {
+        margin-bottom: 30px;
+    }
+    
+    .intro .row > div:last-child {
+        margin-bottom: 0;
+    }
 }
 </style>
 </head>
@@ -337,7 +385,7 @@
 	<div class="intro">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6">
+				<div class="col-lg-6 order-1 order-lg-1">
 					<div class="intro_content">
 						<div class="intro_subtitle page_subtitle" style="font-family: 'Cormorant Garamond', serif !important;">Una tradición desde 1972</div>
 						<div class="intro_title"><h2 style="font-family: 'Cormorant Garamond', serif !important;">Historia del Restaurante Atarazana</h2></div>
@@ -354,7 +402,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-6">
+				<div class="col-lg-6 order-2 order-lg-2">
 					<div class="intro_image">
 						<img id="about-intro-img" src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other2/location_night.jpeg" alt="Vista nocturna del Restaurante Atarazana" class="img-fluid">
 					</div>
