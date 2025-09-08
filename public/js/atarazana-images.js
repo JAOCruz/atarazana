@@ -12,9 +12,9 @@ if (videoBg) videoBg.style.backgroundImage = `url('https://jaocruz.nyc3.digitalo
 
 // Set signature background and image
 const sigBg = document.getElementById('sig-bg');
-if (sigBg) sigBg.style.backgroundImage = `url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table2.jpg')`;
+if (sigBg) sigBg.style.backgroundImage = `url('https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/2025/table1.jpg')`;
 const sigImg = document.getElementById('sig-img');
-if (sigImg) sigImg.src = "https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/table2.jpg";
+if (sigImg) sigImg.src = "https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/2025/table1.jpg";
 
 // Set about intro image
 const aboutIntroImg = document.getElementById('about-intro-img');
