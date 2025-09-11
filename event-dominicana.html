@@ -119,6 +119,9 @@
 							<div class="sig_title"><h2>Folklóricas</h2></div>
 							<p>Haz un recorrido por nuestras rafces a traves de nuestras estaciones experenciales. Puedes tener la mas alta representacion de nuestra gastronomfa, arte, musica y folklore, incluyendolas en tu evento corporativo, con decoracion alegorica a nuestras tradiciones con flores tipicas y elementos de nuestro pafs. 
                                 Contamos con diferentes estaciones que se adecuan a la necesidad de tu evento e intereses de tus invitados. </p>
+							<button class="ver-mas-btn" onclick="openStationsPopup()">
+								Ver más <i class="fa fa-arrow-right"></i>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -133,6 +136,46 @@
 							<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/buffet.JPG" alt="Comida dominicana" style="display:none;">
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Stations Popup Modal -->
+	<div id="stationsModal" class="stations-modal">
+		<div class="stations-content">
+			<div class="stations-header">
+				<h3>Estaciones Folklóricas Disponibles</h3>
+				<span class="stations-close" onclick="closeStationsPopup()">&times;</span>
+			</div>
+			<div class="stations-body">
+				<div class="station-item">
+					<h4><i class="fa fa-map-marker"></i> Villa Mella</h4>
+					<p>Desde la Parada Mama Tingó traemos los más deliciosos Chicharrones de cerdo enchumbados con limón y casabe.</p>
+				</div>
+				<div class="station-item">
+					<h4><i class="fa fa-anchor"></i> Boca Chica</h4>
+					<p>Si quieres sentir que estás en la playa debes incluir esta estación en tu evento, con una exquisita variedad de pescados fritos.</p>
+				</div>
+				<div class="station-item">
+					<h4><i class="fa fa-leaf"></i> El Coquero</h4>
+					<p>Una estación exclusiva de Coco de agua servidos al instante.</p>
+				</div>
+				<div class="station-item">
+					<h4><i class="fa fa-glass"></i> El Friero</h4>
+					<p>Frío frío refrescantes y desde dónde puedes servir las bebidas con o sin alcohol.</p>
+				</div>
+				<div class="station-item">
+					<h4><i class="fa fa-fire"></i> Estación de Tabaco</h4>
+					<p>Tabaquero preparando la hoja del tabaco hasta realizar un buen puro en vivo.</p>
+				</div>
+				<div class="station-item">
+					<h4><i class="fa fa-eye"></i> Careteros</h4>
+					<p>En esta estación puedes conocer las diferentes caretas de las regiones del país y cómo se elaboran.</p>
+				</div>
+				<div class="station-item">
+					<h4><i class="fa fa-paint-brush"></i> Artesanos</h4>
+					<p>Puedes tener una muestra de nuestra artesanía típica en tu evento si incluyes esta estación.</p>
 				</div>
 			</div>
 		</div>
@@ -394,6 +437,33 @@ $(document).ready(function() {
             });
         }
     }, 500); // Give time for includes to load
+    
+    // Stations popup functionality
+    window.openStationsPopup = function() {
+        const modal = document.getElementById('stationsModal');
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    };
+    
+    window.closeStationsPopup = function() {
+        const modal = document.getElementById('stationsModal');
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    };
+    
+    // Close stations popup when clicking outside
+    document.getElementById('stationsModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeStationsPopup();
+        }
+    });
+    
+    // Close stations popup with escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeStationsPopup();
+        }
+    });
 });
 </script>
 
@@ -917,6 +987,132 @@ $(document).ready(function() {
     color: #b49383 !important;
 }
 
+/* Ver más button */
+.ver-mas-btn {
+    background: #b49383;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ver-mas-btn:hover {
+    background: #a08671;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(180, 147, 131, 0.3);
+}
+
+.ver-mas-btn i {
+    transition: transform 0.3s ease;
+}
+
+.ver-mas-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* Stations Popup Modal */
+.stations-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease;
+}
+
+.stations-content {
+    position: relative;
+    background: white;
+    margin: 5% auto;
+    padding: 0;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.stations-header {
+    background: #b49383;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stations-header h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.stations-close {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.stations-close:hover {
+    color: #f0f0f0;
+}
+
+.stations-body {
+    padding: 30px;
+}
+
+.station-item {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.station-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.station-item h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: #b49383;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.station-item h4 i {
+    font-size: 1.1rem;
+    color: #a08671;
+}
+
+.station-item p {
+    font-family: 'Montserrat', sans-serif;
+    color: #636363;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 14px;
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
     .dominican-intro-card {
@@ -984,6 +1180,32 @@ $(document).ready(function() {
     
     .gallery-item img {
         height: 150px;
+    }
+    
+    .stations-content {
+        margin: 10% auto;
+        width: 95%;
+    }
+    
+    .stations-header {
+        padding: 15px 20px;
+    }
+    
+    .stations-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .stations-body {
+        padding: 20px;
+    }
+    
+    .station-item h4 {
+        font-size: 1.1rem;
+    }
+    
+    .ver-mas-btn {
+        padding: 10px 20px;
+        font-size: 13px;
     }
 }
 </style>
