@@ -27,7 +27,7 @@
 <div class="super_container">
 	
 	<!-- Home -->
-	<div class="home" style="background-image: url('https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/dominicana.png'); background-attachment: fixed; background-size: 100%; background-position: 50% -130%; background-repeat: no-repeat;">		<div class="home_container">
+	<div class="home dominican-home" style="background-image: url('https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/dominicana.png');">		<div class="home_container">
 			<div class="container">
 				<div class="row">
 					<div class="col">
@@ -669,6 +669,31 @@ $(document).ready(function() {
 /* Home Section */
 .home {
     position: relative;
+}
+
+/* Dominican Home Section - Different image for mobile */
+.dominican-home {
+    height: 100vh;
+    min-height: 600px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+/* Use different image for mobile devices */
+@media (max-width: 768px) {
+    .dominican-home {
+        height: 70vh;
+        min-height: 500px;
+        background-image: url('/images/dominicana_phone.png') !important;
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        width: 100%;
+        max-width: 100%;
+    }
 }
 
 /* Home Overlay */
