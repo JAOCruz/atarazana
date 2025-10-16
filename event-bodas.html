@@ -9,9 +9,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="/styles/bootstrap-4.1.2/bootstrap.min.css">
 <link href="/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-<link rel="stylesheet" type="text/css" href="/plugins/OwlCarousel2-2.2.1/animate.css">
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <link href="/plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
 <link href="/plugins/jquery-timepicker/jquery.timepicker.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="/styles/main_styles.css">
@@ -23,51 +22,52 @@
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
 
 <style>
-/* Fix for mobile images in venue sections */
+/* SIMPLIFIED MOBILE FIXES - Clear and Direct */
 @media (max-width: 768px) {
-    .sig_image {
-        height: 300px;
-        width: 100%;
-        margin-bottom: 30px;
-        position: relative;
+    /* COMPLETELY RESTRUCTURE VENUE SECTIONS FOR MOBILE */
+    .venue-section {
+        padding: 20px 0 40px 0 !important;
+        margin-bottom: 30px !important;
+        border-bottom: 1px solid #eee !important;
+        display: block !important; /* Override flex */
     }
     
-    .sig_image .background_image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-        display: block !important;
-    }
-    
-    .sig_image img {
+    /* Hide all desktop layout elements */
+    .venue-section .sig_content_container,
+    .venue-section .sig_image_container,
+    .venue-section .background_image {
         display: none !important;
     }
     
-    .venue-section {
-        padding: 30px 0;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
+    /* Show mobile-only content instead */
+    .venue-section .mobile-content {
+        display: block !important;
+        margin: 0 auto;
+        width: 90%;
+        max-width: 500px;
     }
     
-    .sig_content_container {
-        padding: 30px 0;
-        order: 1;
+    /* Style the mobile text box */
+    .venue-section .mobile-text-box {
+        background: #fff;
+        border: 2px solid #b49383;
+        padding: 25px;
+        margin-bottom: 25px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
     
-    .sig_image_container {
-        padding-bottom: 30px;
-        order: 2;
+    /* Style the mobile image container */
+    .venue-section .mobile-image-container {
+        margin-top: 20px;
+        text-align: center;
     }
     
-    /* Make sure images are visible on mobile */
-    .mobile-visible-img {
-        display: none;
+    /* Style the mobile images */
+    .venue-section .mobile-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
     
     /* Fix column offsets on mobile */
@@ -80,15 +80,24 @@
     .venue-section + .venue-section {
         margin-top: 20px;
     }
+}
+
+/* Ensure proper display on tablets and desktop */
+@media (min-width: 769px) {
+    /* Desktop/tablet styles - keep original behavior */
+    .venue-section .sig_image {
+        height: 525px;
+    }
     
-    /* Make sure row display works correctly */
-    .venue-section .row {
-        display: flex;
-        flex-direction: column;
+    .venue-section .sig_image img {
+        display: none; /* Hide img tags on desktop, use background */
+    }
+    
+    .venue-section .sig_image .background_image {
+        display: block; /* Show background images on desktop */
     }
 }
 
-/* Ensure proper display on tablets */
 @media (min-width: 769px) and (max-width: 991px) {
     .sig_image {
         height: 350px;
@@ -149,7 +158,7 @@
 
 			<div class="row">
 				<div class="col-12">
-					<div class="wedding-slideshow owl-carousel">
+					<div class="wedding-slideshow">
 						<div class="slide-item">
 							<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/segundopiso.jpeg" alt="Novios" class="img-fluid">
 						</div>
@@ -166,7 +175,8 @@
 	</div>
 
 	<!-- Terraza Colonial Section -->
-	<div class="venue-section">
+	<div class="venue-section venue-section-terraza">
+		<!-- Desktop Version -->
 		<div class="sig_content_container">
 			<div class="container">
 				<div class="row">
@@ -191,10 +201,22 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- Mobile Version (completely separate) -->
+		<div class="mobile-content" style="display: none;">
+			<div class="mobile-text-box">
+				<h3 class="sig_subtitle page_subtitle">Terraza colonial</h3>
+				<p>Único Terraza interior de estilo colonial con techo panorámico y con aire acondicionado. Amplia, confortable con el toque que hace falta para crear ese ambiente mágico que deleite a todos sus invitados y que solo le puede proporcionar el más cálido y elegante escenario que envuelve la estructura del Restaurante Atarazana desde el siglo XVI, complementado por la calidad de sus servicios.</p>
+			</div>
+			<div class="mobile-image-container">
+				<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/terraza2.jpg" alt="Terraza colonial" class="mobile-image">
+			</div>
+		</div>
 	</div>
 
 	<!-- Salón De Armas Section -->
-	<div class="venue-section">
+	<div class="venue-section venue-section-salon">
+		<!-- Desktop Version -->
 		<div class="sig_content_container">
 			<div class="container">
 				<div class="row">
@@ -220,6 +242,18 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- Mobile Version (completely separate) -->
+		<div class="mobile-content" style="display: none;">
+			<div class="mobile-text-box">
+				<h3 class="sig_subtitle page_subtitle">Salón De Armas</h3>
+				<h2 class="sig_title">Ambiente colonial</h2>
+				<p>Salón decorado al estilo Colonial con la vista más impresionante del Alcázar de Diego Colón, donde tú y tus invitados podrán sentirse parte de la historia, de la romántica magia que envuelve la época del descubrimiento.</p>
+			</div>
+			<div class="mobile-image-container">
+				<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/ambiente_colonial.jpeg" alt="Salón De Armas" class="mobile-image">
+			</div>
+		</div>
 	</div>
 
 	<!-- Gastronomía Section with Blurred Background -->
@@ -241,7 +275,8 @@
 
 
 	<!-- Atmosphere Section with Card Style -->
-	<div class="atmosphere-section venue-section">
+	<div class="atmosphere-section venue-section venue-section-atmosphere">
+		<!-- Desktop Version -->
 		<div class="sig_content_container">
 			<div class="container">
 				<div class="row">
@@ -267,10 +302,23 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- Mobile Version (completely separate) -->
+		<div class="mobile-content" style="display: none;">
+			<div class="mobile-text-box">
+				<h3 class="sig_subtitle page_subtitle">Ambiente</h3>
+				<h2 class="sig_title">Mágia colonial</h2>
+				<p>Las piedras centenarias de nuestro restaurante han sido testigo de innumerables historias de amor. Cada rincón respira romance y elegancia, creando el escenario perfecto para que tu boda sea inolvidable. La combinación de la arquitectura colonial con una decoración refinada proporciona un ambiente único que transporta a tus invitados a una época de ensueño.</p>
+			</div>
+			<div class="mobile-image-container">
+				<img src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/boda/talbe-window.JPG" alt="Mesa junto a ventana" class="mobile-image">
+			</div>
+		</div>
 	</div>
 
 	<!-- Celebration Section with Card Style -->
-	<div class="celebration-section venue-section">
+	<div class="celebration-section venue-section venue-section-celebration">
+		<!-- Desktop Version -->
 		<div class="sig_content_container">
 			<div class="container">
 				<div class="row">
@@ -296,6 +344,18 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- Mobile Version (completely separate) -->
+		<div class="mobile-content" style="display: none;">
+			<div class="mobile-text-box">
+				<h3 class="sig_subtitle page_subtitle">Celebración</h3>
+				<h2 class="sig_title">Momentos únicos</h2>
+				<p>Desde el brindis inaugural hasta el último baile, cada momento de tu boda será especial. Nuestro equipo se encarga de coordinar cada detalle para que tú y tus invitados solo se preocupen por disfrutar. La pista de baile se llena de alegría mientras que el servicio impecable garantiza que todo fluya perfectamente.</p>
+			</div>
+			<div class="mobile-image-container">
+				<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/momentos5.jpg" alt="Invitados bailando" class="mobile-image">
+			</div>
+		</div>
 	</div>
 	<!-- Footer Gallery Section -->
 	<div class="footer-gallery-section" style="background-image: url('https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other2/groom_bride.jpeg');">
@@ -307,187 +367,194 @@
 						<p class="section_subtitle text-white">Cada imagén cuenta una historia de amor</p>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-lg-3 col-md-6 mb-4">
-						<div class="gallery-item">
+				<div class="swiper gallery-swiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/momentos.jpeg">
 							<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/momentos.jpeg" alt="Mesa servida" class="img-fluid">
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-6 mb-4">
-						<div class="gallery-item">
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/momentos3.jpeg">
 							<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/momentos3.jpeg" alt="Buffet" class="img-fluid">
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-6 mb-4">
-						<div class="gallery-item">
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/momentos2.jpeg">
 							<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/momentos2.jpeg" alt="Plato gourmet" class="img-fluid">
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-6 mb-4">
-						<div class="gallery-item">
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/momentos4.jpg">
 							<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/momentos4.jpg" alt="Plato especial" class="img-fluid">
 						</div>
 					</div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/galeriab3.jpg">
                             <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/galeriab3.jpg" alt="Plato especial" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/galeriab2.jpg">
                             <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/galeriab2.jpg" alt="Plato especial" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/angel.jpg"Plato especial" class="img-fluid">
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/angel.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/angel.jpg" alt="Plato especial" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/cake.jpg">
                             <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/cake.jpg" alt="Plato especial" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/happy.jpg">
                             <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/happy.jpg" alt="Plato especial" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/crowddancing.jpg">
                             <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/crowddancing.jpg" alt="Plato especial" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/birdeyedancer.jpg"Plato especial" class="img-fluid">
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/birdeyedancer.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/birdeyedancer.jpg" alt="Plato especial" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/coupledancing.jpg">
                             <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/coupledancing.jpg" alt="Plato especial" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/candle-min.jpg">
                             <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/candle-min.jpg" alt="Velas decorativas" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/flowers-min.jpg">
                             <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/flowers-min.jpg" alt="Arreglo floral" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/tables-min.jpg">
                             <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/tables-min.jpg" alt="Mesas decoradas" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/tables2-min.jpg">
                             <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/tables2-min.jpg" alt="Decoración de mesas" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/poeplefromtop-min.jpg" alt="Comida gourmet" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/night_event-min.jpg" alt="Evento nocturno" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/confeti-min.jpg" alt="Confeti de celebración" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/food-min.jpg" alt="Entrada colonial" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/doorandtables-min.jpg" alt="Entrada y mesas" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/hallwaytodoor-min.jpg" alt="Pasillo hacia entrada" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/plateflower-min.jpg" alt="Platos gourmet" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/door-min.jpg" alt="Plato con flores" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/tableswhite-min.jpg" alt="Mesas blancas elegantes" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/topviewtables-min.jpg" alt="Vista superior de mesas" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/doorfromtop-min.jpg" alt="Entrada vista desde arriba" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/wallbricks-min.jpg" alt="Paredes de ladrillo colonial" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/ceiling-min.jpg" alt="Techo colonial" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/space-min.jpg" alt="Espacio colonial" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/tablesflowersceiling-min.jpg" alt="Mesas con flores y techo" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/tableflowersandmore-min.jpg" alt="Araña de cristal" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/papers-min.jpg" alt="Invitados en celebración" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/papers2-min.jpg" alt="Invitados en celebración" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/roast-min.jpg" alt="Invitados en celebración" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="gallery-item">
-                            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/tablesother-min.jpg" alt="Invitados en celebración" class="img-fluid">
-                        </div>
-                    </div>
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/poeplefromtop-min.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/poeplefromtop-min.jpg" alt="Comida gourmet" class="img-fluid">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/night_event-min.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/night_event-min.jpg" alt="Evento nocturno" class="img-fluid">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/confeti-min.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/confeti-min.jpg" alt="Confeti de celebración" class="img-fluid">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/food-min.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/food-min.jpg" alt="Entrada colonial" class="img-fluid">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/doorandtables-min.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/doorandtables-min.jpg" alt="Entrada y mesas" class="img-fluid">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/hallwaytodoor-min.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/hallwaytodoor-min.jpg" alt="Pasillo hacia entrada" class="img-fluid">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/plateflower-min.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/plateflower-min.jpg" alt="Platos gourmet" class="img-fluid">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/door-min.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/door-min.jpg" alt="Plato con flores" class="img-fluid">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/tableswhite-min.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/tableswhite-min.jpg" alt="Mesas blancas elegantes" class="img-fluid">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/topviewtables-min.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/topviewtables-min.jpg" alt="Vista superior de mesas" class="img-fluid">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/doorfromtop-min.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/doorfromtop-min.jpg" alt="Entrada vista desde arriba" class="img-fluid">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/wallbricks-min.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/wallbricks-min.jpg" alt="Paredes de ladrillo colonial" class="img-fluid">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/ceiling-min.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/ceiling-min.jpg" alt="Techo colonial" class="img-fluid">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/space-min.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/space-min.jpg" alt="Espacio colonial" class="img-fluid">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/tablesflowersceiling-min.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/tablesflowersceiling-min.jpg" alt="Mesas con flores y techo" class="img-fluid">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/tableflowersandmore-min.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/tableflowersandmore-min.jpg" alt="Araña de cristal" class="img-fluid">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/papers-min.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/papers-min.jpg" alt="Invitados en celebración" class="img-fluid">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/papers2-min.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/papers2-min.jpg" alt="Invitados en celebración" class="img-fluid">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/roast-min.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/roast-min.jpg" alt="Invitados en celebración" class="img-fluid">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="gallery-item" data-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/tablesother-min.jpg">
+								<img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/tablesother-min.jpg" alt="Invitados en celebración" class="img-fluid">
+							</div>
+						</div>
+					</div>
+					<!-- Navigation buttons -->
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+					<!-- Pagination -->
+					<div class="swiper-pagination"></div>
 				</div>
 			</div>
 		</div>
@@ -508,7 +575,8 @@
 <script src="/plugins/scrollmagic/ScrollMagic.min.js"></script>
 <script src="/plugins/greensock/animation.gsap.min.js"></script>
 <script src="/plugins/greensock/ScrollToPlugin.min.js"></script>
-<script src="/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="/plugins/easing/easing.js"></script>
 <script src="/plugins/parallax-js-master/parallax.min.js"></script>
 <script src="/plugins/jquery-datepicker/jquery-ui.js"></script>
@@ -526,26 +594,329 @@ $(window).on('scroll', function() {
     }
 });
 
-// Initialize wedding slideshow
+// Initialize wedding slideshow with simple manual slideshow
 $(document).ready(function() {
-    $('.wedding-slideshow').owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: true,
-        dots: true,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 1
-            },
-            1000: {
-                items: 1
+    console.log('Document ready - starting gallery initialization...');
+    
+    // Simple slideshow for wedding photos
+    let currentSlide = 0;
+    const slides = $('.wedding-slideshow .slide-item');
+    const totalSlides = slides.length;
+    
+    if (slides.length > 0) {
+        // Hide all slides except first
+        slides.hide();
+        slides.eq(0).show();
+        
+        // Auto-advance slides every 5 seconds
+        setInterval(function() {
+            slides.eq(currentSlide).fadeOut(500, function() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                slides.eq(currentSlide).fadeIn(500);
+            });
+        }, 5000);
+        
+        console.log('Wedding slideshow initialized with', totalSlides, 'slides');
+    }
+});
+    
+// Simple test to verify JavaScript is working
+console.log('=== GALLERY DEBUG TEST ===');
+console.log('jQuery loaded:', typeof $ !== 'undefined');
+console.log('Document ready state:', document.readyState);
+
+// Test if gallery elements exist
+setTimeout(function() {
+    const slides = document.querySelectorAll('.gallery-swiper .swiper-slide');
+    const nextBtn = document.querySelector('.swiper-button-next');
+    const prevBtn = document.querySelector('.swiper-button-prev');
+    
+    console.log('=== ELEMENT CHECK ===');
+    console.log('Slides found:', slides.length);
+    console.log('Next button found:', nextBtn ? 'YES' : 'NO');
+    console.log('Prev button found:', prevBtn ? 'YES' : 'NO');
+    
+    if (slides.length > 0) {
+        console.log('=== INITIALIZING SIMPLE GALLERY ===');
+        
+        let currentSlide = 0;
+        
+        // Hide all slides except first
+        slides.forEach((slide, index) => {
+            slide.style.display = index === 0 ? 'block' : 'none';
+        });
+        
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+            currentSlide = index;
+            console.log('Showing slide:', index + 1, 'of', slides.length);
+        }
+        
+        function nextSlide() {
+            const next = (currentSlide + 1) % slides.length;
+            showSlide(next);
+        }
+        
+        function prevSlide() {
+            const prev = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prev);
+        }
+        
+        // Add click handlers
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('NEXT BUTTON CLICKED!');
+                nextSlide();
+            });
+        }
+        
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('PREV BUTTON CLICKED!');
+                prevSlide();
+            });
+        }
+        
+        console.log('=== GALLERY INITIALIZED ===');
+    }
+}, 1000);
+
+let gallerySwiper = null;
+
+function initGallery() {
+    console.log('initGallery function called');
+    
+    // Check if elements exist
+    const slides = $('.gallery-swiper .swiper-slide');
+    const nextBtn = $('.swiper-button-next');
+    const prevBtn = $('.swiper-button-prev');
+    
+    console.log('Found slides:', slides.length);
+    console.log('Found next button:', nextBtn.length);
+    console.log('Found prev button:', prevBtn.length);
+    
+    if (slides.length === 0) {
+        console.error('No slides found!');
+        return;
+    }
+    
+    // First, let's create a simple manual gallery that definitely works
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    
+    // Hide all slides except the first one
+    slides.hide();
+    slides.eq(0).show();
+    
+    // Navigation functions
+    function showSlide(index) {
+        slides.hide();
+        slides.eq(index).show();
+        currentSlide = index;
+        console.log('Showing slide:', index + 1, 'of', totalSlides);
+    }
+    
+    function nextSlide() {
+        const next = (currentSlide + 1) % totalSlides;
+        showSlide(next);
+    }
+    
+    function prevSlide() {
+        const prev = (currentSlide - 1 + totalSlides) % totalSlides;
+        showSlide(prev);
+    }
+    
+    // Arrow button handlers
+    nextBtn.off('click').on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Next button clicked');
+        nextSlide();
+    });
+    
+    prevBtn.off('click').on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Prev button clicked');
+        prevSlide();
+    });
+    
+    // Touch/swipe handlers
+    let startX = 0;
+    let startY = 0;
+    
+    $('.gallery-swiper').off('touchstart touchend').on('touchstart', function(e) {
+        startX = e.originalEvent.touches[0].clientX;
+        startY = e.originalEvent.touches[0].clientY;
+    });
+    
+    $('.gallery-swiper').on('touchend', function(e) {
+        if (!startX || !startY) return;
+        
+        const endX = e.originalEvent.changedTouches[0].clientX;
+        const endY = e.originalEvent.changedTouches[0].clientY;
+        
+        const diffX = startX - endX;
+        const diffY = startY - endY;
+        
+        // Only trigger if horizontal swipe is more significant than vertical
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+            if (diffX > 0) {
+                console.log('Swipe left - next slide');
+                nextSlide();
+            } else {
+                console.log('Swipe right - previous slide');
+                prevSlide();
             }
         }
+        
+        startX = 0;
+        startY = 0;
+    });
+    
+    // Pagination click handlers
+    $('.swiper-pagination-bullet').off('click').on('click', function() {
+        const index = $(this).index();
+        console.log('Pagination clicked:', index);
+        showSlide(index);
+    });
+    
+    console.log('Manual gallery initialized with', totalSlides, 'slides');
+}
+
+// Try to initialize immediately
+initGallery();
+
+// Also try after DOM is ready
+$(document).ready(function() {
+    console.log('Document ready, trying to initialize gallery again...');
+    initGallery();
+});
+
+// Fallback without jQuery if jQuery fails
+setTimeout(function() {
+    console.log('Fallback initialization after 2 seconds...');
+    
+    // Check if gallery is working
+    const slides = document.querySelectorAll('.gallery-swiper .swiper-slide');
+    const nextBtn = document.querySelector('.swiper-button-next');
+    const prevBtn = document.querySelector('.swiper-button-prev');
+    
+    console.log('Fallback - Found slides:', slides.length);
+    console.log('Fallback - Found next button:', nextBtn ? 'Yes' : 'No');
+    console.log('Fallback - Found prev button:', prevBtn ? 'Yes' : 'No');
+    
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        
+        // Hide all slides except first
+        slides.forEach((slide, index) => {
+            slide.style.display = index === 0 ? 'block' : 'none';
+        });
+        
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+            currentSlide = index;
+            console.log('Fallback - Showing slide:', index + 1);
+        }
+        
+        function nextSlide() {
+            const next = (currentSlide + 1) % slides.length;
+            showSlide(next);
+        }
+        
+        function prevSlide() {
+            const prev = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prev);
+        }
+        
+        // Add click handlers
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Fallback - Next button clicked');
+                nextSlide();
+            });
+        }
+        
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Fallback - Prev button clicked');
+                prevSlide();
+            });
+        }
+        
+        console.log('Fallback gallery initialized');
+    }
+}, 2000);
+    
+    // Enhanced click-to-fullscreen functionality
+    $('.gallery-swiper .gallery-item').on('click', function() {
+        var imgSrc = $(this).find('img').attr('src');
+        var imgAlt = $(this).find('img').attr('alt');
+        var currentIndex = $(this).closest('.swiper-slide').index();
+        var totalSlides = $('.gallery-swiper .swiper-slide').length;
+        
+        console.log('Opening image', currentIndex + 1, 'of', totalSlides);
+        
+        // Create modal overlay with navigation
+        var modal = $('<div class="gallery-modal">' +
+            '<div class="modal-overlay"></div>' +
+            '<div class="modal-content">' +
+                '<span class="modal-close">&times;</span>' +
+                '<img src="' + imgSrc + '" alt="' + imgAlt + '" class="modal-image">' +
+            '</div>' +
+        '</div>');
+        
+        $('body').append(modal);
+        $('body').addClass('modal-open');
+        
+        // Preload adjacent images for smoother navigation
+        function preloadImage(index) {
+            if (index >= 0 && index < totalSlides) {
+                var preloadSrc = $('.gallery-swiper .swiper-slide').eq(index).find('img').attr('src');
+                if (preloadSrc) {
+                    var img = new Image();
+                    img.src = preloadSrc;
+                }
+            }
+        }
+        
+        // Preload next and previous images
+        preloadImage(currentIndex + 1);
+        preloadImage(currentIndex - 1);
+        
+        // Close modal functionality
+        $('.modal-close').on('click', function(e) {
+            e.stopPropagation();
+            modal.remove();
+            $('body').removeClass('modal-open');
+        });
+        
+        $('.modal-overlay').on('click', function() {
+            modal.remove();
+            $('body').removeClass('modal-open');
+        });
+        
+        // Close on escape key
+        $(document).on('keyup.galleryModal', function(e) {
+            if (e.keyCode === 27) { // ESC key
+                modal.remove();
+                $('body').removeClass('modal-open');
+                $(document).off('keyup.galleryModal');
+            }
+        });
+        
+        // Prevent image click from closing modal
+        $('.modal-image').on('click', function(e) {
+            e.stopPropagation();
     });
 });
 </script>
@@ -961,17 +1332,133 @@ $(document).ready(function() {
     margin-right: auto;
 }
 
-.gallery-item {
+/* Swiper Gallery Styles */
+.gallery-swiper {
+    margin-top: 30px;
+    position: relative;
+    padding: 0 40px 50px 40px;
+    overflow: hidden;
+    touch-action: pan-y;
+    width: 100%;
+}
+
+.gallery-swiper .swiper-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.gallery-swiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.gallery-swiper .gallery-item {
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    touch-action: manipulation;
+    user-select: none;
+    width: 100%;
+    max-width: 1400px; /* Much larger max width */
+    margin: 0 auto;
+}
+
+.gallery-swiper .gallery-item:hover {
+    transform: scale(1.02); /* Smaller scale to avoid overflow */
+}
+
+.gallery-swiper .gallery-item img {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    max-height: 85vh; /* Much taller - use viewport height */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    border-radius: 15px;
+}
+
+/* Swiper Navigation Buttons */
+.gallery-swiper .swiper-button-next,
+.gallery-swiper .swiper-button-prev {
+    background: rgba(180, 147, 131, 0.95);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.gallery-swiper .swiper-button-next:hover,
+.gallery-swiper .swiper-button-prev:hover {
+    background: rgba(180, 147, 131, 1);
+    transform: translateY(-50%) scale(1.1);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.gallery-swiper .swiper-button-next:after,
+.gallery-swiper .swiper-button-prev:after {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+.gallery-swiper .swiper-button-next:after {
+    content: '→';
+}
+
+.gallery-swiper .swiper-button-prev:after {
+    content: '←';
+}
+
+.gallery-swiper .swiper-button-next {
+    right: 15px;
+}
+
+.gallery-swiper .swiper-button-prev {
+    left: 15px;
+}
+
+/* Swiper Pagination */
+.gallery-swiper .swiper-pagination {
+    position: relative;
+    margin-top: 20px;
+}
+
+.gallery-swiper .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+.gallery-swiper .swiper-pagination-bullet-active {
+    background: #b49383;
+    transform: scale(1.2);
 }
 
 .gallery-item img {
     width: 100%;
-    height: 350px;
-    object-fit: cover;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
     transition: transform 0.3s ease;
 }
 
@@ -1061,6 +1548,16 @@ $(document).ready(function() {
 }
 
 /* Responsive Design */
+@media (min-width: 1400px) {
+    .gallery-swiper .gallery-item {
+        max-width: 1200px;
+    }
+    
+    .gallery-swiper .gallery-item img {
+        max-height: 900px;
+    }
+}
+
 @media (max-width: 1200px) {
     .wedding-intro-card {
         padding: 45px 35px 49px 35px;
@@ -1166,9 +1663,135 @@ $(document).ready(function() {
         height: 200px;
     }
     
-    .gallery-item img {
-        height: 150px;
+    /* Mobile Swiper adjustments */
+    .gallery-swiper {
+        padding: 0 20px 40px 20px;
     }
+    
+    .gallery-swiper .swiper-button-next,
+    .gallery-swiper .swiper-button-prev {
+        width: 50px;
+        height: 50px;
+        opacity: 0.9; /* More visible on mobile */
+    }
+    
+    .gallery-swiper .swiper-button-next:after,
+    .gallery-swiper .swiper-button-prev:after {
+        font-size: 22px;
+        font-weight: bolder;
+    }
+    
+    .gallery-swiper .swiper-button-next {
+        right: 5px;
+    }
+    
+    .gallery-swiper .swiper-button-prev {
+        left: 5px;
+    }
+    
+    .gallery-swiper .gallery-item {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+    
+    .gallery-swiper .gallery-item img {
+        min-height: 250px;
+        max-height: 70vh; /* Use more vertical space on mobile */
+        border-radius: 8px;
+    }
+    
+    /* Improve modal on mobile */
+    .modal-close {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+    
+    .modal-image {
+        max-height: 85vh;
+        border-radius: 5px;
+    }
+}
+
+/* Gallery Modal Styles */
+.gallery-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    position: relative;
+    max-width: 95%;
+    max-height: 95%;
+    z-index: 10;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-image {
+    width: 100%;
+    height: auto;
+    max-height: 95vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.modal-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    background: rgba(180, 147, 131, 0.9);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-close:hover {
+    background: rgba(180, 147, 131, 1);
+    transform: scale(1.1);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+body.modal-open {
+    overflow: hidden;
 }
 </style>
 <script src="https://www.w3schools.com/lib/w3.js"></script>

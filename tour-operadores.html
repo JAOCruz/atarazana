@@ -130,8 +130,19 @@
 						<div class="virtual-tour-section mt-4">
 							<h4 class="virtual-tour-title">Conoce nuestro espacio</h4>
 							<div class="video-container">
-								<div class="video-placeholder">
-									<div class="video-thumbnail">
+								<div class="video-player" id="videoPlayer" style="display: none;">
+									<video controls width="100%" height="400">
+										<source src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/videos/Tour%20Operadores.mp4" type="video/mp4">
+										Tu navegador no soporta el elemento de video.
+									</video>
+									<div class="video-controls">
+										<button class="close-video-btn" onclick="closeVideo()">
+											<i class="fa fa-times"></i> Cerrar Video
+										</button>
+									</div>
+								</div>
+								<div class="video-placeholder" id="videoPlaceholder">
+									<div class="video-thumbnail" onclick="playVideo()">
 										<img src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/tour-operadores/video-thumbnail.jpg" alt="Video thumbnail" class="thumbnail-image">
 										<div class="play-button">
 											<i class="fa fa-play-circle"></i>
@@ -140,9 +151,9 @@
 									<div class="video-info">
 										<h5>Recorrido Virtual del Restaurante Atarazana</h5>
 										<p>Descubre la historia y el ambiente único de nuestro espacio colonial</p>
-										<a href="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/videos/Tour%20Operadores.mp4" target="_blank" class="video-link">
-											<i class="fa fa-external-link"></i> Ver video en Facebook
-										</a>
+										<button class="video-link" onclick="playVideo()">
+											<i class="fa fa-play"></i> Ver Video
+										</button>
 									</div>
 								</div>
 							</div>
@@ -208,6 +219,34 @@ $(document).ready(function() {
         }
     });
 });
+
+// Video player functions
+function playVideo() {
+    const videoPlayer = document.getElementById('videoPlayer');
+    const videoPlaceholder = document.getElementById('videoPlaceholder');
+    const video = videoPlayer.querySelector('video');
+    
+    // Show video player and hide placeholder
+    videoPlayer.style.display = 'block';
+    videoPlaceholder.style.display = 'none';
+    
+    // Play the video
+    video.play();
+}
+
+function closeVideo() {
+    const videoPlayer = document.getElementById('videoPlayer');
+    const videoPlaceholder = document.getElementById('videoPlaceholder');
+    const video = videoPlayer.querySelector('video');
+    
+    // Pause and reset video
+    video.pause();
+    video.currentTime = 0;
+    
+    // Hide video player and show placeholder
+    videoPlayer.style.display = 'none';
+    videoPlaceholder.style.display = 'block';
+}
 </script>
 
 <style>
@@ -505,6 +544,47 @@ $(document).ready(function() {
 }
 .video-link i {
   font-size: 1.2rem;
+}
+
+/* Video Player Styles */
+.video-player {
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-player video {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+
+.video-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+}
+
+.close-video-btn {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.close-video-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.05);
+}
+
+.close-video-btn i {
+  margin-right: 5px;
 }
 @media (max-width: 768px) {
   .video-thumbnail {
