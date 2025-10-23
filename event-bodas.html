@@ -610,10 +610,11 @@ $(document).ready(function() {
         
         // Auto-advance slides every 5 seconds
         setInterval(function() {
-            slides.eq(currentSlide).fadeOut(500, function() {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                slides.eq(currentSlide).fadeIn(500);
-            });
+            // Make sure all other slides are hidden first
+            slides.hide();
+            // Only then show the next slide
+            currentSlide = (currentSlide + 1) % totalSlides;
+            slides.eq(currentSlide).fadeIn(500);
         }, 5000);
         
         console.log('Wedding slideshow initialized with', totalSlides, 'slides');
@@ -857,7 +858,7 @@ setTimeout(function() {
     }
 }, 2000);
     
-    // Enhanced click-to-fullscreen functionality
+    // Enhanced click-to-fullscreen functionality with navigation arrows
     $('.gallery-swiper .gallery-item').on('click', function() {
         var imgSrc = $(this).find('img').attr('src');
         var imgAlt = $(this).find('img').attr('alt');
@@ -866,32 +867,94 @@ setTimeout(function() {
         
         console.log('Opening image', currentIndex + 1, 'of', totalSlides);
         
-        // Create modal overlay with navigation
+        // Create modal overlay with navigation arrows
         var modal = $('<div class="gallery-modal">' +
             '<div class="modal-overlay"></div>' +
             '<div class="modal-content">' +
                 '<span class="modal-close">&times;</span>' +
                 '<img src="' + imgSrc + '" alt="' + imgAlt + '" class="modal-image">' +
+                '<div class="modal-nav">' +
+                    '<div class="modal-nav-prev"><i class="fa fa-angle-left"></i></div>' +
+                    '<div class="modal-nav-next"><i class="fa fa-angle-right"></i></div>' +
+                '</div>' +
+                '<div class="modal-counter">' + (currentIndex + 1) + ' / ' + totalSlides + '</div>' +
             '</div>' +
         '</div>');
         
         $('body').append(modal);
         $('body').addClass('modal-open');
         
+        // Function to show specific image in modal
+        function showModalImage(index) {
+            if (index < 0) index = totalSlides - 1;
+            if (index >= totalSlides) index = 0;
+            
+            currentIndex = index;
+            var newSrc = $('.gallery-swiper .swiper-slide').eq(index).find('img').attr('src');
+            var newAlt = $('.gallery-swiper .swiper-slide').eq(index).find('img').attr('alt');
+            
+            // Fade out current image, update src, then fade in
+            $('.modal-image').fadeOut(200, function() {
+                $(this).attr('src', newSrc).attr('alt', newAlt).fadeIn(200);
+            });
+            
+            // Update counter
+            $('.modal-counter').text((currentIndex + 1) + ' / ' + totalSlides);
+            
+            // Preload adjacent images
+            preloadImage(index + 1);
+            preloadImage(index - 1);
+        }
+        
         // Preload adjacent images for smoother navigation
         function preloadImage(index) {
-            if (index >= 0 && index < totalSlides) {
-                var preloadSrc = $('.gallery-swiper .swiper-slide').eq(index).find('img').attr('src');
-                if (preloadSrc) {
-                    var img = new Image();
-                    img.src = preloadSrc;
-                }
+            if (index < 0) index = totalSlides - 1;
+            if (index >= totalSlides) index = 0;
+            
+            var preloadSrc = $('.gallery-swiper .swiper-slide').eq(index).find('img').attr('src');
+            if (preloadSrc) {
+                var img = new Image();
+                img.src = preloadSrc;
             }
         }
         
         // Preload next and previous images
         preloadImage(currentIndex + 1);
         preloadImage(currentIndex - 1);
+        
+        // Navigation event handlers
+        $('.modal-nav-prev').on('click', function(e) {
+            e.stopPropagation();
+            showModalImage(currentIndex - 1);
+        });
+        
+        $('.modal-nav-next').on('click', function(e) {
+            e.stopPropagation();
+            showModalImage(currentIndex + 1);
+        });
+        
+        // Swipe handlers for mobile
+        var touchStartX = 0;
+        var touchEndX = 0;
+        
+        $('.modal-content').on('touchstart', function(e) {
+            touchStartX = e.originalEvent.touches[0].clientX;
+        });
+        
+        $('.modal-content').on('touchend', function(e) {
+            touchEndX = e.originalEvent.changedTouches[0].clientX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            if (touchStartX - touchEndX > 50) {
+                // Swipe left - next image
+                showModalImage(currentIndex + 1);
+            } else if (touchEndX - touchStartX > 50) {
+                // Swipe right - previous image
+                showModalImage(currentIndex - 1);
+            }
+        }
         
         // Close modal functionality
         $('.modal-close').on('click', function(e) {
@@ -905,20 +968,24 @@ setTimeout(function() {
             $('body').removeClass('modal-open');
         });
         
-        // Close on escape key
+        // Arrow key navigation
         $(document).on('keyup.galleryModal', function(e) {
             if (e.keyCode === 27) { // ESC key
                 modal.remove();
                 $('body').removeClass('modal-open');
                 $(document).off('keyup.galleryModal');
+            } else if (e.keyCode === 37) { // Left arrow
+                showModalImage(currentIndex - 1);
+            } else if (e.keyCode === 39) { // Right arrow
+                showModalImage(currentIndex + 1);
             }
         });
         
         // Prevent image click from closing modal
         $('.modal-image').on('click', function(e) {
             e.stopPropagation();
+        });
     });
-});
 </script>
 
 <style>
@@ -986,8 +1053,9 @@ setTimeout(function() {
 
 .wedding-slideshow .slide-item img {
     width: 100%;
-    height: 700px;
-    object-fit: cover;
+    max-height: 700px;
+    height: auto;
+    object-fit: contain;
     transition: transform 0.3s ease;
 }
 
@@ -1792,6 +1860,82 @@ setTimeout(function() {
 
 body.modal-open {
     overflow: hidden;
+}
+
+/* Modal Navigation Arrows */
+.modal-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+}
+
+.modal-nav-prev,
+.modal-nav-next {
+    width: 45px;
+    height: 45px;
+    background: rgba(180, 147, 131, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: all 0.3s ease;
+    margin: 0 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 20;
+}
+
+.modal-nav-prev i,
+.modal-nav-next i {
+    color: white;
+    font-size: 24px;
+}
+
+.modal-nav-prev:hover,
+.modal-nav-next:hover {
+    background: rgba(180, 147, 131, 1);
+    transform: scale(1.1);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.modal-counter {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Mobile optimizations for modal navigation */
+@media (max-width: 768px) {
+    .modal-nav-prev,
+    .modal-nav-next {
+        width: 38px;
+        height: 38px;
+        margin: 0 10px;
+    }
+    
+    .modal-nav-prev i,
+    .modal-nav-next i {
+        font-size: 20px;
+    }
+    
+    .modal-counter {
+        bottom: -35px;
+        font-size: 14px;
+    }
 }
 </style>
 <script src="https://www.w3schools.com/lib/w3.js"></script>
