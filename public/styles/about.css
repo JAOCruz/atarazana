@@ -582,6 +582,7 @@ section
 	bottom: 129px;
 	left: 0;
 	width: 100%;
+
 }
 .home_subtitle
 {
@@ -592,6 +593,7 @@ section
 .home_title
 {
 	margin-top: -2px;
+	margin-bottom: 200px;
 }
 .home_title h1
 {
