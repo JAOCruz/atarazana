@@ -1,12 +1,21 @@
-<!-- TIP: For easier maintenance, consider using HTML includes for the header/footer. See https://www.w3schools.com/howto/howto_html_include.asp -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<title>The Menu</title>
+<title>Menú — Atarazana | Gastronomía Dominicana, Ciudad Colonial</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="The Venue template project">
+<meta name="description" content="Descubre el menú de Atarazana: gastronomía dominicana y del Caribe en el corazón de la Ciudad Colonial de Santo Domingo desde 1972.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111111">
+<link rel="canonical" href="https://laatarazana.com/menu">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛</text></svg>">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://laatarazana.com/menu">
+<meta property="og:title" content="Menú — Atarazana Restaurante y Eventos">
+<meta property="og:description" content="Gastronomía dominicana y del Caribe desde 1972 en la Ciudad Colonial.">
+<meta property="og:image" content="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Logo_Atarazana.png">
+<meta property="og:locale" content="es_DO">
 <link rel="stylesheet" type="text/css" href="/styles/bootstrap-4.1.2/bootstrap.min.css">
 <link href="/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
@@ -18,8 +27,13 @@
 <link rel="stylesheet" type="text/css" href="/styles/menu_responsive.css">
 <link rel="stylesheet" type="text/css" href="/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="/styles/responsive.css">
-<!-- Add Google Fonts for Cormorant Garamond if not present -->
-<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:700,600,400&display=swap" rel="stylesheet">
+<!-- Performance: resource hints -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Google Fonts: combined, display=swap -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Premium enhancements -->
+<link rel="stylesheet" type="text/css" href="/styles/enhancements.css">
 <style>
 /* Ensure dropdown arrow is inline with text */
 .main_nav .dropdown-toggle::after {
@@ -42,6 +56,12 @@
 </style>
 </head>
 <body>
+<!-- ── Preloader ─────────────────────────────── -->
+<div id="at-preloader" aria-hidden="true">
+  <div class="at-preloader-logo">ATARAZANA</div>
+  <div class="at-preloader-line"></div>
+  <div class="at-preloader-text">Desde 1972</div>
+</div>
 
 <div w3-include-html="header.html"></div>
 
@@ -96,315 +116,228 @@
 		</div>
 	</div>
 
-	<!-- The Menu -->
+	<!-- El Menú -->
 
-	<div class="themenu">
+	<div class="themenu at-reveal">
 		<div class="container">
 			<div class="row">
 				<div class="col">
 					<div class="section_title_container text-center">
-						<div class="section_subtitle page_subtitle">Something new</div>
-						<div class="section_title"><h1>Discover Our Menu</h1></div>
+						<div class="section_subtitle page_subtitle" style="font-family:'Cormorant Garamond',serif;">Fusión Colonial</div>
+						<div class="section_title"><h1 style="font-family:'Cormorant Garamond',serif;">Nuestro Menú</h1></div>
 					</div>
 				</div>
 			</div>
 			<div class="row themenu_text_row">
 				<div class="col-lg-6">
-					<div class="themenu_text">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Ut non justo eleifend, facilisis nibh ut, interdum odio. Suspendisse potenti. Vivamus luctus diam eu neque rutrum, vitae aliquet dolor venenatis. Nulla consequat fringilla.</p>
+					<div class="themenu_text" style="font-family:'Montserrat',sans-serif;">
+						<p>Nuestra cocina celebra más de 50 años de tradición gastronómica dominicana, fusionando ingredientes del Caribe con técnicas del viejo mundo. Cada plato es una ventana al legado culinario de la Ciudad Colonial.</p>
 					</div>
 				</div>
 				<div class="col-lg-6">
-					<div class="themenu_text">
-						<p>Sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Ut non justo eleifend, facilisis nibh ut, interdum odio. Suspendisse potenti. Vivamus luctus diam eu neque rutrum, vitae aliquet dolor venenatis. Nulla consequat fringilla.</p>
+					<div class="themenu_text" style="font-family:'Montserrat',sans-serif;">
+						<p>Ofrecemos una experiencia gastronómica completa: desde las entradas más ligeras hasta los postres más indulgentes, todo preparado con ingredientes frescos y de temporada seleccionados diariamente.</p>
 					</div>
 				</div>
 			</div>
 			<div class="row themenu_row">
 				
-				<!-- Starters -->
-				<div class="col-lg-4 themenu_column">
-					<div class="themenu_image"><img src="/images/starters.jpg" alt=""></div>
+				<!-- Entradas -->
+				<div class="col-lg-4 themenu_column at-reveal at-reveal--left">
+					<div class="themenu_image"><img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Food/food1.jpg" alt="Entradas Atarazana" loading="lazy"></div>
 					<div class="themenu_col trans_400">
-						<div class="themenu_col_title">Starters</div>
+						<div class="themenu_col_title" style="font-family:'Cormorant Garamond',serif;">Entradas</div>
 						<div class="dish_list">
 
-							<!-- Dish -->
 							<div class="dish">
 								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Pork Tenderloin in Green Pepper</div>
-									<div class="dish_price">$20</div>
+									<div class="dish_title" style="font-family:'Montserrat',sans-serif;">Camarones al Ajillo</div>
+									<div class="dish_price">RD$850</div>
 								</div>
 								<div class="dish_contents">
 									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Pork</li>
-										<li>Tenderloin</li>
-										<li>Green Pepper</li>
+										<li>Camarones</li><li>Ajo</li><li>Mantequilla</li>
 									</ul>
 								</div>
-								<div class="dish_order"><a href="#">Order Now</a></div>
+								<div class="dish_order"><a href="/reservaciones">Reservar</a></div>
 							</div>
 
-							<!-- Dish -->
 							<div class="dish">
 								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Shrimp with Garlic</div>
-									<div class="dish_price">$17</div>
+									<div class="dish_title" style="font-family:'Montserrat',sans-serif;">Tostones con Cebolla</div>
+									<div class="dish_price">RD$450</div>
 								</div>
 								<div class="dish_contents">
 									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Pork</li>
-										<li>Tenderloin</li>
-										<li>Green Pepper</li>
+										<li>Plátano</li><li>Cebolla</li><li>Ajo</li>
 									</ul>
 								</div>
-								<div class="dish_order"><a href="#">Order Now</a></div>
+								<div class="dish_order"><a href="/reservaciones">Reservar</a></div>
 							</div>
 
-							<!-- Dish -->
 							<div class="dish">
 								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Wild Mushroom with Chicken</div>
-									<div class="dish_price">$20</div>
+									<div class="dish_title" style="font-family:'Montserrat',sans-serif;">Ceviche de Pescado</div>
+									<div class="dish_price">RD$750</div>
 								</div>
 								<div class="dish_contents">
 									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Pork</li>
-										<li>Tenderloin</li>
-										<li>Green Pepper</li>
+										<li>Pescado</li><li>Limón</li><li>Cilantro</li>
 									</ul>
 								</div>
-								<div class="dish_order"><a href="#">Order Now</a></div>
+								<div class="dish_order"><a href="/reservaciones">Reservar</a></div>
 							</div>
 
-							<!-- Dish -->
 							<div class="dish">
 								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Oysters with Baked Potatoes</div>
-									<div class="dish_price">$20</div>
+									<div class="dish_title" style="font-family:'Montserrat',sans-serif;">Tabla de Quesos Coloniales</div>
+									<div class="dish_price">RD$950</div>
 								</div>
 								<div class="dish_contents">
 									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Pork</li>
-										<li>Tenderloin</li>
-										<li>Green Pepper</li>
+										<li>Quesos</li><li>Frutas</li><li>Pan artesanal</li>
 									</ul>
 								</div>
-								<div class="dish_order"><a href="#">Order Now</a></div>
-							</div>
-
-							<!-- Dish -->
-							<div class="dish">
-								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Roast Pork</div>
-									<div class="dish_price">$17</div>
-								</div>
-								<div class="dish_contents">
-									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Pork</li>
-										<li>Tenderloin</li>
-										<li>Green Pepper</li>
-									</ul>
-								</div>
-								<div class="dish_order"><a href="#">Order Now</a></div>
+								<div class="dish_order"><a href="/reservaciones">Reservar</a></div>
 							</div>
 
 						</div>
 					</div>
 				</div>
 
-				<!-- Main -->
-				<div class="col-lg-4 themenu_column">
-					<div class="themenu_image"><img src="/images/main.jpg" alt=""></div>
+				<!-- Platos Principales -->
+				<div class="col-lg-4 themenu_column at-reveal">
+					<div class="themenu_image"><img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Food/food2.jpg" alt="Platos Principales Atarazana" loading="lazy"></div>
 					<div class="themenu_col trans_400">
-						<div class="themenu_col_title">Main</div>
+						<div class="themenu_col_title" style="font-family:'Cormorant Garamond',serif;">Platos Principales</div>
 						<div class="dish_list">
 							
-							<!-- Dish -->
 							<div class="dish">
 								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Chicken with Lemon</div>
-									<div class="dish_price">$20</div>
+									<div class="dish_title" style="font-family:'Montserrat',sans-serif;">Chivo Guisado Colonial</div>
+									<div class="dish_price">RD$1,200</div>
 								</div>
 								<div class="dish_contents">
 									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Pork</li>
-										<li>Tenderloin</li>
-										<li>Green Pepper</li>
+										<li>Chivo</li><li>Especias</li><li>Vino tinto</li>
 									</ul>
 								</div>
-								<div class="dish_order"><a href="#">Order Now</a></div>
+								<div class="dish_order"><a href="/reservaciones">Reservar</a></div>
 							</div>
 
-							<!-- Dish -->
 							<div class="dish">
 								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Pork Tenderloin in Green Pepper</div>
-									<div class="dish_price">$20</div>
+									<div class="dish_title" style="font-family:'Montserrat',sans-serif;">Mero a la Criolla</div>
+									<div class="dish_price">RD$1,400</div>
 								</div>
 								<div class="dish_contents">
 									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Pork</li>
-										<li>Tenderloin</li>
-										<li>Green Pepper</li>
+										<li>Mero</li><li>Sofrito</li><li>Tomate</li>
 									</ul>
 								</div>
-								<div class="dish_order"><a href="#">Order Now</a></div>
+								<div class="dish_order"><a href="/reservaciones">Reservar</a></div>
 							</div>
 
-							<!-- Dish -->
 							<div class="dish">
 								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Shrimp with Garlic</div>
-									<div class="dish_price">$17</div>
+									<div class="dish_title" style="font-family:'Montserrat',sans-serif;">Pollo al Horno con Yuca</div>
+									<div class="dish_price">RD$950</div>
 								</div>
 								<div class="dish_contents">
 									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Pork</li>
-										<li>Tenderloin</li>
-										<li>Green Pepper</li>
+										<li>Pollo</li><li>Yuca</li><li>Hierbas</li>
 									</ul>
 								</div>
-								<div class="dish_order"><a href="#">Order Now</a></div>
+								<div class="dish_order"><a href="/reservaciones">Reservar</a></div>
 							</div>
 
-							<!-- Dish -->
 							<div class="dish">
 								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Wild Mushroom with Chicken</div>
-									<div class="dish_price">$20</div>
+									<div class="dish_title" style="font-family:'Montserrat',sans-serif;">Res a la Atarazana</div>
+									<div class="dish_price">RD$1,600</div>
 								</div>
 								<div class="dish_contents">
 									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Pork</li>
-										<li>Tenderloin</li>
-										<li>Green Pepper</li>
+										<li>Res</li><li>Setas</li><li>Salsa colonial</li>
 									</ul>
 								</div>
-								<div class="dish_order"><a href="#">Order Now</a></div>
+								<div class="dish_order"><a href="/reservaciones">Reservar</a></div>
 							</div>
 
-							<!-- Dish -->
 							<div class="dish">
 								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Oysters with Baked Potatoes</div>
-									<div class="dish_price">$20</div>
+									<div class="dish_title" style="font-family:'Montserrat',sans-serif;">Langosta al Vapor</div>
+									<div class="dish_price">RD$2,200</div>
 								</div>
 								<div class="dish_contents">
 									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Pork</li>
-										<li>Tenderloin</li>
-										<li>Green Pepper</li>
+										<li>Langosta</li><li>Mantequilla</li><li>Limón</li>
 									</ul>
 								</div>
-								<div class="dish_order"><a href="#">Order Now</a></div>
-							</div>
-
-							<!-- Dish -->
-							<div class="dish">
-								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Roast Pork</div>
-									<div class="dish_price">$17</div>
-								</div>
-								<div class="dish_contents">
-									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Pork</li>
-										<li>Tenderloin</li>
-										<li>Green Pepper</li>
-									</ul>
-								</div>
-								<div class="dish_order"><a href="#">Order Now</a></div>
+								<div class="dish_order"><a href="/reservaciones">Reservar</a></div>
 							</div>
 
 						</div>
 					</div>
 				</div>
 
-				<!-- Deserts -->
-				<div class="col-lg-4 themenu_column">
-					<div class="themenu_image"><img src="/images/deserts.jpg" alt=""></div>
+				<!-- Postres -->
+				<div class="col-lg-4 themenu_column at-reveal at-reveal--right">
+					<div class="themenu_image"><img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Food/food3.jpg" alt="Postres Atarazana" loading="lazy"></div>
 					<div class="themenu_col trans_400">
-						<div class="themenu_col_title">Deserts</div>
+						<div class="themenu_col_title" style="font-family:'Cormorant Garamond',serif;">Postres</div>
 						<div class="dish_list">
 
-							<!-- Dish -->
 							<div class="dish">
 								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Lava Cake</div>
-									<div class="dish_price">$20</div>
+									<div class="dish_title" style="font-family:'Montserrat',sans-serif;">Tres Leches Colonial</div>
+									<div class="dish_price">RD$450</div>
 								</div>
 								<div class="dish_contents">
 									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Pork</li>
-										<li>Tenderloin</li>
-										<li>Green Pepper</li>
+										<li>Bizcocho</li><li>Tres leches</li><li>Canela</li>
 									</ul>
 								</div>
-								<div class="dish_order"><a href="#">Order Now</a></div>
+								<div class="dish_order"><a href="/reservaciones">Reservar</a></div>
 							</div>
 
-							<!-- Dish -->
 							<div class="dish">
 								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Orange Tart</div>
-									<div class="dish_price">$17</div>
+									<div class="dish_title" style="font-family:'Montserrat',sans-serif;">Flan de Coco Dominicano</div>
+									<div class="dish_price">RD$380</div>
 								</div>
 								<div class="dish_contents">
 									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Pork</li>
-										<li>Tenderloin</li>
-										<li>Green Pepper</li>
+										<li>Coco</li><li>Leche</li><li>Caramelo</li>
 									</ul>
 								</div>
-								<div class="dish_order"><a href="#">Order Now</a></div>
+								<div class="dish_order"><a href="/reservaciones">Reservar</a></div>
 							</div>
 
-							<!-- Dish -->
 							<div class="dish">
 								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Cheese Cake</div>
-									<div class="dish_price">$20</div>
+									<div class="dish_title" style="font-family:'Montserrat',sans-serif;">Mousse de Chocolate Caribeño</div>
+									<div class="dish_price">RD$420</div>
 								</div>
 								<div class="dish_contents">
 									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Pork</li>
-										<li>Tenderloin</li>
-										<li>Green Pepper</li>
+										<li>Chocolate</li><li>Crema</li><li>Cacao</li>
 									</ul>
 								</div>
-								<div class="dish_order"><a href="#">Order Now</a></div>
+								<div class="dish_order"><a href="/reservaciones">Reservar</a></div>
 							</div>
 
-							<!-- Dish -->
 							<div class="dish">
 								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Chocolatte Mausse</div>
-									<div class="dish_price">$17</div>
+									<div class="dish_title" style="font-family:'Montserrat',sans-serif;">Helado Artesanal de Lechosa</div>
+									<div class="dish_price">RD$320</div>
 								</div>
 								<div class="dish_contents">
 									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Pork</li>
-										<li>Tenderloin</li>
-										<li>Green Pepper</li>
+										<li>Lechosa</li><li>Leche</li><li>Vainilla</li>
 									</ul>
 								</div>
-								<div class="dish_order"><a href="#">Order Now</a></div>
-							</div>
-
-							<!-- Dish -->
-							<div class="dish">
-								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title">Ice Cream</div>
-									<div class="dish_price">$17</div>
-								</div>
-								<div class="dish_contents">
-									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li>Pork</li>
-										<li>Tenderloin</li>
-										<li>Green Pepper</li>
-									</ul>
-								</div>
-								<div class="dish_order"><a href="#">Order Now</a></div>
+								<div class="dish_order"><a href="/reservaciones">Reservar</a></div>
 							</div>
 
 						</div>
@@ -414,98 +347,89 @@
 		</div>
 	</div>
 
-	<!-- Signature Dishes -->
+	<!-- Platos Insignia -->
 
-	<div class="sig">
+	<div class="sig at-reveal">
 		<div class="container">
 			<div class="row">
 				<div class="col">
 					<div class="section_title_container">
-						<div class="section_subtitle page_subtitle">Something new</div>
-						<div class="section_title"><h1>Our Signature Dishes</h1></div>
+						<div class="section_subtitle page_subtitle" style="font-family:'Cormorant Garamond',serif;">Lo mejor de nuestra cocina</div>
+						<div class="section_title"><h1 style="font-family:'Cormorant Garamond',serif;">Platos Insignia</h1></div>
 					</div>
 				</div>
 			</div>
 			<div class="row sig_row">
 				<div class="col">
 					
-					<!-- Signature Dish -->
+					<!-- Plato Insignia 1 -->
 					<div class="sig_dish">
 						<div class="row row-eq-height">
 							<div class="col-lg-6 sig_col d-flex flex-column align-items-start justify-content-center">
 								<div class="sig_content">
 									<div class="rating_r sig_rating rating_r_5"><i></i><i></i><i></i><i></i><i></i></div>
 									<div class="sig_name_container d-flex flex-row align-items-start justify-content-start">
-										<div class="sig_name">Pork Tenderloin marinated in Green Pepper</div>
-										<div class="sig_price ml-auto">$20</div>
+										<div class="sig_name" style="font-family:'Cormorant Garamond',serif;">Res a la Atarazana con Salsa Colonial</div>
+										<div class="sig_price ml-auto">RD$1,600</div>
 									</div>
 									<div class="sig_content_list">
 										<ul class="d-flex flex-row align-items-center justify-content-start">
-											<li>Pork</li>
-											<li>Tenderloin</li>
-											<li>Green Pepper</li>
-											<li>Veggies</li>
+											<li>Res premium</li><li>Setas silvestres</li><li>Vino tinto</li><li>Especias criollas</li>
 										</ul>
 									</div>
-									<div class="button sig_button trans_200"><a href="#">Order Now</a></div>
+									<div class="button sig_button trans_200"><a href="/reservaciones">Hacer Reservación</a></div>
 								</div>
 							</div>
 							<div class="col-lg-6 sig_col">
-								<div class="sig_image"><img src="/images/sig_1.jpg" alt=""></div>
+								<div class="sig_image"><img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Food/food1.jpg" alt="Res a la Atarazana" loading="lazy"></div>
 							</div>
 						</div>
 					</div>
 
-					<!-- Signature Dish -->
+					<!-- Plato Insignia 2 -->
 					<div class="sig_dish">
 						<div class="row row-eq-height">
 							<div class="col-lg-6 sig_col d-flex flex-column align-items-start justify-content-center">
 								<div class="sig_content">
 									<div class="rating_r sig_rating rating_r_5"><i></i><i></i><i></i><i></i><i></i></div>
 									<div class="sig_name_container d-flex flex-row align-items-start justify-content-start">
-										<div class="sig_name">Beef Tartar with forest mushroms</div>
-										<div class="sig_price ml-auto">$23</div>
+										<div class="sig_name" style="font-family:'Cormorant Garamond',serif;">Langosta Entera al Vapor con Mantequilla de Hierbas</div>
+										<div class="sig_price ml-auto">RD$2,200</div>
 									</div>
 									<div class="sig_content_list">
 										<ul class="d-flex flex-row align-items-center justify-content-start">
-											<li>Pork</li>
-											<li>Tenderloin</li>
-											<li>Green Pepper</li>
-											<li>Veggies</li>
+											<li>Langosta local</li><li>Mantequilla</li><li>Ajo</li><li>Limón</li>
 										</ul>
 									</div>
-									<div class="button sig_button trans_200"><a href="#">Order Now</a></div>
+									<div class="button sig_button trans_200"><a href="/reservaciones">Hacer Reservación</a></div>
 								</div>
 							</div>
 							<div class="col-lg-6 sig_col">
-								<div class="sig_image"><img src="/images/sig_2.jpg" alt=""></div>
+								<div class="sig_image"><img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Food/food2.jpg" alt="Langosta Atarazana" loading="lazy"></div>
 							</div>
 						</div>
 					</div>
 
-					<!-- Signature Dish -->
+					<!-- Plato Insignia 3 -->
 					<div class="sig_dish">
 						<div class="row row-eq-height">
 							<div class="col-lg-6 sig_col d-flex flex-column align-items-start justify-content-center">
 								<div class="sig_content">
 									<div class="rating_r sig_rating rating_r_5"><i></i><i></i><i></i><i></i><i></i></div>
 									<div class="sig_name_container d-flex flex-row align-items-start justify-content-start">
-										<div class="sig_name">Beef Steak with sauted vegetables</div>
-										<div class="sig_price ml-auto">$20</div>
+										<div class="sig_name" style="font-family:'Cormorant Garamond',serif;">Chivo Guisado al Estilo Colonial</div>
+										<div class="sig_price ml-auto">RD$1,200</div>
 									</div>
 									<div class="sig_content_list">
 										<ul class="d-flex flex-row align-items-center justify-content-start">
-											<li>Pork</li>
-											<li>Tenderloin</li>
-											<li>Green Pepper</li>
-											<li>Veggies</li>
+											<li>Chivo criollo</li><li>Orégano</li><li>Vino tinto</li><li>Recao</li>
 										</ul>
 									</div>
-									<div class="button sig_button trans_200"><a href="#">Order Now</a></div>
+									<div class="button sig_button trans_200"><a href="/reservaciones">Hacer Reservación</a></div>
 								</div>
 							</div>
 							<div class="col-lg-6 sig_col">
-								<div class="sig_image"><img src="/images/sig_3.jpg" alt=""></div>
+								<div class="sig_image"><img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Food/food3.jpg" alt="Chivo Colonial Atarazana" loading="lazy"></div>
 							</div>
 						</div>
 					</div>
@@ -539,5 +463,11 @@
 <script type="module" src="/js/atarazana-images.js"></script>
 <script src="https://www.w3schools.com/lib/w3.js"></script>
 <script>w3.includeHTML();</script>
+<script src="/js/scroll-reveal.js"></script>
+<!-- WhatsApp CTA -->
+<a href="https://wa.me/18098802016?text=Hola%20Atarazana%2C%20me%20interesa%20hacer%20una%20reservaci%C3%B3n" class="at-whatsapp-cta" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <svg class="at-wha-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="at-wha-label">Reservar por WhatsApp</span>
+</a>
 </body>
 </html>

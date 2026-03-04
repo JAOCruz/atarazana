@@ -1,11 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Atarazana - Restaurante y Eventos</title>
+<title>Atarazana — Restaurante y Eventos | Ciudad Colonial, Santo Domingo</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Atarazana - Espacio colonial para eventos y gastronomía dominicana desde 1972">
+<meta name="description" content="Desde 1972, Atarazana es el espacio colonial por excelencia para bodas, eventos corporativos y gastronomía dominicana en el corazón de la Ciudad Colonial.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111111">
+<link rel="canonical" href="https://laatarazana.com/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛</text></svg>">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://laatarazana.com/">
+<meta property="og:title" content="Atarazana — Restaurante y Eventos | Ciudad Colonial">
+<meta property="og:description" content="Desde 1972, pioneros en gastronomía dominicana y eventos en la Ciudad Colonial de Santo Domingo. Bodas, corporativos, tour operadores.">
+<meta property="og:image" content="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Logo_Atarazana.png">
+<meta property="og:locale" content="es_DO">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Atarazana — Restaurante y Eventos">
+<meta name="twitter:description" content="Bodas, eventos corporativos y gastronomía dominicana desde 1972 en la Ciudad Colonial.">
+<meta name="twitter:image" content="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Logo_Atarazana.png">
+
+<!-- Performance: resource hints -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://jaocruz.nyc3.cdn.digitaloceanspaces.com" crossorigin>
+<link rel="preconnect" href="https://jaocruz.nyc3.digitaloceanspaces.com" crossorigin>
+
+<!-- JSON-LD: Restaurant schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Atarazana Restaurante y Eventos",
+  "description": "Espacio colonial para eventos y gastronomía dominicana desde 1972",
+  "url": "https://laatarazana.com",
+  "foundingDate": "1972",
+  "servesCuisine": ["Dominican", "Caribbean"],
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "La Atarazana",
+    "addressLocality": "Santo Domingo",
+    "addressRegion": "Distrito Nacional",
+    "addressCountry": "DO"
+  },
+  "image": "https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Logo_Atarazana.png",
+  "sameAs": []
+}
+</script>
 <link rel="stylesheet" type="text/css" href="/styles/bootstrap-4.1.2/bootstrap.min.css">
 <link href="/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
@@ -16,8 +62,9 @@
 <link href="/plugins/jquery-timepicker/jquery.timepicker.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="/styles/responsive.css">
-<!-- Add Google Fonts for Cormorant Garamond if not present -->
-<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:700,600,400&display=swap" rel="stylesheet">
+<!-- Google Fonts: Cormorant Garamond + Montserrat (combined, display=swap) -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/styles/enhancements.css">
 <style>
 /* Header styles - Always black background on index page */
 .header {
@@ -287,6 +334,13 @@
 </head>
 <body>
 
+<!-- Preloader -->
+<div id="at-preloader" aria-hidden="true">
+  <div class="at-preloader-logo">ATARAZANA</div>
+  <div class="at-preloader-line"></div>
+  <div class="at-preloader-text">Desde 1972</div>
+</div>
+
 <div w3-include-html="header.html"></div>
 
 	<!-- Home -->
@@ -302,8 +356,11 @@
 							<div class="home_subtitle page_subtitle">Atarazana</div>
 							<div class="home_title"><h1>Un Espacio Colonial para Eventos</h1></div>
 							<div class="home_text ml-auto mr-auto">
-								<p>Desde 1972, Atarazana ha sido pionero en la Ciudad Colonial, evolucionando de restaurante a un espacio especializado para eventos sociales,  corporativos y Operadores Internacionales. Ofrecemos un ambiente colonial único, instalaciones renovadas y una amplia experiencia en la organización de bodas, congresos y ferias. El servicio al cliente es nuestro principal activo, ofrecemos una atención excepcional, adaptándonos a  las necesidades y expectativas de nuestros clientes.
-                </p>
+								<p>Desde 1972, Atarazana ha sido pionero en la Ciudad Colonial, evolucionando de restaurante a un espacio especializado para eventos sociales, corporativos y Operadores Internacionales. Un ambiente colonial único, con más de 50 años de experiencia haciendo de cada evento una experiencia inolvidable.</p>
+							</div>
+							<div class="home_buttons d-flex flex-row align-items-center justify-content-center" style="gap:16px; flex-wrap:wrap; margin-top:28px;">
+								<a href="reservaciones.html" class="button trans_200" style="display:inline-block;"><span>Reservar Ahora</span></a>
+								<a href="event-bodas.html" class="button trans_200" style="display:inline-block; background:transparent; border:1px solid rgba(180,147,131,0.6);"><span>Ver Eventos</span></a>
 							</div>
 						</div>
 					</div>
@@ -318,24 +375,46 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<div class="intro_content">
+					<div class="intro_content at-reveal">
 						<div class="intro_subtitle page_subtitle" style="font-family: 'Cormorant Garamond', serif !important;">Más de 50 años</div>
 						<div class="intro_title"><h2 style="font-family: 'Cormorant Garamond', serif !important;">Una Experiencia Extraordinaria</h2></div>
             <div class="intro_text">
-              <p style="font-family: 'Montserrat', sans-serif !important;">
+              <p>
                 Iniciamos en 1972 con el nombre "Fonda de La Atarazana", siendo el primer restaurante del país en ofrecer servicios a Operadores Internacionales. Fuimos pioneros y creadores de los más innovadores paquetes para en el manejo de eventos y bodas en la República Dominicana.
               </p>
             </div>            
 					</div>
-					<div class="row">
-						<div class="col-xl-4 col-md-6 intro_col">
-							<div class="intro_image"><img src="/images/intro_1.jpg" alt="Ambiente colonial"></div>
+					<div class="row at-stagger">
+						<div class="col-xl-4 col-md-6 intro_col at-reveal at-reveal--left">
+							<div class="intro_image"><img src="/images/intro_1.jpg" alt="Ambiente colonial" loading="lazy"></div>
 						</div>
-						<div class="col-xl-4 col-md-6 intro_col">
-							<div class="intro_image"><img src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other2/location_night.jpeg" alt="Mesa elegante"></div>
+						<div class="col-xl-4 col-md-6 intro_col at-reveal at-reveal--right">
+							<div class="intro_image"><img src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other2/location_night.jpeg" alt="Mesa elegante de noche" loading="lazy"></div>
 						</div>
 					</div>
 				</div>	
+			</div>
+		</div>
+	</div>
+
+	<!-- Stats Counter Section -->
+	<div class="at-stats-section at-reveal">
+		<div class="container">
+			<div class="row align-items-center justify-content-center">
+				<div class="col-6 col-md-3 at-stat-item">
+					<span class="at-stat-number" data-target="1972" data-mode="year">1972</span>
+					<span class="at-stat-label">Año de Fundación</span>
+				</div>
+				<div class="col-md-1 d-none d-md-flex"><div class="at-stat-divider"></div></div>
+				<div class="col-6 col-md-3 at-stat-item">
+					<span class="at-stat-number" data-target="52" data-suffix="+">0</span><span class="at-stat-suffix d-none">+</span>
+					<span class="at-stat-label">Años de Experiencia</span>
+				</div>
+				<div class="col-md-1 d-none d-md-flex"><div class="at-stat-divider"></div></div>
+				<div class="col-6 col-md-3 at-stat-item">
+					<span class="at-stat-number" data-target="5000" data-suffix="+">0</span>
+					<span class="at-stat-label">Eventos Celebrados</span>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -345,6 +424,11 @@
 	<div class="food_slideshow_section">
 		<div class="food_slideshow_overlay"></div>
 		<div class="food_slideshow_content d-flex flex-column align-items-center justify-content-center text-center">
+			<div class="at-slideshow-badge at-reveal">
+				<span class="at-sb-label">Nuestra Carta</span>
+				<span class="at-sb-title">Gastronomía Dominicana</span>
+				<a href="menu.html" class="at-sb-cta">Ver Menú Completo →</a>
+			</div>
 		</div>
 		<div class="owl-carousel food_slideshow">
 			<div class="food_slide" style="background-image: url(https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other2/food3.jpeg)"></div>
@@ -356,7 +440,7 @@
 
 	<!-- Premium Service -->
 
-	<div class="sig">
+	<div class="sig at-reveal">
 		<div class="sig_content_container">
 			<div class="container">
 				<div class="row">
@@ -381,7 +465,7 @@
 					<div class="col-lg-7 offset-lg-5">
 						<div class="sig_image">
 							<div class="background_image" id="sig-bg" style="background-image:url(/images/sig.jpg)"></div>
-							<img id="sig-img" src="/images/sig.jpg" alt="">
+							<img id="sig-img" src="/images/sig.jpg" alt="Mesa elegante con decoración colonial en Atarazana">
 						</div>
 					</div>
 				</div>
@@ -406,10 +490,10 @@
 					</div>
 				</div>
 			</div>
-			<div class="row themenu_row">
+			<div class="row themenu_row at-stagger">
 
 				<!-- Bodas -->
-				<div class="col-lg-4 themenu_column">
+				<div class="col-lg-4 themenu_column at-reveal">
 					<div class="themenu_col">
 						<div class="themenu_col_title" style="font-family: 'Cormorant Garamond', serif !important;">Bodas</div>
 						<div class="dish_list">
@@ -427,7 +511,7 @@
 				</div>
 
 				<!-- Tour Operadores -->
-				<div class="col-lg-4 themenu_column">
+				<div class="col-lg-4 themenu_column at-reveal">
 					<div class="themenu_col">
 						<div class="themenu_col_title" style="font-family: 'Cormorant Garamond', serif !important;">Tour Operadores</div>
 						<div class="dish_list">
@@ -445,7 +529,7 @@
 				</div>
 
 				<!-- A la Dominicana -->
-				<div class="col-lg-4 themenu_column">
+				<div class="col-lg-4 themenu_column at-reveal">
 					<div class="themenu_col">
 						<div class="themenu_col_title" style="font-family: 'Cormorant Garamond', serif !important;">A la Dominicana</div>
 						<div class="dish_list">
@@ -518,5 +602,62 @@ $(document).ready(function() {
 </script>
 <script src="https://www.w3schools.com/lib/w3.js"></script>
 <script src="/js/include-helper.js"></script>
+<!-- Premium enhancements: scroll reveal + preloader -->
+<script src="/js/scroll-reveal.js"></script>
+
+<!-- Stat Counters -->
+<script>
+(function() {
+  function animateCounter(el) {
+    var target = parseInt(el.getAttribute('data-target'), 10);
+    var mode = el.getAttribute('data-mode');
+    var suffix = el.getAttribute('data-suffix') || '';
+    if (mode === 'year') { el.textContent = target; return; }
+    var duration = 1800;
+    var start = 0;
+    var startTime = null;
+    function step(ts) {
+      if (!startTime) startTime = ts;
+      var progress = Math.min((ts - startTime) / duration, 1);
+      var ease = 1 - Math.pow(1 - progress, 3);
+      var current = Math.floor(ease * target);
+      el.textContent = current.toLocaleString() + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target.toLocaleString() + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+
+  var statsObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('[data-target]').forEach(function(el) {
+          if (!el.classList.contains('counted')) {
+            el.classList.add('counted');
+            animateCounter(el);
+          }
+        });
+        statsObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.at-stats-section').forEach(function(s) {
+    statsObs.observe(s);
+  });
+})();
+</script>
+
+<!-- WhatsApp Floating CTA -->
+<a href="https://wa.me/18098802016?text=Hola%2C%20me%20interesa%20hacer%20una%20reservaci%C3%B3n%20en%20Atarazana"
+   class="at-whatsapp-cta"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Contáctanos por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span class="at-wha-label">Reservar por WhatsApp</span>
+</a>
 </body>
 </html>

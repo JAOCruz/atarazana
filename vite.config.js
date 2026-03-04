@@ -2,10 +2,14 @@ import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
+  // public/ is served automatically by Vite at root (contains images, plugins, styles, js, font)
+  publicDir: 'public',
+
   plugins: [
     viteStaticCopy({
       targets: [
         {
+          // HTML pages — copied to dist root
           src: [
             'about.html',
             'blog.html',
@@ -19,7 +23,8 @@ export default defineConfig({
             'reservaciones.html',
             'reservacion-exitosa.html',
             'tour-operadores.html',
-            'event-*.html'
+            'event-*.html',
+            'test-menu.html'
           ],
           dest: ''
         }
