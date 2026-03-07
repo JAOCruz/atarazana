@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Página No Encontrada — Restaurante Atarazana</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="La página que buscas no existe. Vuelve al Restaurante Atarazana.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  min-height: 100vh;
+  background-image: url('https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/segundopiso.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.72);
+  backdrop-filter: blur(4px);
+}
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 60px 40px;
+  max-width: 680px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(180,147,131,0.3);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  color: #b49383;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+.error-code {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 8rem;
+  font-weight: 700;
+  color: #b49383;
+  line-height: 1;
+  opacity: 0.8;
+}
+.divider {
+  width: 60px;
+  height: 1px;
+  background: #b49383;
+  margin: 24px auto;
+}
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+}
+p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-primary-at {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 36px; background: #b49383; color: #fff;
+  font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.12em; border-radius: 40px;
+  text-decoration: none; transition: all 0.3s ease;
+  border: 2px solid #b49383;
+}
+.btn-primary-at:hover { background: transparent; color: #b49383; }
+.btn-outline-at {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 36px; background: transparent; color: rgba(255,255,255,0.8);
+  font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.12em; border-radius: 40px;
+  text-decoration: none; transition: all 0.3s ease;
+  border: 2px solid rgba(255,255,255,0.3);
+}
+.btn-outline-at:hover { border-color: #b49383; color: #b49383; }
+.links-row {
+  margin-top: 36px;
+  display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
+}
+.links-row a {
+  font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.4);
+  text-decoration: none; transition: color 0.3s;
+}
+.links-row a:hover { color: #b49383; }
+@media (max-width: 576px) {
+  body { background-attachment: scroll; }
+  .error-code { font-size: 6rem; }
+  h1 { font-size: 1.8rem; }
+  .content { padding: 50px 25px; margin: 20px; }
+}
+</style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="logo">Restaurante Atarazana</div>
+    <div class="error-code">404</div>
+    <div class="divider"></div>
+    <h1>Página no encontrada</h1>
+    <p>La página que buscas no existe o fue movida. Pero nuestra cocina sigue esperándote — regresa al inicio y continúa explorando Atarazana.</p>
+    <div class="btn-group">
+      <a href="/" class="btn-primary-at">
+        <i class="fa fa-home"></i> Ir al Inicio
+      </a>
+      <a href="https://wa.me/18098892900?text=Hola%2C%20necesito%20ayuda%20en%20Atarazana" class="btn-outline-at" target="_blank">
+        <i class="fa fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+    <div class="links-row">
+      <a href="/menu.html">Menú</a>
+      <a href="/event-bodas.html">Eventos</a>
+      <a href="/reservaciones.html">Reservar</a>
+      <a href="/contact.html">Contacto</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,42 +1,66 @@
 <!-- TIP: For easier maintenance, consider using HTML includes for the header/footer. See https://www.w3schools.com/howto/howto_html_include.asp -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<title>Blog</title>
+<title>Galería de Eventos — Restaurante Atarazana, Zona Colonial</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="The Venue template project">
+<meta name="description" content="Conoce los espacios y ambientes únicos del Restaurante Atarazana para bodas, quinceañeras y eventos especiales en la Zona Colonial de Santo Domingo.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://restauranteatarazana.com/blog.html">
+<meta property="og:title" content="Galería de Eventos — Restaurante Atarazana">
+<meta property="og:description" content="Bodas, quinceañeras y eventos especiales en los salones coloniales más únicos de Santo Domingo.">
+<meta property="og:image" content="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/2018/boda1.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Galería de Eventos — Atarazana">
+<meta name="twitter:image" content="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/2018/boda1.jpg">
+<!-- Preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://jaocruz.nyc3.cdn.digitaloceanspaces.com">
+<!-- Fonts (combined) -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Styles -->
 <link rel="stylesheet" type="text/css" href="/styles/bootstrap-4.1.2/bootstrap.min.css">
 <link href="/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-<link rel="stylesheet" type="text/css" href="/plugins/OwlCarousel2-2.2.1/animate.css">
 <link href="/plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
 <link href="/plugins/jquery-timepicker/jquery.timepicker.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="/styles/responsive.css">
 <link rel="stylesheet" type="text/css" href="/styles/blog.css">
 <link rel="stylesheet" type="text/css" href="/styles/blog_responsive.css">
-<!-- Add Google Fonts for Cormorant Garamond and Montserrat -->
-<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:700,600,400&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/styles/enhancements.css">
 </head>
 <body>
+
+<!-- Preloader -->
+<div id="at-preloader">
+  <div class="at-preloader-logo">ATARAZANA</div>
+  <div class="at-preloader-line"></div>
+  <div class="at-preloader-text">Eventos</div>
+</div>
+
+<!-- WhatsApp CTA -->
+<a href="https://wa.me/18098892900?text=Hola%2C%20me%20interesa%20información%20sobre%20eventos%20en%20Atarazana"
+   class="at-whatsapp-cta" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
+  <i class="fa fa-whatsapp"></i>
+</a>
+
 <div w3-include-html="header.html"></div>
 
 <div class="super_container">
 	
 	<!-- Home -->
-	<div class="home">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/2018/boda1.jpg" data-speed="0.8"></div>
+	<div class="home" style="background-image: url('https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/2018/boda1.jpg'); background-attachment: fixed; background-size: cover; background-position: center;">
+		<div class="home-overlay"></div>
 		<div class="home_container">
 			<div class="container">
 				<div class="row">
 					<div class="col">
 						<div class="home_content text-center">
 							<div class="home_subtitle page_subtitle">Atarazana</div>
-							<div class="home_title"><h1>Eventos</h1></div>
+							<div class="home_title"><h1>Galería de Eventos</h1></div>
 						</div>
 					</div>
 				</div>
@@ -48,21 +72,21 @@
 	<div class="events-gallery container">
 		<div class="container">
 			<div class="row">
-				<div class="col-12 text-center mb-5">
-					<h2 class="section_title">Tu boda en Atarazana</h2>
-					<p class="section_subtitle">Con más de 50 años de experiencia, nuestro restaurante se ha convertido en el lugar de referencia para dar el "sí quiero". Hemos sido testigos de los momentos más maravillosos y felices de miles de parejas que se decidieron por nuestro restaurante en un ambiente colonial único de características inigualables.<br><br>Creadores de los más innovadores paquetes para en el manejo de eventos y bodas en la República Dominicana.</p>
+				<div class="col-12 text-center mb-5 at-reveal">
+					<h2 class="section_title">Nuestros Espacios para Eventos</h2>
+					<p class="section_subtitle">Con más de 50 años de experiencia, el Restaurante Atarazana es el lugar de referencia para bodas, quinceañeras y eventos especiales en la República Dominicana. Nuestras piedras coloniales del siglo XVI crean el escenario más único e irrepetible de Santo Domingo.</p>
 				</div>
 			</div>
 			<!-- Terraza Colonial Section -->
-<div class="venue-section mb-5">
+<div class="venue-section mb-5 at-reveal">
   <div class="sig_content_container">
     <div class="container">
       <div class="row">
         <div class="col-lg-7">
           <div class="sig_content">
-            <div class="sig_subtitle page_subtitle">Terraza colonial</div>
+            <div class="sig_subtitle page_subtitle">Terraza Colonial</div>
             <div class="sig_title"><h2>Un espacio único</h2></div>
-            <p>Único Terraza interior de estilo colonial con techo panorámico y con aire acondicionado. Amplio, confortable con el toque que hace falta para crear ese ambiente mágico que deleite a todos sus invitados y que solo le puede proporcionar el más cálido y elegante escenario que envuelve la estructura del Restaurante Atarazana desde el siglo XVI, complementado por la calidad de nuestros servicios.</p>
+            <p>Única terraza interior de estilo colonial con techo panorámico y aire acondicionado. Amplia, confortable y con el toque que hace falta para crear ese ambiente mágico que deleite a todos sus invitados. Solo el más cálido y elegante escenario del siglo XVI, complementado con la calidad de nuestros servicios gastronómicos, puede dar vida a una celebración verdaderamente inolvidable.</p>
           </div>
         </div>
       </div>
@@ -73,8 +97,8 @@
       <div class="row">
         <div class="col-lg-7 offset-lg-5">
           <div class="sig_image">
-            <div class="background_image" style="background-image:url('https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/2018/boda1.jpg')"></div>
-            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/2018/boda1.jpg" alt="Terraza colonial" style="display:none;">
+            <div class="background_image" style="background-image:url('https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/terraza2.jpg')"></div>
+            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/terraza2.jpg" alt="Terraza colonial Atarazana" loading="lazy" class="mobile-visible-img" style="display:none;">
           </div>
         </div>
       </div>
@@ -83,15 +107,15 @@
 </div>
 
 <!-- Salón De Armas Section -->
-<div class="venue-section mb-5">
+<div class="venue-section mb-5 at-reveal">
   <div class="sig_content_container">
     <div class="container">
       <div class="row">
-        <div class="col-lg-5 offset-lg-7"> <!-- Move card to the right -->
+        <div class="col-lg-5 offset-lg-7">
           <div class="sig_content">
             <div class="sig_subtitle page_subtitle">Salón De Armas</div>
             <div class="sig_title"><h2>Ambiente colonial</h2></div>
-            <p>Salón decorado al estilo Colonial con la vista más impresionante del Alcázar de Diego Colón, donde tú y tus invitados podrán sentirse parte de la historia, de la romántica magia que envuelve la época del descubrimiento.</p>
+            <p>Salón decorado al estilo colonial con la vista más impresionante del Alcázar de Diego Colón, donde tú y tus invitados podrán sentirse parte de la historia y de la romántica magia que envuelve la época del descubrimiento. Cada detalle arquitectónico del siglo XVI crea un escenario que no tiene comparación en ningún otro lugar de Santo Domingo.</p>
           </div>
         </div>
       </div>
@@ -102,12 +126,48 @@
       <div class="row">
         <div class="col-lg-7">
           <div class="sig_image">
-            <div class="background_image" style="background-image:url('https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/2018/boda2.JPG')"></div>
-            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/2018/boda2.JPG" alt="Salón De Armas" style="display:none;">
+            <div class="background_image" style="background-image:url('https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/ambiente_colonial.jpeg')"></div>
+            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/ambiente_colonial.jpeg" alt="Salón De Armas colonial" loading="lazy" class="mobile-visible-img" style="display:none;">
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- Event Types CTA Grid -->
+<div class="row mt-5 at-reveal">
+  <div class="col-12 text-center mb-4">
+    <h3 class="section_title" style="font-size: 2.4rem;">Celebra con Nosotros</h3>
+    <p class="section_subtitle">Selecciona tu tipo de evento para conocer más</p>
+  </div>
+  <div class="col-md-3 col-sm-6 mb-4">
+    <a href="/event-bodas.html" class="at-gallery-event-link">
+      <div class="at-gallery-event-card" style="background-image: url('https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/boda/bride-groom.jpg');">
+        <div class="at-gallery-event-overlay"><span>Bodas</span></div>
+      </div>
+    </a>
+  </div>
+  <div class="col-md-3 col-sm-6 mb-4">
+    <a href="/event-15anos.html" class="at-gallery-event-link">
+      <div class="at-gallery-event-card" style="background-image: url('https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/portada.jpeg');">
+        <div class="at-gallery-event-overlay"><span>Quinceañeras</span></div>
+      </div>
+    </a>
+  </div>
+  <div class="col-md-3 col-sm-6 mb-4">
+    <a href="/event-empresariales.html" class="at-gallery-event-link">
+      <div class="at-gallery-event-card" style="background-image: url('https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/birdview.JPG');">
+        <div class="at-gallery-event-overlay"><span>Empresariales</span></div>
+      </div>
+    </a>
+  </div>
+  <div class="col-md-3 col-sm-6 mb-4">
+    <a href="/event-especiales.html" class="at-gallery-event-link">
+      <div class="at-gallery-event-card" style="background-image: url('https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Eventos/momentos.jpeg');">
+        <div class="at-gallery-event-overlay"><span>Especiales</span></div>
+      </div>
+    </a>
   </div>
 </div>
 		</div>
@@ -135,6 +195,7 @@
 <script src="/plugins/jquery-datepicker/jquery-ui.js"></script>
 <script src="/plugins/jquery-timepicker/jquery.timepicker.js"></script>
 <script src="/js/blog.js"></script>
+<script src="/js/scroll-reveal.js"></script>
 <script type="module" src="/js/atarazana-images.js"></script>
 <script type="module">
 import { eventImages } from '/js/atarazana-images.js';
@@ -233,6 +294,27 @@ if (bodasGallery && eventImages.bodas) {
   margin-bottom: 0;
 }
 
+.home-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
+/* Event gallery cards */
+.at-gallery-event-link { text-decoration: none; display: block; }
+.at-gallery-event-card {
+  height: 260px; background-size: cover; background-position: center;
+  border-radius: 12px; overflow: hidden; position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: transform 0.3s, box-shadow 0.3s;
+}
+.at-gallery-event-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+.at-gallery-event-overlay {
+  position: absolute; inset: 0; background: rgba(0,0,0,0.45);
+  display: flex; align-items: flex-end; padding: 20px;
+  transition: background 0.3s;
+}
+.at-gallery-event-card:hover .at-gallery-event-overlay { background: rgba(180,147,131,0.65); }
+.at-gallery-event-overlay span {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700;
+  color: #fff; letter-spacing: 0.05em;
+}
+.at-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.at-reveal.visible { opacity: 1; transform: none; }
 /* Style for the main wedding heading and subtitle */
 .section_title {
   font-family: 'Cormorant Garamond', serif !important;
