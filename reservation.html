@@ -12,6 +12,9 @@
 					<div class="reservations_form_container">
 						<form action="https://submit-form.com/VIqdZ2gBq" method="POST" class="reservations_form">
 							<input type="hidden" name="_redirect" value="https://atarazana.netlify.app/reservacion-exitosa.html">
+							<input type="hidden" name="_append" value="false">
+							<input type="hidden" name="_email.subject" value="Nueva reservación de evento - Atarazana">
+							<input type="hidden" name="_email.from" value="Atarazana Reservaciones">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
@@ -71,6 +74,12 @@
 										<label for="res_mensaje">Mensaje adicional (opcional)</label>
 										<textarea name="mensaje" id="res_mensaje" class="form-control" rows="3" placeholder="Cuéntanos más detalles sobre tu evento..."></textarea>
 									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-12 text-center">
+									<div class="cf-turnstile d-inline-block" data-sitekey="0x4AAAAAAClroyiN3FgTQjb9"></div>
 								</div>
 							</div>
 							
