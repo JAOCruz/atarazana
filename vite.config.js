@@ -14,7 +14,6 @@ export default defineConfig({
             'about.html',
             'blog.html',
             'contact.html',
-            'menu.html',
             'elements.html',
             'index.html',
             'header.html',
