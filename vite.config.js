@@ -11,6 +11,7 @@ export default defineConfig({
         {
           // HTML pages — copied to dist root
           src: [
+            '404.html',
             'about.html',
             'blog.html',
             'contact.html',
