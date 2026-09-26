@@ -21,6 +21,7 @@
 									<a class="dropdown-item" href="event-bodas.html">Bodas</a>
 									<a class="dropdown-item" href="event-empresariales.html">Empresariales</a>
 									<a class="dropdown-item" href="event-15anos.html">15 Años</a>
+									<a class="dropdown-item" href="event-especiales.html">Especiales</a>
 									<a class="dropdown-item" href="event-dominicana.html">A la Dominicana</a>
 								</div>
 							</li>
@@ -33,7 +34,7 @@
 					</nav>
 					
 					<!-- Mobile Hamburger Menu -->
-					<div class="hamburger mobile-only" id="hamburgerBtn">
+					<div class="hamburger mobile-only" id="hamburgerBtn" role="button" tabindex="0" aria-label="Abrir menú" aria-controls="mobileMenuOverlay" aria-expanded="false">
 						<div class="hamburger_line"></div>
 						<div class="hamburger_line"></div>
 						<div class="hamburger_line"></div>
@@ -46,7 +47,7 @@
 	<!-- Mobile Menu Overlay -->
 	<div class="mobile_menu_overlay" id="mobileMenuOverlay">
 		<div class="mobile_menu_content">
-			<div class="mobile_menu_close" id="mobileMenuClose">×</div>
+			<div class="mobile_menu_close" id="mobileMenuClose" role="button" tabindex="0" aria-label="Cerrar menú">×</div>
 			<ul class="mobile_menu_nav">
 				<li><a href="index.html">Inicio</a></li>
 				<li><a href="about.html">Nosotros</a></li>
@@ -390,7 +391,41 @@
 }
 </style>
 
-<!-- 
-The JavaScript for the mobile menu is now handled in custom.js
-This script has been removed to avoid conflicts
--->
+<script>
+// Mobile menu — the header is inlined at build time, so it can wire itself up
+(function() {
+	var btn = document.getElementById('hamburgerBtn');
+	var overlay = document.getElementById('mobileMenuOverlay');
+	var close = document.getElementById('mobileMenuClose');
+
+	function setOpen(open) {
+		btn.classList.toggle('active', open);
+		overlay.classList.toggle('active', open);
+		btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+	}
+
+	function onActivate(el, fn) {
+		el.addEventListener('click', fn);
+		el.addEventListener('keydown', function(e) {
+			if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fn(e); }
+		});
+	}
+
+	onActivate(btn, function(e) {
+		e.preventDefault();
+		setOpen(!overlay.classList.contains('active'));
+	});
+	onActivate(close, function() { setOpen(false); });
+
+	document.addEventListener('keydown', function(e) {
+		if (e.key === 'Escape') setOpen(false);
+	});
+
+	overlay.querySelectorAll('.mobile-dropdown-title').forEach(function(title) {
+		title.addEventListener('click', function() {
+			title.classList.toggle('active');
+			title.nextElementSibling.classList.toggle('show');
+		});
+	});
+})();
+</script>

@@ -37,10 +37,10 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version=2.0;
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,script,
-https://connect.facebook.net/en_US/fbevents.js);
-fbq(init, 1217556343850015);
-fbq(track, PageView);
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1217556343850015');
+fbq('track', 'PageView');
 </script>
 <!-- End Meta Pixel Code -->
 
@@ -51,40 +51,10 @@ fbq(track, PageView);
 src="https://www.facebook.com/tr?id=1217556343850015&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Noscript -->
-<div w3-include-html="header.html"></div>
+<!-- include: header.html -->
 
 <div class="super_container">
 	
-	<!-- Hamburger -->
-	
-	<div class="hamburger_bar trans_400 d-flex flex-row align-items-center justify-content-start">
-		<div class="hamburger">
-			<div class="menu_toggle d-flex flex-row align-items-center justify-content-start">
-				<span>menu</span>
-				<div class="hamburger_container">
-					<div class="menu_hamburger">
-						<div class="line_1 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
-						<div class="line_2 hamburger_lines" style="visibility: inherit; opacity: 1;"></div>
-						<div class="line_3 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Menu -->
-
-	<div class="menu trans_800">
-		<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
-			<ul>
-				<li><a href="index.html">inicio</a></li>
-				<li><a href="about.html">nosotros</a></li>
-								<li><a href="tour-operadores.html">tour operadores</a></li>
-				<li><a href="contact.html">contacto</a></li>
-			</ul>
-		</div>
-		<div class="menu_reservations_phone ml-auto">Reservaciones: 809-689-2900</div>
-	</div>
 	
 	<!-- Home section removed -->
 
@@ -102,7 +72,7 @@ src="https://www.facebook.com/tr?id=1217556343850015&ev=PageView&noscript=1"
 				<div class="col-lg-8">
 					<div class="reservation_form_container">
 						<form action="https://submit-form.com/VIqdZ2gBq" method="POST" class="reservation_form">
-							<input type="hidden" name="_redirect" value="https://atarazana.netlify.app/reservacion-exitosa.html">
+							<input type="hidden" name="_redirect" value="https://www.atarazana.do/reservacion-exitosa.html">
 							<input type="hidden" name="_append" value="false">
 							<input type="hidden" name="_email.subject" value="Nueva reservación de evento - Atarazana">
 							<input type="hidden" name="_email.from" value="Atarazana Reservaciones">
@@ -223,6 +193,9 @@ src="https://www.facebook.com/tr?id=1217556343850015&ev=PageView&noscript=1"
 	<!-- Footer -->
 
 </div>
+
+<!-- include: footer.html -->
+
 
 <script src="/js/jquery-3.2.1.min.js"></script>
 <script src="/styles/bootstrap-4.1.2/popper.js"></script>
@@ -411,7 +384,5 @@ $(document).ready(function() {
   color: #b49383 !important;
 }
 </style>
-<script src="https://www.w3schools.com/lib/w3.js"></script>
-<script>w3.includeHTML();</script>
 </body>
 </html> 

@@ -76,10 +76,10 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version=2.0;
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,script,
-https://connect.facebook.net/en_US/fbevents.js);
-fbq(init, 1217556343850015);
-fbq(track, PageView);
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1217556343850015');
+fbq('track', 'PageView');
 </script>
 <!-- End Meta Pixel Code -->
 
@@ -90,7 +90,7 @@ fbq(track, PageView);
 src="https://www.facebook.com/tr?id=1217556343850015&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Noscript -->
-<div w3-include-html="header.html"></div>
+<!-- include: header.html -->
 
 <div class="test-content">
     <div class="container">
@@ -119,6 +119,9 @@ src="https://www.facebook.com/tr?id=1217556343850015&ev=PageView&noscript=1"
         </div>
     </div>
 </div>
+
+<!-- include: footer.html -->
+
 
 <script src="/js/jquery-3.2.1.min.js"></script>
 <script src="/styles/bootstrap-4.1.2/popper.js"></script>
@@ -164,7 +167,5 @@ $(document).ready(function() {
     }, 1000);
 });
 </script>
-<script src="https://www.w3schools.com/lib/w3.js"></script>
-<script src="/js/include-helper.js"></script>
 </body>
 </html> 

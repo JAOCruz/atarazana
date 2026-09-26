@@ -1,0 +1,172 @@
+<!-- Footer Component -->
+<footer class="at-footer">
+	<div class="container">
+		<div class="at-footer-grid">
+			<div class="at-footer-brand">
+				<div class="at-footer-logo">Atarazana</div>
+				<div class="at-footer-tagline">Eventos · Desde 1972</div>
+				<p>Bodas, eventos corporativos y experiencias en el corazón de la Ciudad Colonial, frente al Alcázar de Colón.</p>
+			</div>
+
+			<nav class="at-footer-col" aria-label="Eventos">
+				<h4>Eventos</h4>
+				<ul>
+					<li><a href="event-bodas.html">Bodas</a></li>
+					<li><a href="event-empresariales.html">Empresariales</a></li>
+					<li><a href="event-15anos.html">15 Años</a></li>
+					<li><a href="event-especiales.html">Especiales</a></li>
+					<li><a href="event-dominicana.html">A la Dominicana</a></li>
+					<li><a href="tour-operadores.html">Tour Operadores</a></li>
+				</ul>
+			</nav>
+
+			<div class="at-footer-col">
+				<h4>Contacto</h4>
+				<ul>
+					<li>Atarazana No. 5, Ciudad Colonial<br>Santo Domingo 10210, República Dominicana</li>
+					<li><a href="tel:+18096892900">809-689-2900</a></li>
+					<li><a href="https://wa.me/18296597044" target="_blank" rel="noopener noreferrer">WhatsApp 829-659-7044</a></li>
+					<li><a href="mailto:ventas@restauranteatarazana.com">ventas@restauranteatarazana.com</a></li>
+				</ul>
+			</div>
+
+			<div class="at-footer-col at-footer-cta">
+				<h4>Planifica tu evento</h4>
+				<p>Cuéntanos la fecha y el número de invitados y te enviamos una propuesta.</p>
+				<a href="reservaciones.html" class="at-footer-btn">Solicitar Propuesta</a>
+			</div>
+		</div>
+
+		<div class="at-footer-bottom">
+			<span>© <span id="at-footer-year">2026</span> Atarazana. Todos los derechos reservados.</span>
+			<nav aria-label="Enlaces">
+				<a href="about.html">Nosotros</a>
+				<a href="contact.html">Contacto</a>
+			</nav>
+		</div>
+	</div>
+</footer>
+
+<script>document.getElementById('at-footer-year').textContent = new Date().getFullYear();</script>
+
+<style>
+.at-footer {
+	background: #111;
+	color: rgba(255, 255, 255, 0.72);
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	line-height: 1.7;
+	padding: 80px 0 32px;
+}
+
+.at-footer a {
+	color: rgba(255, 255, 255, 0.72);
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.at-footer a:hover,
+.at-footer a:focus-visible {
+	color: #c4ab9f;
+}
+
+.at-footer-grid {
+	display: grid;
+	grid-template-columns: 1.4fr 1fr 1.3fr 1.2fr;
+	gap: 48px;
+}
+
+.at-footer-logo {
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 44px;
+	font-weight: 700;
+	line-height: 1;
+	color: #fff;
+}
+
+.at-footer-tagline {
+	margin: 10px 0 20px;
+	font-size: 11px;
+	letter-spacing: 0.25em;
+	text-transform: uppercase;
+	color: #b49383;
+}
+
+.at-footer h4 {
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 22px;
+	font-weight: 600;
+	color: #fff;
+	margin: 0 0 18px;
+}
+
+.at-footer ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.at-footer li + li {
+	margin-top: 10px;
+}
+
+.at-footer p {
+	color: inherit;
+	font-size: 14px;
+	line-height: 1.7;
+	margin: 0;
+}
+
+.at-footer-btn {
+	display: inline-block;
+	margin-top: 20px;
+	padding: 12px 28px;
+	border: 1px solid #b49383;
+	color: #e8d5c4 !important;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	transition: background 0.2s ease, color 0.2s ease;
+}
+
+.at-footer-btn:hover,
+.at-footer-btn:focus-visible {
+	background: #b49383;
+	color: #111 !important;
+}
+
+.at-footer-bottom {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 16px;
+	margin-top: 64px;
+	padding-top: 24px;
+	border-top: 1px solid rgba(255, 255, 255, 0.12);
+	font-size: 12px;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.at-footer-bottom nav {
+	display: flex;
+	gap: 24px;
+}
+
+@media (max-width: 991px) {
+	.at-footer-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (max-width: 575px) {
+	.at-footer {
+		padding: 56px 0 96px; /* room for the floating WhatsApp button */
+	}
+
+	.at-footer-grid {
+		grid-template-columns: 1fr;
+		gap: 36px;
+	}
+}
+</style>

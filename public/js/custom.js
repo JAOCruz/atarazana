@@ -76,49 +76,20 @@ $(document).ready(function()
 
 	/* 
 
-	3. Init Menu - Updated to work with the new mobile menu structure
+	3. Init Menu
 
 	*/
 
 	function initMenu()
 	{
-		console.log("Initializing mobile menu");
-		
-		// Modern mobile menu (from header.html)
-		if($('#hamburgerBtn').length)
+		// The main mobile menu (#hamburgerBtn) is wired up inside partials/header.html.
+		// Legacy template menu, only if a page still has one
+		if($('.menu').length && $('.hamburger').not('#hamburgerBtn').length)
 		{
-			console.log("Found hamburger button");
-			
-			// Handle hamburger button click
-			$('#hamburgerBtn').on('click', function(e) {
-				console.log("Hamburger clicked");
-				e.preventDefault();
-				$(this).toggleClass('active');
-				$('#mobileMenuOverlay').toggleClass('active');
-			});
-			
-			// Handle close button click
-			$('#mobileMenuClose').on('click', function() {
-				console.log("Close button clicked");
-				$('#hamburgerBtn').removeClass('active');
-				$('#mobileMenuOverlay').removeClass('active');
-			});
-			
-			// Handle dropdown toggles
-			$('.mobile-dropdown-title').on('click', function() {
-				console.log("Mobile dropdown clicked");
-				$(this).toggleClass('active');
-				$(this).next('.mobile-dropdown-menu').toggleClass('show');
-			});
-		}
-		
-		// Legacy menu (if it exists)
-		if($('.menu').length && $('.hamburger').length)
-		{
-			console.log("Found legacy menu");
-			hamburger.on('click', function()
+			var legacyHamburger = $('.hamburger').not('#hamburgerBtn');
+			legacyHamburger.on('click', function()
 			{
-				hamburger.toggleClass('active');
+				legacyHamburger.toggleClass('active');
 				$('.menu').toggleClass('active');
 			});
 		}

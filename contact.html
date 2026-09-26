@@ -234,10 +234,10 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version=2.0;
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,script,
-https://connect.facebook.net/en_US/fbevents.js);
-fbq(init, 1217556343850015);
-fbq(track, PageView);
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1217556343850015');
+fbq('track', 'PageView');
 </script>
 <!-- End Meta Pixel Code -->
 
@@ -255,7 +255,7 @@ src="https://www.facebook.com/tr?id=1217556343850015&ev=PageView&noscript=1"
   <div class="at-preloader-text">Desde 1972</div>
 </div>
 
-<div w3-include-html="header.html"></div>
+<!-- include: header.html -->
 
 <div class="super_container">
 
@@ -329,7 +329,9 @@ src="https://www.facebook.com/tr?id=1217556343850015&ev=PageView&noscript=1"
 	</div>
 
 	<!-- Reservations -->
-	<div w3-include-html="reservation.html"></div>
+	<!-- include: reservation.html -->
+
+	<!-- include: footer.html -->
 
 	<!-- Footer -->
 
@@ -360,8 +362,6 @@ $(window).on('scroll', function() {
     }
 });
 </script>
-<script src="https://www.w3schools.com/lib/w3.js"></script>
-<script src="/js/include-helper.js"></script>
 <script src="/js/scroll-reveal.js"></script>
 <!-- WhatsApp CTA -->
 <a href="https://wa.me/18296597044?text=Hola%20Atarazana%2C%20me%20interesa%20hacer%20una%20reservaci%C3%B3n" class="at-whatsapp-cta" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">

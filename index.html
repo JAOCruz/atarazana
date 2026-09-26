@@ -41,11 +41,14 @@
   "foundingDate": "1972",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "La Atarazana",
+    "streetAddress": "Atarazana No. 5, Ciudad Colonial",
     "addressLocality": "Santo Domingo",
     "addressRegion": "Distrito Nacional",
+    "postalCode": "10210",
     "addressCountry": "DO"
   },
+  "telephone": "+1-809-689-2900",
+  "email": "ventas@restauranteatarazana.com",
   "image": "https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Atarazana/Logo_Atarazana.png",
   "sameAs": []
 }
@@ -121,127 +124,6 @@
 
 
 
-/* Food Slideshow Styles */
-.food_slideshow_section {
-  position: relative;
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
-}
-
-.food_slideshow_overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 2;
-}
-
-.food_slideshow_content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-}
-
-.food_slideshow_title {
-  font-family: 'Cormorant Garamond', serif !important;
-  font-size: 3.5rem;
-  color: #fff;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.food_slideshow_subtitle {
-  font-family: 'Montserrat', sans-serif !important;
-  font-size: 1.2rem;
-  color: #b49383;
-  font-weight: 500;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.food_slideshow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.food_slide {
-  width: 100%;
-  height: 500px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.food_slideshow .owl-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  z-index: 4;
-}
-
-.food_slideshow .owl-nav button {
-  position: absolute;
-  background: rgba(180, 147, 131, 0.8) !important;
-  color: white !important;
-  border: none !important;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 18px !important;
-  transition: all 0.3s ease;
-}
-
-.food_slideshow .owl-nav button:hover {
-  background: rgba(180, 147, 131, 1) !important;
-  transform: scale(1.1);
-}
-
-.food_slideshow .owl-nav .owl-prev {
-  left: 20px;
-}
-
-.food_slideshow .owl-nav .owl-next {
-  right: 20px;
-}
-
-.food_slideshow .owl-dots {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 4;
-}
-
-.food_slideshow .owl-dots .owl-dot {
-  display: inline-block;
-  margin: 0 5px;
-}
-
-.food_slideshow .owl-dots .owl-dot span {
-  width: 12px;
-  height: 12px;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  display: block;
-  transition: all 0.3s ease;
-}
-
-.food_slideshow .owl-dots .owl-dot.active span,
-.food_slideshow .owl-dots .owl-dot:hover span {
-  background: #b49383;
-}
-
 /* Event boxes equal height */
 .event-dish {
   display: flex;
@@ -277,57 +159,6 @@
   display: flex;
   flex-direction: column;
 }
-
-/* Special Visitors Section Styles */
-.special-visitors-section {
-  overflow: hidden;
-}
-
-.special-visitors-content {
-  padding: 20px;
-}
-
-.special-visitors-content .section_subtitle {
-  font-size: 28px;
-  color: #b49383;
-  font-weight: 700;
-  line-height: 0.75;
-}
-
-.special-visitors-content .section_title h2 {
-  font-size: 42px;
-  color: #232323;
-  font-weight: 700;
-  margin-top: 10px;
-  margin-bottom: 25px;
-}
-
-.special-visitors-text p {
-  font-size: 16px;
-  color: #636363;
-  line-height: 1.875;
-  margin-bottom: 15px;
-}
-
-.special-visitors-image img {
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
-
-.special-visitors-image img:hover {
-  transform: scale(1.03);
-}
-
-@media (max-width: 991px) {
-  .special-visitors-content {
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  
-  .special-visitors-content .section_title h2 {
-    font-size: 36px;
-  }
-}
 </style>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
@@ -340,10 +171,10 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version=2.0;
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,script,
-https://connect.facebook.net/en_US/fbevents.js);
-fbq(init, 1217556343850015);
-fbq(track, PageView);
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1217556343850015');
+fbq('track', 'PageView');
 </script>
 <!-- End Meta Pixel Code -->
 
@@ -362,7 +193,7 @@ src="https://www.facebook.com/tr?id=1217556343850015&ev=PageView&noscript=1"
   <div class="at-preloader-text">Desde 1972</div>
 </div>
 
-<div w3-include-html="header.html"></div>
+<!-- include: header.html -->
 
 	<!-- Home -->
 
@@ -379,9 +210,9 @@ src="https://www.facebook.com/tr?id=1217556343850015&ev=PageView&noscript=1"
 							<div class="home_text ml-auto mr-auto">
 								<p>Bodas, eventos y experiencias extraordinarias en uno de los espacios más emblemáticos de la Ciudad Colonial de Santo Domingo. Frente al Alcázar de Colón, Atarazana ofrece un escenario único donde siglos de historia se convierten en el marco perfecto para celebrar los momentos más importantes.</p>
 							</div>
-							<div class="home_buttons d-flex flex-row align-items-center justify-content-center" style="gap:20px; flex-wrap:wrap; margin-top:32px;">
-								<a href="reservaciones.html" class="trans_200" style="display:inline-block;text-decoration:none;color:#1a1208;background:#c4ab9f;padding:14px 36px;font-family:'Playfair Display',serif;font-size:14px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;transition:all 0.3s ease;">Solicitar Propuesta</a>
-								<a href="event-bodas.html" class="trans_200" style="display:inline-block;text-decoration:none;color:#e8d5c4;background:transparent;padding:13px 36px;font-family:'Playfair Display',serif;font-size:14px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;border:1px solid rgba(232,213,196,0.55);transition:all 0.3s ease;">Ver Eventos</a>
+							<div class="home_buttons at-hero-actions">
+								<a href="reservaciones.html" class="at-btn at-btn--solid">Solicitar Propuesta</a>
+								<a href="event-bodas.html" class="at-btn at-btn--ghost">Ver Eventos</a>
 							</div>
 						</div>
 					</div>
@@ -394,26 +225,20 @@ src="https://www.facebook.com/tr?id=1217556343850015&ev=PageView&noscript=1"
 
 	<div class="intro">
 		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="intro_content at-reveal">
-						<div class="intro_subtitle page_subtitle" style="font-family: 'Cormorant Garamond', serif !important;">Un Lugar Que No Puede Ser Replicado</div>
-						<div class="intro_title"><h2 style="font-family: 'Cormorant Garamond', serif !important;">Historia Viva en Cada Rincón</h2></div>
-            <div class="intro_text">
-              <p>
-                Hay espacios para eventos. Y hay lugares que forman parte de la historia. Ubicada en el corazón de la Ciudad Colonial, Atarazana combina patrimonio, arquitectura y hospitalidad para crear experiencias que ningún salón convencional puede ofrecer. Aquí cada celebración adquiere un significado especial porque ocurre en un escenario que ha sido testigo de generaciones de historias.
-              </p>
-            </div>            
+			<div class="at-intro-grid">
+				<div class="at-intro-images at-stagger">
+					<div class="intro_image at-reveal at-reveal--left"><img src="/images/intro_1.jpg" alt="Ambiente colonial" loading="lazy"></div>
+					<div class="intro_image at-reveal at-reveal--right"><img src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other2/location_night.jpeg" alt="Mesa elegante de noche" loading="lazy"></div>
+				</div>
+				<div class="intro_content at-intro-card at-reveal">
+					<div class="intro_subtitle page_subtitle">Un Lugar Que No Puede Ser Replicado</div>
+					<div class="intro_title"><h2>Historia Viva en Cada Rincón</h2></div>
+					<div class="intro_text">
+						<p>
+							Hay espacios para eventos. Y hay lugares que forman parte de la historia. Ubicada en el corazón de la Ciudad Colonial, Atarazana combina patrimonio, arquitectura y hospitalidad para crear experiencias que ningún salón convencional puede ofrecer. Aquí cada celebración adquiere un significado especial porque ocurre en un escenario que ha sido testigo de generaciones de historias.
+						</p>
 					</div>
-					<div class="row at-stagger">
-						<div class="col-xl-4 col-md-6 intro_col at-reveal at-reveal--left">
-							<div class="intro_image"><img src="/images/intro_1.jpg" alt="Ambiente colonial" loading="lazy"></div>
-						</div>
-						<div class="col-xl-4 col-md-6 intro_col at-reveal at-reveal--right">
-							<div class="intro_image"><img src="https://jaocruz.nyc3.digitaloceanspaces.com/Atarazana/Other2/location_night.jpeg" alt="Mesa elegante de noche" loading="lazy"></div>
-						</div>
-					</div>
-				</div>	
+				</div>
 			</div>
 		</div>
 	</div>
@@ -428,7 +253,7 @@ src="https://www.facebook.com/tr?id=1217556343850015&ev=PageView&noscript=1"
 				</div>
 				<div class="col-md-1 d-none d-md-flex"><div class="at-stat-divider"></div></div>
 				<div class="col-6 col-md-3 at-stat-item">
-					<span class="at-stat-number" data-target="52" data-suffix="+">0</span><span class="at-stat-suffix d-none">+</span>
+					<span class="at-stat-number" data-since="1972" data-suffix="+">0</span>
 					<span class="at-stat-label">Años de Experiencia</span>
 				</div>
 				<div class="col-md-1 d-none d-md-flex"><div class="at-stat-divider"></div></div>
@@ -448,11 +273,11 @@ src="https://www.facebook.com/tr?id=1217556343850015&ev=PageView&noscript=1"
 				<div class="row">
 					<div class="col-lg-7">
 						<div class="sig_content">
-							<div class="sig_subtitle page_subtitle" style="font-family: 'Cormorant Garamond', serif !important;">Nuestra Promesa</div>
-							<div class="sig_title"><h1 style="font-family: 'Cormorant Garamond', serif !important;">Servicio Premium</h1></div>
+							<div class="sig_subtitle page_subtitle">Nuestra Promesa</div>
+							<div class="sig_title"><h1>Servicio Premium</h1></div>
 							<div class="rating_r sig_rating rating_r_5"><i></i><i></i><i></i><i></i><i></i></div>
 							<div class="sig_name_container d-flex flex-row align-items-start justify-content-start">
-								<div class="sig_name" style="font-family: 'Montserrat', sans-serif !important;">Más de 50 años de experiencia brindando atención personalizada y profesional que hace de cada visita una experiencia inolvidable.</div>
+								<div class="sig_name">Más de 50 años de experiencia brindando atención personalizada y profesional que hace de cada visita una experiencia inolvidable.</div>
 
 							</div>
 							<div class="button sig_button trans_200"><a href="about.html">Conocer Más</a></div>
@@ -482,12 +307,12 @@ src="https://www.facebook.com/tr?id=1217556343850015&ev=PageView&noscript=1"
 			<div class="row">
 				<div class="col">
 					<div class="themenu_title_bar_container">
-						<div class="themenu_stars text-center page_subtitle" style="font-family: 'Cormorant Garamond', serif !important;">Celebraciones Memorables</div>
+						<div class="themenu_stars text-center page_subtitle">Celebraciones Memorables</div>
 						<div class="themenu_rating text-center">
 							<div class="rating_r rating_r_5"><i></i><i></i><i></i><i></i><i></i></div>
 						</div>
 						<div class="themenu_title_bar d-flex flex-column align-items-center justify-content-center">
-							<div class="themenu_title" style="font-family: 'Cormorant Garamond', serif !important;">Un Espacio Imposible de Olvidar</div>
+							<div class="themenu_title">Un Espacio Imposible de Olvidar</div>
 						</div>
 					</div>
 				</div>
@@ -497,14 +322,14 @@ src="https://www.facebook.com/tr?id=1217556343850015&ev=PageView&noscript=1"
 				<!-- Bodas -->
 				<div class="col-lg-4 themenu_column at-reveal">
 					<div class="themenu_col">
-						<div class="themenu_col_title" style="font-family: 'Cormorant Garamond', serif !important;">Bodas</div>
+						<div class="themenu_col_title">Bodas</div>
 						<div class="dish_list">
 							<div class="dish event-dish">
 								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title" style="font-family: 'Cormorant Garamond', serif !important;">Celebraciones Únicas</div>
+									<div class="dish_title">Celebraciones Únicas</div>
 								</div>
 								<div class="dish_contents">
-									<p style="font-family: 'Montserrat', sans-serif !important;">Durante más de cinco décadas, parejas, empresas, instituciones y visitantes de todo el mundo han elegido Atarazana para celebrar momentos que merecen algo más que un simple lugar. Han elegido un espacio con carácter. Un espacio con historia. Un espacio imposible de olvidar.</p>
+									<p>Durante más de cinco décadas, parejas, empresas, instituciones y visitantes de todo el mundo han elegido Atarazana para celebrar momentos que merecen algo más que un simple lugar. Han elegido un espacio con carácter. Un espacio con historia. Un espacio imposible de olvidar.</p>
 								</div>
 								<div class="dish_order"><a href="event-bodas.html">Conocer Más</a></div>
 							</div>
@@ -515,14 +340,14 @@ src="https://www.facebook.com/tr?id=1217556343850015&ev=PageView&noscript=1"
 				<!-- Tour Operadores -->
 				<div class="col-lg-4 themenu_column at-reveal">
 					<div class="themenu_col">
-						<div class="themenu_col_title" style="font-family: 'Cormorant Garamond', serif !important;">Tour Operadores</div>
+						<div class="themenu_col_title">Tour Operadores</div>
 						<div class="dish_list">
 							<div class="dish event-dish">
 								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title" style="font-family: 'Cormorant Garamond', serif !important;">Experiencia Histórica</div>
+									<div class="dish_title">Experiencia Histórica</div>
 								</div>
 								<div class="dish_contents">
-									<p style="font-family: 'Montserrat', sans-serif !important;">Espacio más antiguo de la Ciudad Colonial dedicado a recibir visitantes, pioneros en servicios para grupos turísticos. Ofrecemos una experiencia cultural completa con folklore dominicano en el corazón de la historia.</p>
+									<p>Espacio más antiguo de la Ciudad Colonial dedicado a recibir visitantes, pioneros en servicios para grupos turísticos. Ofrecemos una experiencia cultural completa con folklore dominicano en el corazón de la historia.</p>
 								</div>
 								<div class="dish_order"><a href="tour-operadores.html">Conocer Más</a></div>
 							</div>
@@ -533,14 +358,14 @@ src="https://www.facebook.com/tr?id=1217556343850015&ev=PageView&noscript=1"
 				<!-- A la Dominicana -->
 				<div class="col-lg-4 themenu_column at-reveal">
 					<div class="themenu_col">
-						<div class="themenu_col_title" style="font-family: 'Cormorant Garamond', serif !important;">A la Dominicana</div>
+						<div class="themenu_col_title">A la Dominicana</div>
 						<div class="dish_list">
 							<div class="dish event-dish">
 								<div class="dish_title_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-									<div class="dish_title" style="font-family: 'Cormorant Garamond', serif !important;">Tradición Caribeña</div>
+									<div class="dish_title">Tradición Caribeña</div>
 								</div>
 								<div class="dish_contents">
-									<p style="font-family: 'Montserrat', sans-serif !important;">Eventos temáticos con auténtico sabor dominicano. Música folklórica, gastronomía criolla y decoración tropical que transporta a tus invitados a la esencia del Caribe dominicano.</p>
+									<p>Eventos temáticos con auténtico sabor dominicano. Música folklórica, gastronomía criolla y decoración tropical que transporta a tus invitados a la esencia del Caribe dominicano.</p>
 								</div>
 								<div class="dish_order"><a href="event-dominicana.html">Conocer Más</a></div>
 							</div>
@@ -553,12 +378,10 @@ src="https://www.facebook.com/tr?id=1217556343850015&ev=PageView&noscript=1"
 	</div>
 
 
-			<!-- Reservations -->
-			<div w3-include-html="reservation.html"></div>
+	<!-- Reservations -->
+	<!-- include: reservation.html -->
 
-			<!-- Footer -->
-		
-		</div>
+	<!-- include: footer.html -->
 
 <script src="/js/jquery-3.2.1.min.js"></script>
 <script src="/styles/bootstrap-4.1.2/popper.js"></script>
@@ -577,8 +400,6 @@ src="https://www.facebook.com/tr?id=1217556343850015&ev=PageView&noscript=1"
 <script src="/js/custom.js"></script>
 <script type="module" src="/js/atarazana-images.js"></script>
 
-<script src="https://www.w3schools.com/lib/w3.js"></script>
-<script src="/js/include-helper.js"></script>
 <!-- Premium enhancements: scroll reveal + preloader -->
 <script src="/js/scroll-reveal.js"></script>
 
@@ -618,6 +439,11 @@ src="https://www.facebook.com/tr?id=1217556343850015&ev=PageView&noscript=1"
       }
     });
   }, { threshold: 0.3 });
+
+  document.querySelectorAll('[data-since]').forEach(function(el) {
+    var since = parseInt(el.getAttribute('data-since'), 10);
+    el.setAttribute('data-target', new Date().getFullYear() - since);
+  });
 
   document.querySelectorAll('.at-stats-section').forEach(function(s) {
     statsObs.observe(s);
