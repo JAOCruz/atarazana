@@ -18,6 +18,17 @@ export default defineConfig({
   // public/ is served automatically by Vite at root (contains images, plugins, styles, js, font)
   publicDir: 'public',
 
+  // En producción /fotos/* lo resuelve Netlify (public/_redirects); en local, este proxy
+  server: {
+    proxy: {
+      '/fotos': {
+        target: 'https://pub-4a5376730f764e2cae9d1e2dccaa7b06.r2.dev',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/fotos/, '')
+      }
+    }
+  },
+
   plugins: [
     {
       // Dev server: resolve includes on every HTML request
