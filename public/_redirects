@@ -1,1 +1,4 @@
+# Fotos en Cloudflare R2 (bucket jaocruz), servidas por Netlify con su caché
+/fotos/*  https://pub-4a5376730f764e2cae9d1e2dccaa7b06.r2.dev/:splat  200
+
 /:page    /:page.html   200
