@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /reservacion-exitosa
+Disallow: /test-menu
+Disallow: /elements
+
+Sitemap: https://restauranteatarazana.com/sitemap.xml
