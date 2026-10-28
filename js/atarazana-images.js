@@ -48,14 +48,6 @@ reservationsSections.forEach(bg => {
     bg.style.backgroundImage = `url('/fotos/Atarazana/table4.jpg')`;
 });
 
-// Set contact page home background (special case)
-const contactHomeBg = document.querySelector('.home .parallax_background.parallax-window');
-if (contactHomeBg && window.location.pathname.includes('contact')) {
-    const imgUrl = "/fotos/Atarazana/2018/DSC_0002.JPG";
-    contactHomeBg.setAttribute('data-image-src', imgUrl);
-    contactHomeBg.style.backgroundImage = `url('${imgUrl}')`;
-}
-
 // Export event images for use in the events (blog) page
 export const eventImages = {
     bodas: [
